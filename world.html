@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艾瑟蘭大陸 Eseran ｜ 序章：五聖之陸</title>
+  <meta name="description" content="史詩奇幻文學互動式序章：五獸鎮守大地，五國延續千年，而被遺忘的第六個名字，仍沉睡於歷史之外。">
+  
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Noto Serif TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Noto+Serif+TC:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="world.css">
+</head>
+<body class="fantasy-theme">
+
+  <!-- Canvas 背景粒子層 (星塵、微光與火燼) -->
+  <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+
+  <!-- 頂部古典導覽列 -->
+  <header class="top-nav" id="top-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="crest-icon">✦</span>
+        <span class="brand-title">艾瑟蘭大陸</span>
+        <span class="brand-sub">ESERAN</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">序章卷首</a>
+        <a href="#history" class="nav-link">無星紀元</a>
+        <a href="#interactive-map" class="nav-link">大陸全圖</a>
+        <a href="#nations-codex" class="nav-link">五國列傳</a>
+        <a href="#holy-pact" class="nav-link">五聖盟約</a>
+        <a href="#prologue-ending" class="nav-link fate-link">命運殘卷</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="sound-toggle" class="nav-btn sound-btn" title="切換中古氛圍環境音（Web Audio 合成音）">
+          <span class="icon">♪</span>
+          <span class="label">氛圍音效: 關閉</span>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="開啟導覽選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 手機版抽屜式導覽選單 -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">艾瑟蘭編年史目錄</span>
+      <button id="close-drawer-btn" class="close-btn">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#hero" class="drawer-link">卷首：開闢之初</a></li>
+      <li><a href="#history" class="drawer-link">神話：無星紀元</a></li>
+      <li><a href="#interactive-map" class="drawer-link">輿圖：五聖大陸地圖</a></li>
+      <li><a href="#nations-codex" class="drawer-link">列國：五邦深度檔案</a></li>
+      <li><a href="#holy-pact" class="drawer-link">盟約：九百年裂痕</a></li>
+      <li><a href="#prologue-ending" class="drawer-link fate-link">異象：第六頭聖獸</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ==============================================
+         二、首頁視覺 HERO SECTION
+         ============================================== -->
+    <section id="hero" class="hero-section">
+      <!-- 羊皮紙底紋與星空山巒視覺圖層 -->
+      <div class="hero-layer parchment-grain"></div>
+      <div class="hero-layer star-canopy"></div>
+      <div class="hero-layer fog-layer fog-1"></div>
+      <div class="hero-layer fog-layer fog-2"></div>
+      
+      <!-- 遠古五聖微光羅盤背景 (五方向光暈) -->
+      <div class="divine-pentagram-glow">
+        <div class="halo halo-north" title="玄狼靈光"></div>
+        <div class="halo halo-west" title="白獅聖光"></div>
+        <div class="halo halo-center" title="翠鹿森輝"></div>
+        <div class="halo halo-east" title="蒼龍雷電"></div>
+        <div class="halo halo-south" title="朱凰緋焰"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="ornament-top">
+          <span class="rune-line left"></span>
+          <span class="rune-symbol">ᛟ ᚱ ᛞ ᛖ ᚱ</span>
+          <span class="rune-line right"></span>
+        </div>
+
+        <h1 class="main-title">
+          <span class="pre-title">史詩奇幻・序章</span>
+          <span class="title-text">艾瑟蘭大陸</span>
+        </h1>
+        <div class="sub-title">THE CONTINENT OF ESERAN</div>
+
+        <div class="hero-verse">
+          <p class="verse-line">五獸鎮守大地，</p>
+          <p class="verse-line">五國延續千年，</p>
+          <p class="verse-line highlight-verse">而被遺忘的第六個名字，</p>
+          <p class="verse-line">仍沉睡於歷史之外。</p>
+        </div>
+
+        <div class="hero-cta-wrapper">
+          <a href="#history" class="parchment-btn scroll-btn" id="hero-scroll-btn">
+            <span class="btn-border-corner tl"></span>
+            <span class="btn-border-corner tr"></span>
+            <span class="btn-border-corner bl"></span>
+            <span class="btn-border-corner br"></span>
+            <span class="btn-icon">📜</span>
+            <span class="btn-text">展開古老卷軸</span>
+          </a>
+        </div>
+
+        <div class="scroll-indicator">
+          <span class="chevron-down"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         三、世界歷史序章 WORLD HISTORY SCROLL
+         ============================================== -->
+    <section id="history" class="history-section">
+      <div class="section-container">
+        
+        <div class="scroll-wrapper">
+          <!-- 頂部與底部卷軸裝飾軸桿 -->
+          <div class="scroll-roller scroll-top-roller"></div>
+          
+          <div class="ancient-scroll-sheet">
+            <div class="scroll-watermark">✦</div>
+            <div class="section-header text-center">
+              <span class="chapter-badge">CHRONICLE 00</span>
+              <h2 class="section-title">無星紀元</h2>
+              <div class="section-subtitle">THE AGE OF STARLESS VOID</div>
+              <div class="title-divider">
+                <span class="diamond"></span>
+              </div>
+            </div>
+
+            <div class="scroll-prose">
+              <p class="dropcap-paragraph">
+                在艾瑟蘭最古老的神話裡，世界曾經沒有星辰。
+              </p>
+              <p>
+                黑暗從大地裂隙中無盡湧出，山脈在哀鳴中崩塌，浩瀚江河瞬間乾涸，無數文明無聲息地消失於被稱為<strong>「虛無之潮」</strong>的滅世災厄之中。萬物在混沌中盲目狂亂，大地淪為無光、無序、無望的深淵。
+              </p>
+              <p>
+                就在世界即將走向徹底終結之時，五頭無上聖獸從天地不同的五個方向破空降臨大地——
+              </p>
+
+              <!-- 五聖降臨交互光環卡 -->
+              <div class="beast-descent-grid">
+                
+                <div class="descent-item beast-east" data-beast="canglong">
+                  <div class="beast-mini-sigil">
+                    <svg viewBox="0 0 40 40" class="svg-sigil">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+                      <path d="M12 28 C12 20, 20 18, 20 12 C20 18, 28 20, 28 28 Z" fill="currentColor" opacity="0.8"/>
+                      <path d="M18 10 L22 10 M20 8 L20 14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <div class="descent-body">
+                    <span class="beast-name">蒼天龍・奧爾雷恩</span>
+                    <span class="beast-action">帶來天空與雷霆，劈裂永恆的烏雲</span>
+                  </div>
+                </div>
+
+                <div class="descent-item beast-west" data-beast="bailion">
+                  <div class="beast-mini-sigil">
+                    <svg viewBox="0 0 40 40" class="svg-sigil">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+                      <circle cx="20" cy="20" r="8" fill="currentColor" opacity="0.8"/>
+                      <path d="M20 6 L20 10 M20 30 L20 34 M6 20 L10 20 M30 20 L34 20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <div class="descent-body">
+                    <span class="beast-name">聖耀白獅・雷古斯</span>
+                    <span class="beast-action">帶來太陽與誓言，驅散一切恐懼殘渣</span>
+                  </div>
+                </div>
+
+                <div class="descent-item beast-north" data-beast="xuanwolf">
+                  <div class="beast-mini-sigil">
+                    <svg viewBox="0 0 40 40" class="svg-sigil">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+                      <path d="M16 12 A10 10 0 0 0 26 28 A12 12 0 1 1 16 12 Z" fill="currentColor" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  <div class="descent-body">
+                    <span class="beast-name">月影玄狼・芬里雅</span>
+                    <span class="beast-action">帶來月亮與自由，在酷寒黑夜中劃出獵徑</span>
+                  </div>
+                </div>
+
+                <div class="descent-item beast-south" data-beast="zhuhuang">
+                  <div class="beast-mini-sigil">
+                    <svg viewBox="0 0 40 40" class="svg-sigil">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+                      <path d="M20 10 C15 18, 12 22, 12 28 C12 33, 28 33, 28 28 C28 22, 25 18, 20 10 Z" fill="currentColor" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  <div class="descent-body">
+                    <span class="beast-name">不滅朱凰・瑟菲拉</span>
+                    <span class="beast-action">帶來火焰與重生，焚盡腐朽使生機復萌</span>
+                  </div>
+                </div>
+
+                <div class="descent-item beast-center" data-beast="shenlu">
+                  <div class="beast-mini-sigil">
+                    <svg viewBox="0 0 40 40" class="svg-sigil">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,2"/>
+                      <path d="M20 28 L20 18 M16 14 L20 18 L24 14 M12 20 L20 22 L28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="descent-body">
+                    <span class="beast-name">世界樹神鹿・艾露希亞</span>
+                    <span class="beast-action">守護自然、記憶與命運，撫平大陸的深創</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="scroll-epilogue">
+                <blockquote class="pact-quote">
+                  「五聖獸創造秩序，五國守護世界，<br>
+                  只要五聖之盟仍在，黑暗便永不復返。」
+                </blockquote>
+                <p>
+                  五獸共同終結無星紀元。後世的人類在五座聖域周圍建立國度。經過數百年歲月的生息、征戰與融合，最終形成了今日統治艾瑟蘭的五大國度。
+                </p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="scroll-roller scroll-bottom-roller"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         四、互動式艾瑟蘭大陸地圖 INTERACTIVE SVG MAP
+         ============================================== -->
+    <section id="interactive-map" class="map-section">
+      <div class="section-container full-width-container">
+        
+        <div class="section-header text-center map-heading">
+          <span class="chapter-badge">ATLAS OF ESERAN</span>
+          <h2 class="section-title">艾瑟蘭大陸全圖</h2>
+          <div class="section-subtitle">探索五聖庇佑之境・點擊或游移於國度以揭開秘傳檔案</div>
+          <div class="title-divider">
+            <span class="diamond"></span>
+          </div>
+        </div>
+
+        <!-- 地圖控制面板 (過濾器與縮放) -->
+        <div class="map-controls-bar">
+          <div class="filter-group">
+            <span class="control-label">圖層檢視：</span>
+            <button class="filter-btn active" data-filter="all">全部國度</button>
+            <button class="filter-btn" data-filter="dragonEmpire">蒼龍帝國</button>
+            <button class="filter-btn" data-filter="lionKingdom">白獅聖王國</button>
+            <button class="filter-btn" data-filter="wolfFederation">玄狼冰原聯邦</button>
+            <button class="filter-btn" data-filter="phoenixTheocracy">朱凰神國</button>
+            <button class="filter-btn" data-filter="deerForest">翠鹿森國</button>
+            <button class="filter-btn special-filter" data-filter="rift">未知裂隙 (？？？)</button>
+          </div>
+
+          <div class="map-zoom-tools">
+            <button id="btn-zoom-in" class="tool-btn" title="放大地圖">+</button>
+            <button id="btn-zoom-reset" class="tool-btn" title="重設地圖">⟲</button>
+            <button id="btn-zoom-out" class="tool-btn" title="縮小地圖">−</button>
+          </div>
+        </div>
+
+        <!-- 地圖視窗與 SVG 畫布容器 -->
+        <div class="map-viewport-wrapper" id="map-viewport">
+          
+          <!-- 手機端操作提示 -->
+          <div class="mobile-map-hint">
+            <span>👆 點擊地圖區域查看國家檔案與重要城邦</span>
+          </div>
+
+          <!-- 原創奇幻大陸 SVG 地圖 -->
+          <div class="svg-map-stage" id="svg-map-stage">
+            <svg id="eseran-svg-map" viewBox="0 0 1400 950" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- 古代羊皮紙海洋質感濾鏡 -->
+                <filter id="parchment-rough" x="0%" y="0%" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+                  <feColorMatrix type="matrix" values="0 0 0 0 0.85   0 0 0 0 0.78   0 0 0 0 0.65  0 0 0 0.35 0" />
+                  <feBlend mode="multiply" in="SourceGraphic" result="blend" />
+                </filter>
+
+                <filter id="glow-dragon" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feFlood flood-color="#38bdf8" flood-opacity="0.6"/>
+                  <feComposite in2="blur" operator="in"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="glow-lion" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feFlood flood-color="#f59e0b" flood-opacity="0.7"/>
+                  <feComposite in2="blur" operator="in"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="glow-wolf" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feFlood flood-color="#818cf8" flood-opacity="0.6"/>
+                  <feComposite in2="blur" operator="in"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="glow-phoenix" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feFlood flood-color="#ef4444" flood-opacity="0.7"/>
+                  <feComposite in2="blur" operator="in"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="glow-deer" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feFlood flood-color="#10b981" flood-opacity="0.6"/>
+                  <feComposite in2="blur" operator="in"/>
+                  <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <!-- 海洋底色漸層 -->
+                <radialGradient id="ocean-grad" cx="50%" cy="50%" r="65%">
+                  <stop offset="0%" stop-color="#131e2b"/>
+                  <stop offset="60%" stop-color="#0e1722"/>
+                  <stop offset="100%" stop-color="#080d14"/>
+                </radialGradient>
+
+                <!-- 森林與山脈圖樣 -->
+                <pattern id="forest-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M10 2 L5 12 L8 12 L4 18 L16 18 L12 12 L15 12 Z" fill="#0d3824" opacity="0.35"/>
+                </pattern>
+                
+                <pattern id="ice-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <path d="M0 15 L30 15 M15 0 L15 30" stroke="#cbd5e1" stroke-width="0.5" opacity="0.2"/>
+                  <polygon points="10,5 20,5 15,12" fill="#94a3b8" opacity="0.15"/>
+                </pattern>
+
+                <linearGradient id="rift-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#475569" stop-opacity="0.3"/>
+                  <stop offset="50%" stop-color="#9333ea" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#c084fc" stop-opacity="0.4"/>
+                </linearGradient>
+              </defs>
+
+              <!-- 海洋底景與波浪紋 -->
+              <rect x="0" y="0" width="1400" height="950" fill="url(#ocean-grad)" />
+              
+              <!-- 經緯度古地圖線條 -->
+              <g class="map-grid-lines" opacity="0.15" stroke="#d4af37" stroke-width="0.75" stroke-dasharray="5,10">
+                <line x1="100" y1="0" x2="100" y2="950"/>
+                <line x1="350" y1="0" x2="350" y2="950"/>
+                <line x1="700" y1="0" x2="700" y2="950"/>
+                <line x1="1050" y1="0" x2="1050" y2="950"/>
+                <line x1="1300" y1="0" x2="1300" y2="950"/>
+                
+                <line x1="0" y1="120" x2="1400" y2="120"/>
+                <line x1="0" y1="320" x2="1400" y2="320"/>
+                <line x1="0" y1="520" x2="1400" y2="520"/>
+                <line x1="0" y1="720" x2="1400" y2="720"/>
+                <line x1="0" y1="880" x2="1400" y2="880"/>
+              </g>
+
+              <!-- 海洋裝飾：遠古海獸與波浪文字 -->
+              <g class="ocean-decorations" opacity="0.4">
+                <text x="180" y="850" class="ocean-label">MAR OCCIDENTALIS・西境無盡之洋</text>
+                <text x="1100" y="160" class="ocean-label">OCEANUS BOREALIS・極北寒海</text>
+                <text x="1150" y="870" class="ocean-label">MARE ORIENTALIS・巨龍怒濤海</text>
+                
+                <!-- 海洋波紋漣漪 -->
+                <path d="M 80 400 Q 110 395 140 400 T 200 400" stroke="#718096" fill="none" stroke-width="1.2"/>
+                <path d="M 120 420 Q 150 415 180 420 T 240 420" stroke="#718096" fill="none" stroke-width="1.2"/>
+                <path d="M 1240 680 Q 1270 675 1300 680 T 1360 680" stroke="#718096" fill="none" stroke-width="1.2"/>
+                <path d="M 1200 700 Q 1230 695 1260 700 T 1320 700" stroke="#718096" fill="none" stroke-width="1.2"/>
+              </g>
+
+              <!-- 大陸群島與海岸淺灘暈邊 (Coastline Shallow Reefs) -->
+              <g class="shallow-coasts" opacity="0.35">
+                <!-- 大陸淺海暈輪 (放大版的海岸線) -->
+                <path d="M 680 60 C 820 60, 940 100, 1020 180 C 1100 250, 1160 330, 1260 410 C 1310 460, 1310 580, 1260 680 C 1200 770, 1080 840, 930 890 C 820 925, 620 925, 480 880 C 370 840, 240 780, 150 670 C 80 570, 90 440, 140 340 C 200 240, 310 160, 440 100 C 530 65, 600 60, 680 60 Z" fill="#1b2a3d"/>
+              </g>
+
+              <!-- ==============================================
+                   五大國家地理版圖 (Paths)
+                   ============================================== -->
+              <g class="nations-territory-layer">
+
+                <!-- 1. 北方：玄狼冰原聯邦 (Wolf Federation) -->
+                <path id="nation-wolfFederation" class="nation-territory territory-wolf"
+                  data-nation="wolfFederation"
+                  d="M 440 110 
+                     C 500 80, 630 65, 720 70 
+                     C 840 75, 960 110, 1030 180 
+                     C 1070 230, 1060 290, 1010 330 
+                     C 960 370, 890 360, 820 370 
+                     C 770 380, 740 400, 680 400 
+                     C 630 400, 600 375, 540 365 
+                     C 460 355, 390 320, 350 260 
+                     C 320 200, 360 150, 440 110 Z"
+                  fill="#1b2636"
+                  stroke="#57708d"
+                  stroke-width="3"
+                />
+
+                <!-- 2. 西方：白獅聖王國 (White Lion Holy Kingdom) -->
+                <path id="nation-lionKingdom" class="nation-territory territory-lion"
+                  data-nation="lionKingdom"
+                  d="M 350 260 
+                     C 390 320, 460 355, 540 365 
+                     C 555 420, 560 480, 550 540 
+                     C 530 600, 490 640, 430 670 
+                     C 350 710, 270 700, 210 650 
+                     C 140 580, 110 490, 130 410 
+                     C 150 330, 210 260, 290 230 
+                     C 310 235, 335 245, 350 260 Z"
+                  fill="#3d362a"
+                  stroke="#bfa26b"
+                  stroke-width="3"
+                />
+
+                <!-- 3. 中央：翠鹿森國 (Emerald Deer Forest Realm) -->
+                <path id="nation-deerForest" class="nation-territory territory-deer"
+                  data-nation="deerForest"
+                  d="M 540 365 
+                     C 600 375, 630 400, 680 400 
+                     C 740 400, 770 380, 820 370 
+                     C 850 420, 860 470, 850 530 
+                     C 840 590, 810 635, 760 660 
+                     C 700 680, 640 680, 590 650 
+                     C 550 620, 540 570, 550 540 
+                     C 560 480, 555 420, 540 365 Z"
+                  fill="#1c382b"
+                  stroke="#48bb78"
+                  stroke-width="3"
+                />
+
+                <!-- 4. 東方：蒼龍帝國 (Canglong Empire) -->
+                <path id="nation-dragonEmpire" class="nation-territory territory-dragon"
+                  data-nation="dragonEmpire"
+                  d="M 820 370 
+                     C 890 360, 960 370, 1010 330 
+                     C 1070 370, 1150 400, 1220 460 
+                     C 1280 520, 1290 620, 1250 690 
+                     C 1190 780, 1080 810, 990 790 
+                     C 930 770, 880 730, 850 680 
+                     C 830 630, 840 580, 850 530 
+                     C 860 470, 850 420, 820 370 Z"
+                  fill="#1c3342"
+                  stroke="#38bdf8"
+                  stroke-width="3"
+                />
+
+                <!-- 5. 南方：朱凰神國 (Vermilion Phoenix Theocracy) -->
+                <path id="nation-phoenixTheocracy" class="nation-territory territory-phoenix"
+                  data-nation="phoenixTheocracy"
+                  d="M 430 670 
+                     C 490 640, 550 620, 590 650 
+                     C 640 680, 700 680, 760 660 
+                     C 810 635, 850 680, 850 680 
+                     C 880 730, 930 770, 930 810 
+                     C 930 860, 840 900, 740 910 
+                     C 630 920, 520 890, 440 830 
+                     C 370 780, 360 720, 430 670 Z"
+                  fill="#3d1f1f"
+                  stroke="#f87171"
+                  stroke-width="3"
+                />
+
+                <!-- 6. 核心神秘區域：深淵裂隙 (第六聖獸未知沉睡之所) -->
+                <g id="mystic-rift-zone" class="mystic-rift-zone" data-nation="rift">
+                  <ellipse cx="690" cy="510" rx="45" ry="32" fill="url(#rift-glow)" class="rift-pulse" stroke="#c084fc" stroke-dasharray="3,3" stroke-width="2"/>
+                  <path d="M 670 510 Q 690 495 710 510 T 670 510" fill="none" stroke="#e9d5ff" stroke-width="2"/>
+                  <circle cx="690" cy="510" r="3" fill="#ffffff" />
+                  <text x="690" y="535" text-anchor="middle" class="rift-text">？？？？</text>
+                </g>
+
+              </g>
+
+              <!-- ==============================================
+                   地貌圖形：山脈、河流、林地、商道 (Geography Elements)
+                   ============================================== -->
+              <g class="geography-features" pointer-events="none">
+                
+                <!-- 北方霜牙山脈 -->
+                <g class="mountain-range frost-mountains" stroke="#94a3b8" fill="#334155" stroke-width="1.5">
+                  <polygon points="500,210 520,175 540,210" />
+                  <polygon points="535,215 560,160 585,215" />
+                  <polygon points="575,210 600,170 625,210" />
+                  <polygon points="620,205 645,150 670,205" />
+                  <polygon points="665,220 690,165 715,220" />
+                  <polygon points="710,215 735,175 760,215" />
+                  <polygon points="755,225 780,180 805,225" />
+                  <polygon points="800,220 830,165 860,220" />
+                  <polygon points="850,230 875,190 900,230" />
+                </g>
+
+                <!-- 西方白金之巔山脈 -->
+                <g class="mountain-range holy-mountains" stroke="#d4af37" fill="#4a3e2a" stroke-width="1.5">
+                  <polygon points="260,420 280,380 300,420" />
+                  <polygon points="295,430 320,360 345,430" />
+                  <polygon points="340,435 365,390 390,435" />
+                  <polygon points="380,450 405,395 430,450" />
+                  <polygon points="425,470 450,410 475,470" />
+                </g>
+
+                <!-- 東方雷鳴脊山脈 -->
+                <g class="mountain-range thunder-mountains" stroke="#38bdf8" fill="#1e293b" stroke-width="1.5">
+                  <polygon points="920,440 945,390 970,440" />
+                  <polygon points="965,450 990,380 1015,450" />
+                  <polygon points="1010,470 1040,405 1070,470" />
+                  <polygon points="1060,490 1090,420 1120,490" />
+                </g>
+
+                <!-- 南方熾焰裂谷與火山峰 -->
+                <g class="mountain-range volcano-peaks" stroke="#f87171" fill="#450a0a" stroke-width="1.5">
+                  <polygon points="620,770 645,710 670,770" />
+                  <polygon points="665,780 700,700 735,780" />
+                  <circle cx="700" cy="700" r="3" fill="#fb923c"/>
+                  <polygon points="730,775 760,720 790,775" />
+                </g>
+
+                <!-- 蜿蜒河流體系 (Rivers) -->
+                <g class="rivers" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.75" stroke-linecap="round">
+                  <!-- 蒼天巨川：由中央世界樹雪山奔流入東海 -->
+                  <path d="M 680 430 Q 750 460 810 470 T 930 520 T 1060 560 T 1170 590 T 1270 610" />
+                  <path d="M 930 520 Q 970 580 1030 630 T 1130 670" stroke-width="1.5" />
+                  
+                  <!-- 白銀聖河：自西方山脈注入西海 -->
+                  <path d="M 460 450 Q 380 470 320 500 T 210 520 T 120 540" />
+
+                  <!-- 玄冰寒川：自北方冰峰注入北海 -->
+                  <path d="M 680 200 Q 640 160 620 120 T 610 70" />
+                  <path d="M 780 210 Q 820 170 860 130 T 910 80" />
+
+                  <!-- 緋焰聖泉暗河：由中央匯入南方聖湖 -->
+                  <path d="M 660 620 Q 640 680 620 730 T 570 810" stroke="#f43f5e" stroke-width="1.5" />
+                </g>
+
+                <!-- 森林與樹冠群 (Forest Grooves) -->
+                <g class="forest-clumps" fill="#15803d" opacity="0.6">
+                  <!-- 中央世界樹巨冠符號 -->
+                  <g class="world-tree-symbol" transform="translate(680, 480)">
+                    <circle cx="0" cy="0" r="26" fill="#14532d" stroke="#4ade80" stroke-width="2"/>
+                    <path d="M 0 15 L 0 -18 M -12 -5 L 0 -12 L 12 -5 M -8 5 L 0 -2 L 8 5" stroke="#86efac" stroke-width="2.5" fill="none"/>
+                  </g>
+
+                  <!-- 翠鹿森國環形密林群 -->
+                  <circle cx="610" cy="450" r="14" />
+                  <circle cx="630" cy="490" r="18" />
+                  <circle cx="740" cy="460" r="16" />
+                  <circle cx="760" cy="520" r="18" />
+                  <circle cx="660" cy="560" r="15" />
+                  <circle cx="720" cy="580" r="14" />
+                </g>
+
+                <!-- 主要五聖商貿巨道 (Trade Routes) -->
+                <g class="trade-roads" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.5" fill="none">
+                  <!-- 橫貫東西主商道 -->
+                  <path d="M 320 480 L 680 480 L 1080 500" />
+                  <!-- 縱貫南北朝聖古道 -->
+                  <path d="M 670 230 L 680 480 L 680 750" />
+                  <!-- 雲川城東南商路 -->
+                  <path d="M 1080 500 Q 1120 620 1140 700" />
+                </g>
+
+              </g>
+
+              <!-- ==============================================
+                   城邦、首都、名勝與古遺跡標記 (Interactive Pins)
+                   ============================================== -->
+              <g class="landmarks-layer">
+
+                <!-- 1. 蒼龍帝國首都：天龍京 -->
+                <g class="landmark-pin capital-pin" data-landmark="tianlong" transform="translate(1080, 490)">
+                  <circle cx="0" cy="0" r="12" class="pin-halo"/>
+                  <polygon points="0,-10 9,6 -9,6" class="pin-icon crown-icon"/>
+                  <circle cx="0" cy="0" r="4" class="pin-core"/>
+                  <text x="0" y="24" text-anchor="middle" class="pin-label">天龍京 (首都)</text>
+                </g>
+
+                <!-- ★ 特別標註：雲川城 (未來第一章主角鼻鼻的伏筆所在城邦！) -->
+                <g class="landmark-pin special-story-pin" data-landmark="yunchuan" transform="translate(1140, 700)">
+                  <circle cx="0" cy="0" r="15" class="pin-story-pulse"/>
+                  <circle cx="0" cy="0" r="8" class="pin-base-circle"/>
+                  <text x="0" y="4" text-anchor="middle" class="pin-story-star">✦</text>
+                  <text x="0" y="24" text-anchor="middle" class="pin-label story-label">雲川城 📜</text>
+                </g>
+
+                <!-- 2. 白獅聖王國首都：日耀堡 -->
+                <g class="landmark-pin capital-pin" data-landmark="sunbastion" transform="translate(320, 480)">
+                  <circle cx="0" cy="0" r="12" class="pin-halo"/>
+                  <polygon points="0,-10 9,6 -9,6" class="pin-icon lion-crown"/>
+                  <circle cx="0" cy="0" r="4" class="pin-core"/>
+                  <text x="0" y="24" text-anchor="middle" class="pin-label">日耀堡 (首都)</text>
+                </g>
+
+                <!-- 3. 玄狼冰原聯邦大部族聚落：冬牙城 -->
+                <g class="landmark-pin capital-pin" data-landmark="winterfang" transform="translate(670, 230)">
+                  <circle cx="0" cy="0" r="12" class="pin-halo"/>
+                  <polygon points="0,-10 9,6 -9,6" class="pin-icon wolf-crest"/>
+                  <circle cx="0" cy="0" r="4" class="pin-core"/>
+                  <text x="0" y="24" text-anchor="middle" class="pin-label">冬牙城 (會盟之地)</text>
+                </g>
+
+                <!-- 北方神秘古代遺跡 -->
+                <g class="landmark-pin ruin-pin" data-landmark="north_ruin" transform="translate(850, 160)">
+                  <rect x="-7" y="-7" width="14" height="14" class="ruin-box"/>
+                  <text x="0" y="4" text-anchor="middle" class="ruin-mark">▲</text>
+                  <text x="0" y="22" text-anchor="middle" class="pin-label ruin-label">極北冰封遺蹟</text>
+                </g>
+
+                <!-- 4. 朱凰神國聖座：涅槃聖殿 -->
+                <g class="landmark-pin capital-pin" data-landmark="nirvana" transform="translate(680, 750)">
+                  <circle cx="0" cy="0" r="12" class="pin-halo"/>
+                  <polygon points="0,-10 9,6 -9,6" class="pin-icon phoenix-temple"/>
+                  <circle cx="0" cy="0" r="4" class="pin-core"/>
+                  <text x="0" y="24" text-anchor="middle" class="pin-label">涅槃聖殿 (赤宮)</text>
+                </g>
+
+                <!-- 5. 翠鹿森國：森之冠・世界樹聚落 -->
+                <g class="landmark-pin capital-pin" data-landmark="arborcrown" transform="translate(680, 480)">
+                  <circle cx="0" cy="0" r="14" class="pin-halo tree-halo"/>
+                  <circle cx="0" cy="0" r="5" class="pin-core tree-core"/>
+                  <text x="0" y="-18" text-anchor="middle" class="pin-label tree-label">森之冠・世界樹</text>
+                </g>
+
+              </g>
+
+              <!-- ==============================================
+                   五聖獸象徵印記 (Divine Beast Sigils on Map)
+                   ============================================== -->
+              <g class="beast-badges-layer">
+                <!-- 蒼龍印記 (東) -->
+                <g class="map-beast-emblem emblem-dragon" data-beast="canglong" transform="translate(1050, 360)">
+                  <circle cx="0" cy="0" r="28" class="badge-bg"/>
+                  <text x="0" y="-32" text-anchor="middle" class="beast-mini-title">蒼天龍・奧爾雷恩</text>
+                  <text x="0" y="6" text-anchor="middle" class="badge-icon">🐉</text>
+                  <text x="0" y="42" text-anchor="middle" class="badge-motto">「雷霆與秩序之神」</text>
+                </g>
+
+                <!-- 白獅印記 (西) -->
+                <g class="map-beast-emblem emblem-lion" data-beast="bailion" transform="translate(240, 360)">
+                  <circle cx="0" cy="0" r="28" class="badge-bg"/>
+                  <text x="0" y="-32" text-anchor="middle" class="beast-mini-title">聖耀白獅・雷古斯</text>
+                  <text x="0" y="6" text-anchor="middle" class="badge-icon">🦁</text>
+                  <text x="0" y="42" text-anchor="middle" class="badge-motto">「太陽與誓言之神」</text>
+                </g>
+
+                <!-- 玄狼印記 (北) -->
+                <g class="map-beast-emblem emblem-wolf" data-beast="xuanwolf" transform="translate(860, 260)">
+                  <circle cx="0" cy="0" r="28" class="badge-bg"/>
+                  <text x="0" y="-32" text-anchor="middle" class="beast-mini-title">月影玄狼・芬里雅</text>
+                  <text x="0" y="6" text-anchor="middle" class="badge-icon">🐺</text>
+                  <text x="0" y="42" text-anchor="middle" class="badge-motto">「月亮與自由之神」</text>
+                </g>
+
+                <!-- 朱凰印記 (南) -->
+                <g class="map-beast-emblem emblem-phoenix" data-beast="zhuhuang" transform="translate(520, 770)">
+                  <circle cx="0" cy="0" r="28" class="badge-bg"/>
+                  <text x="0" y="-32" text-anchor="middle" class="beast-mini-title">不滅朱凰・瑟菲拉</text>
+                  <text x="0" y="6" text-anchor="middle" class="badge-icon">🦅</text>
+                  <text x="0" y="42" text-anchor="middle" class="badge-motto">「火焰與重生之神」</text>
+                </g>
+
+                <!-- 神鹿印記 (中) -->
+                <g class="map-beast-emblem emblem-deer" data-beast="shenlu" transform="translate(760, 420)">
+                  <circle cx="0" cy="0" r="28" class="badge-bg"/>
+                  <text x="0" y="-32" text-anchor="middle" class="beast-mini-title">世界樹神鹿・艾露希亞</text>
+                  <text x="0" y="6" text-anchor="middle" class="badge-icon">🦌</text>
+                  <text x="0" y="42" text-anchor="middle" class="badge-motto">「自然與記憶之神」</text>
+                </g>
+              </g>
+
+              <!-- 復古羊皮紙羅盤玫瑰 (Compass Rose) -->
+              <g class="compass-rose" transform="translate(160, 160)" opacity="0.75" pointer-events="none">
+                <circle cx="0" cy="0" r="45" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="38" fill="none" stroke="#d4af37" stroke-width="0.75" stroke-dasharray="3,3"/>
+                <!-- 指向星芒 -->
+                <polygon points="0,-48 6,-10 0,0 -6,-10" fill="#d4af37" />
+                <polygon points="0,48 6,10 0,0 -6,10" fill="#997b24" />
+                <polygon points="48,0 10,6 0,0 10,-6" fill="#bfa26b" />
+                <polygon points="-48,0 -10,6 0,0 -10,-6" fill="#997b24" />
+                <text x="0" y="-53" text-anchor="middle" class="compass-text">N</text>
+                <text x="56" y="5" text-anchor="middle" class="compass-text">E</text>
+                <text x="0" y="63" text-anchor="middle" class="compass-text">S</text>
+                <text x="-56" y="5" text-anchor="middle" class="compass-text">W</text>
+              </g>
+
+              <!-- 裝飾邊框角花 (Medieval Cartouche Corners) -->
+              <g class="map-frame" pointer-events="none" stroke="#d4af37" fill="none" stroke-width="2">
+                <rect x="15" y="15" width="1370" height="920" stroke-width="3" opacity="0.8"/>
+                <rect x="25" y="25" width="1350" height="900" stroke-width="1" stroke-dasharray="8,4" opacity="0.5"/>
+                <!-- 四角花飾 -->
+                <path d="M 15 50 L 50 15 M 15 65 L 65 15 M 1385 50 L 1350 15 M 1385 65 L 1335 15 M 15 900 L 50 935 M 15 885 L 65 935 M 1385 900 L 1350 935 M 1385 885 L 1335 935" />
+              </g>
+
+            </svg>
+          </div>
+
+          <!-- 地圖浮動情報卡 (隨滑鼠游移或固定於右側，不遮擋主地圖) -->
+          <div id="map-hover-card" class="map-hover-card">
+            <div class="card-glass-header">
+              <span class="card-crest-badge" id="card-beast-sigil">✦</span>
+              <div class="card-header-titles">
+                <h4 id="card-nation-name" class="card-nation-title">蒼龍帝國</h4>
+                <span id="card-deity-name" class="card-deity-subtitle">主神：蒼天龍・奧爾雷恩</span>
+              </div>
+              <button id="close-hover-card-btn" class="card-close-btn" aria-label="關閉情報卡">&times;</button>
+            </div>
+            
+            <div class="card-body">
+              <div class="card-field">
+                <span class="field-label">國家象徵</span>
+                <span class="field-value" id="card-symbol">雷霆、天空、秩序、王權</span>
+              </div>
+              <div class="card-field">
+                <span class="field-label">政權首都</span>
+                <span class="field-value" id="card-capital">天龍京</span>
+              </div>
+              <div class="card-field">
+                <span class="field-label">自然地貌</span>
+                <span class="field-value" id="card-terrain">雷鳴山脈、萬里平原、奔騰三角洲</span>
+              </div>
+              <div class="card-field">
+                <span class="field-label">魔法體系</span>
+                <span class="field-value highlight-magic" id="card-magic">龍脈術</span>
+              </div>
+              <div class="card-field">
+                <span class="field-label">文明特色</span>
+                <span class="field-value" id="card-culture">艾瑟蘭人口最多的帝國，以官僚制度與龍脈術聞名。</span>
+              </div>
+              <div class="card-motto-box">
+                <span class="motto-quote">“</span>
+                <span id="card-motto" class="motto-text">天有秩序，人亦應有秩序。</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <button class="view-detail-btn" id="card-jump-btn">閱讀完整秘典典藏 ➔</button>
+            </div>
+          </div>
+
+          <!-- 地標即時氣泡 Tooltip -->
+          <div id="landmark-tooltip" class="landmark-tooltip">
+            <div class="tooltip-title" id="tooltip-title">城邦名稱</div>
+            <div class="tooltip-desc" id="tooltip-desc">城邦詳細故事</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         七、國家介紹區 NATIONS CODEX CARDS
+         ============================================== -->
+    <section id="nations-codex" class="codex-section">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="chapter-badge">REALMS CODEX</span>
+          <h2 class="section-title">五聖諸邦列傳</h2>
+          <div class="section-subtitle">五大聖獸主神鎮守的文明・五個截然不同的信念與術式體系</div>
+          <div class="title-divider">
+            <span class="diamond"></span>
+          </div>
+        </div>
+
+        <!-- 五張大型古代羊皮紙風格國家檔案卡 -->
+        <div class="nations-grid" id="nations-card-container">
+          <!-- 由 JS 自動渲染 5 國完整卡片 -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         九、五國關係與五聖盟約 THE PACT & CRACKS
+         ============================================== -->
+    <section id="holy-pact" class="pact-section">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="chapter-badge">THE CRACKED OATH</span>
+          <h2 class="section-title">五聖盟約</h2>
+          <div class="section-subtitle">九百年不戰之誓・五聖曆 987 年的動盪暗潮</div>
+          <div class="title-divider">
+            <span class="diamond"></span>
+          </div>
+        </div>
+
+        <div class="pact-parchment-scroll">
+          <div class="pact-preamble">
+            <p>
+              遠古虛無之潮平息後，五大國先祖於世界樹下結盟，立下石碑：<br>
+              <strong>「五國永世相互制衡，承諾永遠不讓任何單一國家統治整個艾瑟蘭。」</strong>
+            </p>
+            <p class="omen-text">
+              然而時至<strong>五聖曆 987 年</strong>，這份維持了九個世紀的和平，正在各方的猜忌與異象中分崩離析……
+            </p>
+          </div>
+
+          <!-- 各國動態與局勢網格 -->
+          <div class="crisis-grid">
+            
+            <div class="crisis-card card-dragon">
+              <div class="crisis-badge">東方｜蒼龍帝國</div>
+              <h3>軍勢擴張</h3>
+              <p>皇帝「龍裔天子」以安定邊境為由，大幅擴編蒼雷龍騎軍，在各國商道要隘秘密修築龍脈烽火臺，劍指大陸中心。</p>
+            </div>
+
+            <div class="crisis-card card-lion">
+              <div class="crisis-badge">西方｜白獅聖王國</div>
+              <h3>聖劍警戒</h3>
+              <p>聖殿騎士團全員進入最高戒備，總團長宣告：「白獅的誓言不容踐踏」，並於邊境部署聖火堡壘，防備帝國東征。</p>
+            </div>
+
+            <div class="crisis-card card-wolf">
+              <div class="crisis-badge">北方｜玄狼冰原聯邦</div>
+              <h3>遠古寒層遺蹟</h3>
+              <p>部族獵人在永凍冰層深處挖掘出超越五聖時代的遠古遺構，其中散發著不屬於已知任何自然法則的異質黑晶光芒。</p>
+            </div>
+
+            <div class="crisis-card card-phoenix">
+              <div class="crisis-badge">南方｜朱凰神國</div>
+              <h3>聖女之絕罰預言</h3>
+              <p>永不衰老的「焰之聖女」在祭火大典上發布令人戰慄的啟示：<strong>「朱凰下一次死亡，將不再重生。」</strong>神國上下陷入末日恐慌。</p>
+            </div>
+
+            <div class="crisis-card card-deer full-width-crisis">
+              <div class="crisis-badge">中央｜翠鹿森國</div>
+              <h3>祭司之死劫預知：銀色巨蛇</h3>
+              <p>
+                世界樹的神官祭司們於同一夜被同一個噩夢驚醒：五頭守護大地的聖獸眼中燃燒著瘋狂，在燃燒的荒原上互相殘殺、撕咬殆盡。
+              </p>
+              <p class="omen-highlight">
+                而那崩裂的天空之中，竟盤踞著一條從未記載於任何五聖神話與典籍中的——<strong>「銀色巨蛇」</strong>。
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         十、序章結尾 & 十一、未來主角伏筆
+         ============================================== -->
+    <section id="prologue-ending" class="ending-section">
+      <div class="abyss-darkness-overlay" id="darkness-overlay"></div>
+      
+      <div class="section-container ending-container">
+        
+        <!-- 動態儀式感按鈕：觸碰命運殘卷 -->
+        <div class="ending-stage" id="ending-stage">
+          
+          <div class="stage-intro text-center">
+            <button id="btn-trigger-fate" class="fate-seal-btn">
+              <span class="seal-glow"></span>
+              <span class="seal-glyph">🐍</span>
+              <span class="seal-text">觸碰未知裂隙・傾聽歷史的謊言</span>
+            </button>
+            <p class="seal-hint">（點擊以啟動序章終局儀式）</p>
+          </div>
+
+          <!-- 循序顯現的懸疑字幕 -->
+          <div class="fate-narrative" id="fate-narrative">
+            <p class="fade-line line-1" id="line-1">「五國相信，他們知道世界的歷史。」</p>
+            <p class="fade-line line-2" id="line-2">「但歷史從未告訴他們——」</p>
+            <p class="fade-line line-3 highlight-truth" id="line-3">「曾經存在第六頭聖獸。」</p>
+            
+            <!-- 第六聖獸神祕圖騰 -->
+            <div class="sixth-beast-awakening" id="sixth-beast-box">
+              <div class="silver-serpent-sigil">
+                <svg viewBox="0 0 160 160" class="serpent-svg">
+                  <!-- 盤繞的銀蛇輪廓 -->
+                  <defs>
+                    <radialGradient id="serpent-silver" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="60%" stop-color="#e2e8f0"/>
+                      <stop offset="100%" stop-color="#94a3b8"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="74" fill="none" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,4" class="orbit-spin"/>
+                  <path d="M 80 20 C 110 20, 130 45, 125 75 C 120 100, 95 105, 80 120 C 65 135, 45 125, 45 105 C 45 85, 75 75, 80 55 C 83 45, 75 35, 70 38" 
+                    fill="none" stroke="url(#serpent-silver)" stroke-width="4.5" stroke-linecap="round" class="serpent-path"/>
+                  <circle cx="70" cy="38" r="4.5" fill="#f8fafc" class="eye-glow"/>
+                </svg>
+              </div>
+              
+              <div class="hidden-name-reveal">
+                <span class="unknown-name-title">被抹滅的深淵之主</span>
+                <span class="obscured-chars">「 ？？？？ 」</span>
+              </div>
+            </div>
+
+            <!-- 主角伏筆與第一章入口 -->
+            <div class="protagonist-teaser" id="protagonist-teaser">
+              <div class="teaser-card">
+                <div class="teaser-seal">✦ 命運之線 ✦</div>
+                <p class="teaser-prose">
+                  在蒼龍帝國東南方，有一座繁華萬商的巨港商埠——<strong>「雲川城」</strong>。<br>
+                  而在那車水馬龍的酒肆陰影下，坐著一名看似漫不經心、連旅費都常付不出的落魄吟遊詩人。<br>
+                  人們都叫他：<strong class="hero-name">「鼻鼻」</strong>。
+                </p>
+                <div class="chapter-one-gateway">
+                  <a href="index.html" class="chapter-one-btn" id="btn-chapter-one">
+                    <span class="btn-text">第一章：雲川城的吟遊詩人</span>
+                    <span class="btn-arrow">➔</span>
+                  </a>
+                  <span class="gateway-hint">即將揭開：詩琴中深藏的銀鱗與禁忌之歌</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       通用全螢幕詳細誌 MODAL (國家深度百科)
+       ============================================== -->
+  <div id="codex-modal" class="codex-modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-window parchment-texture">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="關閉視窗">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-beast-symbol" id="modal-beast-sigil">✦</div>
+        <div class="modal-title-group">
+          <span class="modal-direction" id="modal-direction">東方之邦</span>
+          <h3 class="modal-nation-name" id="modal-nation-name">蒼龍帝國</h3>
+          <span class="modal-deity-title" id="modal-deity-title">主神：蒼天龍・奧爾雷恩</span>
+        </div>
+      </div>
+
+      <div class="modal-content-grid">
+        
+        <div class="modal-column left-col">
+          <div class="lore-section">
+            <h4>【 聖獸顯化與圖騰 】</h4>
+            <div class="modal-beast-portrait" id="modal-beast-portrait">
+              <!-- SVG 聖獸高階剪影 -->
+            </div>
+            <p id="modal-beast-desc" class="beast-visual-desc">巨大青藍色東方巨龍，全身覆滿蒼青鱗片，周圍永遠纏繞雷雲。</p>
+          </div>
+
+          <div class="lore-section">
+            <h4>【 核心信念與帝國格言 】</h4>
+            <blockquote id="modal-quote" class="modal-quote">
+              「天有秩序，人亦應有秩序。」
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="modal-column right-col">
+          
+          <div class="lore-section">
+            <h4>【 國家制度與文明文化 】</h4>
+            <p id="modal-culture">
+              艾瑟蘭最大的帝國。擁有完整官僚制度與中央集權。皇帝被稱為「龍裔天子」，皇族宣稱擁有蒼龍之血。
+            </p>
+          </div>
+
+          <div class="lore-section">
+            <h4>【 秘傳魔法體系 】</h4>
+            <div class="magic-pill-box">
+              <span class="magic-badge-name" id="modal-magic-name">龍脈術</span>
+            </div>
+            <p id="modal-magic-desc">
+              可以操控雷、風、符文與封印結界，高階術士能引動天地龍脈之氣。
+            </p>
+          </div>
+
+          <div class="lore-section">
+            <h4>【 精銳軍武武裝 】</h4>
+            <p id="modal-military">
+              <strong>蒼雷龍騎軍</strong>：騎乘蒼鱗飛龍與雷獸的重裝禁軍，橫掃大陸無匹。
+            </p>
+          </div>
+
+          <div class="lore-section">
+            <h4>【 重要地理與主要城邦 】</h4>
+            <p id="modal-geography">
+              首都<strong>天龍京</strong>，座落於帝國中樞，為大陸最繁華宮殿城郭。
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="parchment-btn small-btn" id="modal-done-btn">合上秘卷</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 第一章未來預告 MODAL -->
+  <div id="chapter-preview-modal" class="codex-modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="preview-backdrop"></div>
+    <div class="modal-window parchment-texture preview-window">
+      <button class="modal-close-btn" id="preview-close-btn">&times;</button>
+      <div class="modal-header">
+        <span class="preview-badge">CHAPTER 01 TEASER</span>
+        <h3 class="preview-title">《第一章：雲川城的吟遊詩人》</h3>
+      </div>
+      <div class="preview-body">
+        <p class="preview-verse">
+          「琴弦劃破了海潮的嘆息，<br>
+          酒碗裡映著五頭聖獸的倒影。<br>
+          客人啊，別問這首歌有多久遠——<br>
+          當第六顆星星墜落時，連神祇都會忘記自己的名字。」
+        </p>
+        <p class="preview-note">
+          在雲川城的「沉船與鹿」酒館裡，吟遊詩人<strong>鼻鼻</strong>正撥弄著他那把掉了漆的舊木琴。<br>
+          沒有人知道，他隨身羊皮袋的底層，正靜靜躺著一片散發著冰冷銀光的無名鱗片……
+        </p>
+        <div class="preview-status-box">
+          <span>📜 本章章節原稿已就緒・敬請期待後續正式章節更新！</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="parchment-btn" id="preview-ok-btn">重返艾瑟蘭大陸</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾版權與致敬 -->
+  <footer class="ancient-footer">
+    <div class="footer-content">
+      <div class="footer-crests">
+        <span>🐉</span><span>🦁</span><span>🐺</span><span>🦅</span><span>🦌</span>
+      </div>
+      <p class="footer-title">《艾瑟蘭大陸 Eseran》・五聖之陸互動式序章</p>
+      <p class="footer-sub">以純粹的 HTML / CSS / Vanilla JavaScript 打造的史詩奇幻世界設定集</p>
+      <div class="footer-ornament">✦ ✦ ✦</div>
+    </div>
+  </footer>
+
+  <script src="world.js"></script>
+</body>
+</html>

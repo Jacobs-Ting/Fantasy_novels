@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《艾瑟蘭大陸》第一章：雲川城的吟遊詩人 ｜ 互動式奇幻小說</title>
+  <meta name="description" content="史詩奇幻小說互動式第一章：雲川城的酒肆陰影下，落魄吟遊詩人鼻鼻彈奏著古老史詩，直到一名攜帶著禁忌銀蛇之頁的秘術師撞開了酒館大門……">
+
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Noto Serif TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Noto+Serif+TC:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="novel-theme">
+
+  <!-- 背景粒子層 (夜色薄霧與燭火微光) -->
+  <canvas id="atmosphere-canvas" class="atmosphere-canvas"></canvas>
+
+  <!-- 頂部古典導讀選單 -->
+  <header class="novel-nav" id="novel-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="world.html" class="nav-return-btn" title="返回艾瑟蘭世界地圖與序章">
+          <span class="btn-arrow">«</span>
+          <span class="btn-text">返回艾瑟蘭大陸</span>
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <span class="chapter-indicator">第 一 章 ・ 雲川城的吟遊詩人</span>
+      </div>
+
+      <div class="nav-right">
+        <!-- 音效切換 (Web Audio 合成酒館燭火與古琴氛圍) -->
+        <button id="btn-ambient-audio" class="nav-tool-btn" title="切換酒館與夜風氛圍音">
+          <span class="icon">♪</span>
+          <span class="text">環境音: 關閉</span>
+        </button>
+
+        <!-- 角色資訊卡按鈕 -->
+        <button id="btn-open-dossier" class="nav-tool-btn highlight-btn" title="查看人物誌">
+          <span class="icon">📜</span>
+          <span class="text">人物誌</span>
+        </button>
+
+        <!-- 世界百科快速預覽 -->
+        <button id="btn-open-world-drawer" class="nav-tool-btn" title="開啟艾瑟蘭世界誌速查">
+          <span class="icon">🗺️</span>
+          <span class="text">世界誌</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       人物誌側邊欄 (Character Dossier Drawer)
+       ============================================== -->
+  <div id="character-dossier" class="side-drawer" aria-hidden="true">
+    <div class="drawer-inner parchment-card">
+      <div class="drawer-header">
+        <h3 class="drawer-title">【 人 物 誌 】</h3>
+        <button id="btn-close-dossier" class="drawer-close" aria-label="關閉人物誌">&times;</button>
+      </div>
+      <div class="drawer-body" id="dossier-content">
+        <!-- 由 JS 動態注入鼻鼻與汎汎角色卡 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       世界誌快速速查側邊欄 (World Lore Drawer)
+       ============================================== -->
+  <div id="world-drawer" class="side-drawer" aria-hidden="true">
+    <div class="drawer-inner parchment-card">
+      <div class="drawer-header">
+        <h3 class="drawer-title">【 艾 瑟 蘭 世 界 誌 】</h3>
+        <button id="btn-close-world-drawer" class="drawer-close" aria-label="關閉世界誌">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <div class="world-quick-info">
+          <h4>蒼龍帝國・雲川城</h4>
+          <p>五聖大陸東方的繁華水路樞紐，商隊、傭兵、流民與各派勢力混雜之所。城中布滿青瓦木造街屋與曲折水道。</p>
+        </div>
+        <div class="world-quick-info">
+          <h4>五聖獸神話體系</h4>
+          <p>世人相信：蒼龍、白獅、玄狼、朱凰、神鹿五大聖獸於無星紀元降臨，鎮壓邪蛇並開闢五國秩序。</p>
+        </div>
+        <div class="world-quick-links">
+          <a href="world.html" class="parchment-link-btn">開啟完整艾瑟蘭大陸地圖與盟約歷史 ➔</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 遮罩背景 -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <!-- ==============================================
+       主體小說滾動故事線
+       ============================================== -->
+  <main class="novel-main" id="novel-stage">
+
+    <!-- ──────────────────────────────────────────
+         一、開場：夜幕下的雲川城 HERO SCENE
+         ────────────────────────────────────────── -->
+    <section id="scene-city" class="scene-section scene-city-hero">
+      
+      <!-- 雲川城東方幻想剪影與夜景圖層 -->
+      <div class="city-sky-backdrop">
+        <div class="distant-mountains"></div>
+        <div class="lightning-flash" id="lightning-flash"></div>
+        <div class="city-skyline-silhouette"></div>
+        <div class="city-mist-layer"></div>
+      </div>
+
+      <div class="hero-text-container">
+        <div class="scene-pre-badge">CHAPTER I ・ THE BARD OF YUNCHUAN</div>
+        <h1 class="novel-chapter-title">
+          <span class="sub-chapter">第一章</span>
+          <span class="main-title">雲川城的吟遊詩人</span>
+        </h1>
+        
+        <div class="city-lore-stamp">
+          <span class="location-name">蒼龍帝國・雲川城</span>
+          <span class="divider">✦</span>
+          <span class="era-name">五聖曆 987 年</span>
+        </div>
+
+        <p class="hero-lead-quote">
+          「今晚，本來只是一個平凡的夜晚。」
+        </p>
+
+        <div class="enter-tavern-wrapper">
+          <a href="#scene-tavern" class="parchment-cta-btn" id="btn-enter-tavern">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+            <span class="btn-icon">🏮</span>
+            <span class="btn-label">推門進入「青羽亭」</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="city-scroll-hint">
+        <span class="mouse-icon"></span>
+        <span class="hint-text">向下滑動閱讀故事</span>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         二、青羽亭酒館場景：鼻鼻的日常與七弦琴
+         ────────────────────────────────────────── -->
+    <section id="scene-tavern" class="scene-section scene-tavern-interior">
+      
+      <!-- 酒館溫暖暖燭光與木構裝飾 -->
+      <div class="tavern-ambient-glow"></div>
+
+      <div class="narrative-wrapper">
+        
+        <!-- 場景標記卡 -->
+        <div class="scene-marker">
+          <span class="marker-tag">場景一</span>
+          <h2 class="marker-title">青石巷弄與青羽亭</h2>
+        </div>
+
+        <div class="novel-prose-block">
+          <p class="dropcap-paragraph">
+            暮色像浸了濃墨的粗麻布，慢條斯理地覆蓋了雲川城錯落的青瓦飛簷。
+          </p>
+          <p>
+            這座坐落於蒼龍帝國東南、扼守三江交匯的大港，從來沒有真正安靜的時候。江面上的烏篷商船還在卸著來自南方神國的香料與西方的鍛鐵，碼頭苦力的號子聲穿過潮濕的霧氣，與沿街酒肆裡喧鬧的人聲混成一片。
+          </p>
+          <p>
+            在靠近舊水閘的青石巷深處，掛著一盞被油煙燻得焦黃的紙燈籠。燈籠上歪歪斜斜地畫著一根青色羽毛，厚重的樟木門內，便是<strong>「青羽亭」</strong>。
+          </p>
+        </div>
+
+        <!-- 鼻鼻的舞台與七弦琴視覺卡 -->
+        <div class="bard-stage-card">
+          <div class="stage-visual">
+            <div class="candle-flicker candle-1"></div>
+            <div class="candle-flicker candle-2"></div>
+            <div class="bard-silhouette">
+              <span class="lute-glow">🎻</span>
+            </div>
+          </div>
+          <div class="stage-info">
+            <span class="character-tag">吟遊詩人</span>
+            <h3 class="character-name">鼻鼻</h3>
+            <p class="character-desc">
+              穿著手肘補著青布的舊斗篷，懷抱一把以冰蠶絲為弦的舊梧桐七弦琴。神態漫不經心，嘴角總噙著若有若無的微笑。
+            </p>
+          </div>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            對鼻鼻而言，在酒館的小木台上彈唱並不是什麼神聖的祭儀。這只是他每天晚上賺取麵包屑與熱菜湯的方式。他的手指熟練地在冰蠶弦上彈跳，唇齒間朗聲吟誦著全艾瑟蘭大陸三歲孩童皆能倒背如流的古老史詩：
+          </p>
+
+          <!-- 《五聖鎮世歌》詩篇排版 -->
+          <blockquote class="epic-poem" id="epic-poem-block">
+            <p class="poem-line">「蒼龍馭雷而降，</p>
+            <p class="poem-line">白獅攜日而來，</p>
+            <p class="poem-line">玄狼行於月影，</p>
+            <p class="poem-line">朱凰浴火重生，</p>
+            <p class="poem-line">神鹿守望命運——」</p>
+            <p class="poem-line highlight-omen" id="poem-climax-line">
+              「五聖降臨，銀蛇墜於永夜。」
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- ──────────────────────────────────────
+             三、互動功能：賞錢帽與鼻鼻的日常碎碎念
+             ────────────────────────────────────── -->
+        <div class="tipping-hat-widget" id="tipping-hat-widget">
+          <div class="hat-visual-area">
+            <div class="felt-hat" id="felt-hat">
+              <div class="hat-rim"></div>
+              <div class="hat-coin-container" id="hat-coin-container"></div>
+              <span class="hat-symbol">🎩</span>
+            </div>
+            <div class="income-display">
+              <span class="income-label">今晚收入</span>
+              <span class="income-count" id="income-count">17</span>
+              <span class="income-unit">枚銅幣</span>
+            </div>
+          </div>
+
+          <div class="hat-controls">
+            <button class="coin-tip-btn" id="btn-tip-coin">
+              <span class="coin-sparkle">🪙</span>
+              <span class="tip-text">往帽子丟 +1 銅幣</span>
+            </button>
+            <div class="bibi-thought-bubble" id="bibi-thought">
+              <span class="bubble-tail"></span>
+              <p id="thought-text">「嗯……今晚房租有著落了。」</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 推進劇情提示按鈕 -->
+        <div class="story-advance-cue">
+          <button class="advance-narrative-btn" id="btn-trigger-fanfan">
+            <span>唱完這句《五聖鎮世歌》...</span>
+            <span class="cue-arrow">▼</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         四、汎汎撞門闖入 與 第一次對視
+         ────────────────────────────────────────── -->
+    <section id="scene-intrusion" class="scene-section scene-intrusion-drama">
+      
+      <!-- 風雨倒灌與門扉破裂衝擊特效層 -->
+      <div class="door-slam-fx" id="door-slam-fx"></div>
+
+      <div class="narrative-wrapper">
+        
+        <div class="sfx-sound-banner" id="intrusion-sfx">
+          <span class="sfx-text sfx-crash">💥 砰 ！！！！！</span>
+          <span class="sfx-desc">「粗重樟木門被猛力撞開，初秋暴雨倒灌而入！」</span>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            就在鼻鼻指尖剛落下最後一個休止符的剎那，青羽亭厚重的樟木門被粗暴地撞開了。
+          </p>
+          <p>
+            冰冷的夜風夾雜著雨水灌入溫暖的酒肆，油燈被吹得瘋狂搖曳，兩盞靠近門邊的燭火更是應聲而滅。一名身裹深黑斗篷的年輕女子踉蹌衝入室內。
+          </p>
+        </div>
+
+        <!-- 汎汎初登場卡片 -->
+        <div class="character-spotlight-card fanfan-spotlight" id="fanfan-spotlight">
+          <div class="spotlight-visual">
+            <div class="fanfan-avatar">
+              <span class="avatar-glyph">❄️</span>
+            </div>
+            <div class="status-tags">
+              <span class="status-badge danger">手臂負傷</span>
+              <span class="status-badge alert">極度警戒</span>
+            </div>
+          </div>
+          <div class="spotlight-details">
+            <span class="character-tag">秘術師</span>
+            <h3 class="character-name">汎汎</h3>
+            <p class="spotlight-state">
+              深色斗篷沾滿泥濘與雨水，呼吸急促紊亂。左臂衣袖被利刃撕裂，滲著暗紅血痕。右手卻如鋼鐵般死死護著懷中一個古老鞣製皮革包裹。
+            </p>
+          </div>
+        </div>
+
+        <!-- 兩人目光第一次對視的情境呈現 -->
+        <div class="eye-contact-tableau" id="tableau-stare">
+          <div class="stare-box bibi-box">
+            <span class="stare-name">鼻鼻</span>
+            <p class="stare-sub">手指微僵在琴弦上</p>
+          </div>
+          <div class="stare-spark">
+            <span class="spark-icon">✦</span>
+            <span class="spark-label">目光交匯</span>
+          </div>
+          <div class="stare-box fanfan-box">
+            <span class="stare-name">汎汎</span>
+            <p class="stare-sub">銳利的冷芒直射而來</p>
+          </div>
+        </div>
+
+        <div class="novel-prose-block text-center prose-italic">
+          <p>「這不是一見鍾情，而是兩個陌生人在驟臨的災厄前，第一次本能地嗅到了命運危局的氣味。」</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         五、帝國秘衛搜捕 與 幽默互動
+         ────────────────────────────────────────── -->
+    <section id="scene-guards" class="scene-section scene-guards-tension">
+      
+      <div class="narrative-wrapper">
+
+        <div class="sfx-sound-banner">
+          <span class="sfx-text sfx-march">踏、踏、踏、踏——！</span>
+          <span class="sfx-desc">「鐵蹄踏碎泥水，重裝鎧甲鏗鏘作響！」</span>
+        </div>
+
+        <div class="imperial-proclamation">
+          <div class="dragon-crest-seal">🐉</div>
+          <h3 class="proclamation-title">「帝國秘衛！封鎖酒館！」</h3>
+          <p class="proclamation-body">
+            十餘名身著深青重鎧、披雷紋黑斗篷的帝國士兵魚貫而入，腰間制式長劍泛著寒光。為首軍官亮出蒼龍青銅徽記，目光冷酷：
+            <br><strong>「帝國追捕竊取國家禁物之危險秘術師，任何人膽敢隱匿，格殺勿論！」</strong>
+          </p>
+        </div>
+
+        <!-- 幽默對話劇場 (互動氣泡) -->
+        <div class="dialogue-theater-box" id="dialogue-theater">
+          
+          <div class="dialogue-bubble bibi-bubble">
+            <span class="speaker">鼻鼻（內心祈禱）</span>
+            <p class="quote">「……千萬不要往我這裡走。後廚在左邊，酒窖在右邊，求求妳別看我。」</p>
+          </div>
+
+          <div class="dialogue-narrative-note">
+            <span>然而，那位斗篷女子徑直穿過人群，無聲無息地坐在了鼻鼻身旁的小竹凳上。</span>
+          </div>
+
+          <div class="dialogue-bubble bibi-bubble">
+            <span class="speaker">鼻鼻（內心崩潰）</span>
+            <p class="quote">「……喂。」</p>
+          </div>
+
+          <div class="dialogue-bubble fanfan-bubble">
+            <span class="speaker">汎汎（極低聲）</span>
+            <p class="quote">「繼續唱。」</p>
+          </div>
+
+          <div class="dialogue-bubble bibi-bubble">
+            <span class="speaker">鼻鼻</span>
+            <p class="quote">「什麼？」</p>
+          </div>
+
+          <div class="dialogue-bubble fanfan-bubble">
+            <span class="speaker">汎汎</span>
+            <p class="quote">「繼續唱。不要看我。」</p>
+          </div>
+
+        </div>
+
+        <!-- 搜尋進度緊張感條 (Search Progress Bar) -->
+        <div class="search-tracker-card" id="search-tracker">
+          <div class="tracker-header">
+            <span class="tracker-title">⚠️ 帝國秘衛逐桌搜查中</span>
+            <span class="distance-badge" id="search-distance">距離木台：80 公尺</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar-fill" id="search-progress-bar"></div>
+          </div>
+          <div class="tracker-actions">
+            <button class="parchment-btn small-btn" id="btn-continue-search">
+              <span>士兵正在逼近……（點擊推進）</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         六、銀蛇之頁 與 護符之謎
+         ────────────────────────────────────────── -->
+    <section id="scene-serpent-revelation" class="scene-section scene-silver-revelation">
+      
+      <div class="narrative-wrapper">
+
+        <div class="scene-marker">
+          <span class="marker-tag">場景二</span>
+          <h2 class="marker-title">首尾相連的銀蛇</h2>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            鼻鼻硬著頭皮重新撥弄琴弦，然而他的視線卻不由自主地被身旁女子懷中的皮革包裹所吸引。
+          </p>
+          <p>
+            因奔逃而略顯鬆脫的皮革縫隙間，悄然露出一角極薄的銀白金屬。在昏暗的燭火下，那塊金屬竟泛著如冰雪初霽般的幽芒，上面清晰地銘刻著一幅不可思議的圖騰——
+          </p>
+        </div>
+
+        <!-- 銀蛇圖案 VS 鼻鼻護符 對比展示台 -->
+        <div class="relic-comparison-stage">
+          
+          <div class="relic-card relic-page">
+            <div class="relic-icon-wrapper">
+              <svg viewBox="0 0 100 100" class="silver-ouroboros-svg">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#cbd1d8" stroke-width="3" stroke-dasharray="3,3" class="spin-ring"/>
+                <path d="M 50 15 C 70 15, 85 30, 85 50 C 85 70, 70 85, 50 85 C 30 85, 15 70, 15 50 C 15 35, 30 25, 45 20" 
+                      fill="none" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round"/>
+                <circle cx="45" cy="20" r="3.5" fill="#f8fafc"/>
+              </svg>
+            </div>
+            <h4 class="relic-name">汎汎懷中的「銀蛇之頁」</h4>
+            <p class="relic-desc">薄如蟬翼的古代未知合金，銘刻著首尾相噬的銜尾銀蛇。</p>
+          </div>
+
+          <div class="resonance-spark" id="resonance-spark">
+            <span class="spark-core">⚡</span>
+            <span class="spark-text">微光共鳴</span>
+          </div>
+
+          <div class="relic-card relic-amulet">
+            <div class="relic-icon-wrapper">
+              <svg viewBox="0 0 100 100" class="silver-ouroboros-svg">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#d4af37" stroke-width="2"/>
+                <path d="M 50 18 C 68 18, 82 32, 82 50 C 82 68, 68 82, 50 82 C 32 82, 18 68, 18 50 C 18 36, 32 26, 46 22" 
+                      fill="none" stroke="#f1f5f9" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="46" cy="22" r="3" fill="#cbd5e1"/>
+              </svg>
+            </div>
+            <h4 class="relic-name">鼻鼻胸前的古老護符</h4>
+            <p class="relic-desc">自幼佩戴的無名金屬符印，其蛇形圖騰與金屬頁分毫不差！</p>
+          </div>
+
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            鼻鼻下意識地伸手撫摸自己衣領下的護身符，整個人僵在當場。
+            汎汎敏銳地察覺了他的動作，清冷的眸子順著他的指尖望去，眼中首度浮現出近乎震顫的驚疑：
+          </p>
+        </div>
+
+        <div class="whisper-confrontation">
+          <p class="whisper fanfan-w">汎汎：「你為什麼會有這個？」</p>
+          <p class="whisper bibi-w">鼻鼻：「我正想問妳。」</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         七、身份即將暴露 與 神秘失落旋律
+         ────────────────────────────────────────── -->
+    <section id="scene-climax-darkness" class="scene-section scene-blackout-mystery">
+      
+      <div class="narrative-wrapper">
+
+        <div class="novel-prose-block">
+          <p>
+            來不及多說一個字，沉重的玄鐵皮靴聲已在木台前驟停。
+            臉帶刀疤的秘衛軍官雙手按在佩劍上，居高臨下地俯視著汎汎，森然下令：
+          </p>
+          <blockquote class="officer-command">
+            「把斗篷拿下來。」
+          </blockquote>
+          <p>
+            空氣在一瞬間凍結。滿堂燈火彷彿被無形的力量壓制，光芒急劇暗淡萎縮。汎汎垂手端坐，渾身肌肉繃緊如滿月之弓，未動分毫。
+          </p>
+          <p>
+            極度的死局逼迫下，鼻鼻的手指在痙攣般的神經抽搐中，無意間撥動了第七根冰蠶弦。
+          </p>
+        </div>
+
+        <!-- 弦音共鳴互動按鈕 -->
+        <div class="melody-trigger-box">
+          <button class="ancient-lute-btn" id="btn-play-ancient-melody">
+            <span class="lute-ring-pulse"></span>
+            <span class="lute-btn-icon">🎵</span>
+            <span class="lute-btn-text">撥動那段從未學過的失落古音……</span>
+          </button>
+        </div>
+
+        <!-- 古代音符波紋視覺 -->
+        <div class="ancient-melody-waves" id="melody-waves">
+          <span class="glyph-note gn-1">ᛟ</span>
+          <span class="glyph-note gn-2">ᚱ</span>
+          <span class="glyph-note gn-3">ᛞ</span>
+          <span class="glyph-note gn-4">ᛖ</span>
+          <span class="glyph-note gn-5">ᚱ</span>
+        </div>
+
+      </div>
+
+      <!-- 全黑屏與萬聲之耳遮罩 -->
+      <div class="blackout-screen" id="blackout-screen">
+        <div class="ears-of-ten-thousand">
+          <p class="ten-thousand-voice" id="ten-thousand-voice">「逃。」</p>
+          <span class="voice-subtext">—— 萬聲之耳・跨越時光的遠古殘響 ——</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         八、古代地下通道開啟 與 地下逃亡
+         ────────────────────────────────────────── -->
+    <section id="scene-catacombs" class="scene-section scene-catacombs-escape">
+      
+      <!-- 畫面震動覆蓋層 -->
+      <div class="earthquake-fx" id="earthquake-fx"></div>
+
+      <div class="narrative-wrapper">
+
+        <div class="scene-marker">
+          <span class="marker-tag">場景三</span>
+          <h2 class="marker-title">塵封數百年的地下密道</h2>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            伴隨著古音震盪，青羽亭堅硬的青石地板轟然坍陷！一條被厚重積灰與蛛網封存數百年的古代玄武岩階梯豁然洞開。
+          </p>
+          <p>
+            「走！」汎汎果決無比，一把攥住鼻鼻的斗篷，兩人墜入了冰冷潮濕的地底暗道。
+          </p>
+        </div>
+
+        <!-- 地下逃亡橫向場景視差框 (Parallax Escape Chamber) -->
+        <div class="catacombs-escape-chamber">
+          <div class="chamber-bg chamber-layer-far"></div>
+          <div class="chamber-bg chamber-layer-mid"></div>
+          <div class="chamber-bg chamber-layer-near"></div>
+          
+          <div class="escape-figures">
+            <div class="figure fanfan-run">汎汎 🏃‍♀️</div>
+            <div class="figure bibi-run">鼻鼻（死抱著琴） 🏃‍♂️</div>
+          </div>
+        </div>
+
+        <!-- 幽默逃亡對話連環卡 -->
+        <div class="run-banter-container">
+          <div class="banter-card bibi-banter">
+            <strong>鼻鼻：</strong>「我只是個彈琴賣唱的耶！！！」
+          </div>
+          <div class="banter-card fanfan-banter">
+            <strong>汎汎：</strong>「那你剛才是怎麼把三百年前的密道打開的？！」
+          </div>
+          <div class="banter-card bibi-banter">
+            <strong>鼻鼻：</strong>「我怎麼知道！我隨便撥的啊！」
+          </div>
+          <div class="banter-card fanfan-banter">
+            <strong>汎汎：</strong>「那你胸前那個銀蛇護符又是什麼？！」
+          </div>
+          <div class="banter-card bibi-banter">
+            <strong>鼻鼻：</strong>「從小就有啊！……喂，妳那是什麼懷疑人生的表情？！」
+          </div>
+        </div>
+
+        <!-- 秘紋術師互動：破解三道石門符號 -->
+        <div class="glyph-puzzle-box" id="glyph-puzzle-box">
+          <div class="puzzle-header">
+            <h4>【 汎汎的秘術・破解封印石門 】</h4>
+            <p>前方古老石門閉鎖，依序點擊石門上的古代符印，協助汎汎重構秘法秩序：</p>
+          </div>
+
+          <div class="glyph-buttons-row">
+            <button class="glyph-btn" data-glyph="1" id="glyph-btn-1">
+              <span class="g-rune">門</span>
+              <span class="g-name">【 門・Porta 】</span>
+            </button>
+            <button class="glyph-btn" data-glyph="2" id="glyph-btn-2" disabled>
+              <span class="g-rune">憶</span>
+              <span class="g-name">【 記憶・Memoria 】</span>
+            </button>
+            <button class="glyph-btn" data-glyph="3" id="glyph-btn-3" disabled>
+              <span class="g-rune">望</span>
+              <span class="g-name">【 守望・Vigil 】</span>
+            </button>
+          </div>
+
+          <div class="puzzle-feedback" id="puzzle-feedback">
+            等待解讀第一個古代符文……
+          </div>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            石門在古老的齒輪咬合聲中緩緩退開。在疾馳中，汎汎的話語如寒風中的細針，一下下扎進鼻鼻的意識：
+          </p>
+          <blockquote class="lore-revelation-quote">
+            「我在北方出土的古石板上看見過一句被帝國嚴厲封禁的話——<br>
+            <strong>『第五守門者完成封印之後，第六者自願留下姓名。』</strong><br>
+            蒼龍帝國告訴世人銀蛇是毀滅世界的惡神……但古文字不會撒謊。銀蛇，或許根本不是敵人。」
+          </blockquote>
+          <p>
+            她看著鼻鼻，若有所思地低語：「古謠、韻律、失落的音節……難道古代的吟遊詩人，本質上是歷史的……<strong>『記憶者』</strong>？不可能……」
+          </p>
+          <p>
+            鼻鼻喘著氣：「什麼不可能？」<br>
+            汎汎偏過頭：「沒什麼。」
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────
+         九、城外山丘 與 銀蛇之頁翻面震撼終局
+         ────────────────────────────────────────── -->
+    <section id="scene-epilogue" class="scene-section scene-hill-epilogue">
+      
+      <div class="narrative-wrapper">
+
+        <div class="scene-marker">
+          <span class="marker-tag">終曲</span>
+          <h2 class="marker-title">雲川城郊的寒夜</h2>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            兩人終於從廢棄排水閘的荒藤中鑽了出來。
+          </p>
+          <p>
+            微涼的秋夜冷風拂過草坡。回頭望去，雲川城巍峨的青黑城牆在夜幕下橫臥如巨龍，城頭無數火把連綿湧動，急促刺耳的警鐘聲在三江水波間遠遠飄散。
+          </p>
+          <p>
+            鼻鼻癱坐在草地上，抱著他的七弦琴，胸膛起伏良久，才轉頭看向身邊的女子：
+          </p>
+          <p class="dialogue-line">
+            「所以……妳冒著掉腦袋的風險，到底從帝國手裡偷了什麼？」
+          </p>
+          <p>
+            汎汎在月光下緩緩解開皮革包裹。
+          </p>
+          <p class="dialogue-line">
+            「不是我偷了什麼。」<br>
+            汎汎的目光平靜如寒潭：<br>
+            <strong>「是帝國藏了什麼。」</strong>
+          </p>
+        </div>
+
+        <!-- 3D 翻轉銀蛇之頁 (Interactive Page of the Silver Serpent) -->
+        <div class="silver-page-interactive-stage">
+          <p class="flip-hint-text">👆 點擊下方銀蛇金屬頁以翻轉至背面</p>
+
+          <div class="metal-page-card-container" id="metal-page-card">
+            
+            <!-- 正面：古代秘紋與銜尾銀蛇 -->
+            <div class="metal-face face-front">
+              <div class="metal-sheen"></div>
+              <div class="face-content">
+                <span class="ancient-era-tag">北方深層遺蹟・封印遺物</span>
+                <div class="ouroboros-emblem">
+                  <svg viewBox="0 0 140 140" class="page-serpent-svg">
+                    <circle cx="70" cy="70" r="60" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+                    <path d="M 70 20 C 100 20, 120 45, 115 75 C 110 100, 85 105, 70 120 C 55 135, 35 125, 35 105 C 35 85, 65 75, 70 55 C 73 45, 65 35, 60 38" 
+                          fill="none" stroke="#f1f5f9" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="60" cy="38" r="4.5" fill="#38bdf8"/>
+                  </svg>
+                </div>
+                <h4 class="page-title">【 銀 蛇 之 頁 】</h4>
+                <p class="page-inscribed-text">薄如蟬翼・不朽神金・萬星未顯之銘</p>
+              </div>
+            </div>
+
+            <!-- 背面：六大聖獸神聖印記震撼揭曉 -->
+            <div class="metal-face face-back">
+              <div class="metal-sheen silver-glare"></div>
+              <div class="face-content">
+                <span class="back-title">艾瑟蘭六大守護印記</span>
+                
+                <div class="six-sigils-grid">
+                  <div class="sigil-cell"><span class="s-icon">🐉</span><span class="s-name">蒼天龍</span></div>
+                  <div class="sigil-cell"><span class="s-icon">🦁</span><span class="s-name">聖耀白獅</span></div>
+                  <div class="sigil-cell"><span class="s-icon">🐺</span><span class="s-name">月影玄狼</span></div>
+                  <div class="sigil-cell"><span class="s-icon">🦅</span><span class="s-name">不滅朱凰</span></div>
+                  <div class="sigil-cell"><span class="s-icon">🦌</span><span class="s-name">世界樹神鹿</span></div>
+                  <!-- 第六個震撼印記：銀蛇 -->
+                  <div class="sigil-cell sixth-sigil-cell" id="sixth-sigil-cell">
+                    <span class="s-icon glowing-serpent">🐍</span>
+                    <span class="s-name sixth-name">第六者・銀蛇</span>
+                  </div>
+                </div>
+
+                <p class="resonance-notice">✦ 鼻鼻胸前的護身符在此刻產生了劇烈的灼熱感 ✦</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 結尾懸念淡出與文字呈現 -->
+        <div class="cliffhanger-box" id="cliffhanger-box">
+          <p class="cliffhanger-line line-a" id="ch-line-1">「五聖的神話裡——」</p>
+          <p class="cliffhanger-line line-b" id="ch-line-2">「從來沒有第六個名字。」</p>
+        </div>
+
+        <!-- 章節落幕卡 -->
+        <div class="chapter-end-card" id="chapter-end-card">
+          <span class="end-badge">CHAPTER I END</span>
+          <h3 class="end-title">第一章 完</h3>
+          <p class="next-teaser">《第二章：銀蛇之頁》</p>
+          
+          <div class="end-actions">
+            <button class="parchment-cta-btn" id="btn-next-chapter">
+              <span class="btn-text">繼續旅程 ➔</span>
+            </button>
+            <a href="world.html" class="parchment-btn small-btn">
+              <span>回顧艾瑟蘭世界地圖</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 底部版權 -->
+  <footer class="novel-footer">
+    <div class="footer-inner">
+      <div class="sigils-row">
+        <span>🐉</span><span>🦁</span><span>🐺</span><span>🦅</span><span>🦌</span><span>🐍</span>
+      </div>
+      <p>《艾瑟蘭大陸 Eseran》・第一章：雲川城的吟遊詩人</p>
+      <p class="sub">以純粹的 HTML / CSS / Vanilla JavaScript 打造的互動式奇幻小說閱讀體驗</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
