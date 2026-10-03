@@ -232,6 +232,71 @@ body.novel-theme {
   color: #ded6c8;
 }
 
+/* 章節分頁 Tab 標籤樣式 */
+.chapter-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(12, 10, 8, 0.8);
+  padding: 0.25rem 0.4rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 6px;
+}
+
+.chapter-tab-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #a39682;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.chapter-tab-btn:hover {
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.chapter-tab-btn.active {
+  color: #fff;
+  background: rgba(40, 30, 20, 0.9);
+  border-color: var(--gold-border);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.chapter-tab-btn .tab-num {
+  font-family: var(--font-serif-title);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-dim);
+}
+
+.chapter-tab-btn.active .tab-num {
+  color: var(--gold-bright);
+}
+
+.chapter-tab-btn .tab-title {
+  font-family: var(--font-serif-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* 章節頁面 Pagination 顯示切換控制 */
+.chapter-page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.chapter-page.active-page {
+  display: block;
+  opacity: 1;
+}
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -1919,6 +1984,1405 @@ body.novel-theme {
 }
 
 /* ==========================================================================
+   第二章（下）：山丘異象與神秘聖騎士帕帕樣式表
+   ========================================================================== */
+.scene-ch2-part2 {
+  position: relative;
+  padding: 4rem 0 6rem;
+  background: radial-gradient(circle at 50% 20%, #151d28 0%, #0c0e14 60%, #06070a 100%);
+  border-top: 1px solid var(--gold-border);
+}
+
+.ch2-hill-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.beacon-beam-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(203, 209, 216, 0.9), rgba(56, 189, 248, 0.4), transparent);
+  box-shadow: 0 0 25px rgba(203, 209, 216, 0.8), 0 0 50px rgba(56, 189, 248, 0.6);
+  opacity: 0;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+.beacon-beam-line.active {
+  opacity: 1;
+  transform: translateX(-50%) scaleY(1);
+}
+
+/* 六圖騰信標展示卡 */
+.totem-beacon-stage {
+  margin: 3rem 0;
+  padding: 2.2rem 1.8rem;
+  background: rgba(20, 26, 36, 0.85);
+  border: 1px solid rgba(203, 209, 216, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(203, 209, 216, 0.05);
+  text-align: center;
+  position: relative;
+}
+
+.stage-instruction {
+  font-size: 0.9rem;
+  color: var(--silver-serpent);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+
+.totem-runes-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.totem-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  background: rgba(10, 14, 20, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  min-width: 70px;
+}
+
+.totem-node .t-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transition: var(--transition-normal);
+}
+
+.totem-node .t-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.totem-node.illuminated {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  transform: translateY(-4px);
+}
+
+.totem-node.illuminated .t-icon {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.totem-node.active-snake-glow {
+  border-color: var(--silver-serpent);
+  box-shadow: 0 0 20px var(--silver-glow), inset 0 0 10px rgba(203, 209, 216, 0.4);
+  transform: translateY(-6px);
+}
+
+.totem-node.active-snake-glow .t-icon {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(203, 209, 216, 0.9));
+}
+
+.totem-node.active-snake-glow .t-name {
+  color: var(--silver-serpent);
+  font-weight: bold;
+}
+
+.serpent-amulet-glow-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1.4rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px dashed rgba(203, 209, 216, 0.3);
+  border-radius: 30px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  transition: var(--transition-slow);
+}
+.serpent-amulet-glow-box.active {
+  border-color: var(--silver-serpent);
+  background: rgba(30, 41, 59, 0.9);
+  color: #fff;
+  box-shadow: 0 0 18px var(--silver-glow);
+}
+
+.beacon-effect-log {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+  min-height: 1.6em;
+}
+
+/* 馬蹄節奏與帕帕語錄 */
+.hoof-rhythm {
+  background: rgba(10, 12, 16, 0.8);
+  border-left: 3px solid var(--silver-serpent);
+  padding: 0.8rem 1.4rem;
+  margin: 1.2rem 0;
+  font-family: var(--font-serif-title);
+  letter-spacing: 0.15em;
+  color: var(--silver-serpent);
+}
+
+.papa-first-quote {
+  background: radial-gradient(circle, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(203, 209, 216, 0.4);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #fff;
+  text-shadow: 0 0 12px var(--silver-glow);
+  box-shadow: 0 0 25px rgba(203, 209, 216, 0.15);
+}
+
+/* 帕帕角色焦點卡 */
+.papa-card {
+  border-color: rgba(203, 209, 216, 0.4);
+  background: linear-gradient(135deg, rgba(26, 32, 44, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+}
+
+.lion-serpent-crest {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1rem;
+}
+
+.knight-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.knight-details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-top: 0.8rem;
+}
+
+.k-detail {
+  padding: 0.4rem 0.8rem;
+  background: rgba(10, 14, 22, 0.6);
+  border-radius: 4px;
+  border-left: 2px solid var(--silver-serpent);
+}
+
+/* 對話氣泡 */
+.dialogue-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1.8rem 0;
+}
+
+.dialogue-bubble {
+  max-width: 80%;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.bibi-talk {
+  align-self: flex-start;
+  background: rgba(38, 30, 20, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fef3c7;
+}
+
+.fanfan-talk {
+  align-self: flex-start;
+  background: rgba(18, 30, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #e0f2fe;
+}
+
+.papa-talk {
+  align-self: flex-start;
+  background: rgba(24, 30, 40, 0.9);
+  border: 1px solid rgba(203, 209, 216, 0.4);
+  color: #f1f5f9;
+  box-shadow: 0 0 10px rgba(203, 209, 216, 0.1);
+}
+
+.dialogue-pause {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0.2rem 0.5rem;
+}
+
+/* 戰鬥互動選單 */
+.interactive-battle-stage {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(15, 20, 30, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.battle-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.battle-header h4 {
+  font-family: var(--font-serif-title);
+  color: var(--canglong-cyan);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.battle-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.battle-cmd-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  background: rgba(26, 35, 50, 0.8);
+  border: 1px solid rgba(203, 209, 216, 0.25);
+  border-radius: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.battle-cmd-btn:hover {
+  background: rgba(40, 55, 80, 0.9);
+  border-color: var(--silver-serpent);
+  box-shadow: 0 0 15px var(--silver-glow);
+  transform: translateY(-3px);
+}
+
+.battle-cmd-btn .cmd-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.battle-cmd-btn .cmd-title {
+  font-family: var(--font-serif-title);
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.battle-cmd-btn .cmd-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.battle-narrative-log {
+  background: rgba(8, 12, 18, 0.8);
+  border: 1px dashed rgba(56, 189, 248, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  min-height: 3em;
+  line-height: 1.8;
+}
+
+/* 三人組隊卡組 (聲音、文字、誓約) */
+.party-trio-card {
+  margin: 3rem 0;
+  padding: 2rem 1.5rem;
+  background: rgba(22, 28, 38, 0.9);
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.trio-title {
+  font-family: var(--font-serif-title);
+  color: var(--gold-bright);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.trio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.trio-member {
+  padding: 1.2rem 1rem;
+  background: rgba(12, 16, 24, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+}
+
+.trio-member .m-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.trio-member .m-name {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.trio-member .m-symbol {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--gold-bright);
+  margin: 0.3rem 0 0.6rem;
+  font-weight: bold;
+}
+
+.trio-member .m-ability {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.trio-footer-concept {
+  font-size: 0.95rem;
+  color: var(--silver-serpent);
+  font-style: italic;
+}
+
+.dragon-awakening-quote {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--canglong-cyan);
+  box-shadow: 0 0 20px var(--canglong-glow);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #e0f2fe;
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   【第三章：沉睡的蒼龍】樣式表
+   ========================================================================== */
+.scene-chapter-3 {
+  position: relative;
+  padding: 4rem 0 6rem;
+  background: radial-gradient(circle at 50% 15%, #0b131e 0%, #06090e 65%, #030406 100%);
+  border-top: 1px solid var(--canglong-cyan);
+}
+
+.ch3-ambient-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ancient-memory-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 40%, rgba(56, 189, 248, 0.15) 80%, rgba(15, 23, 42, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+.ancient-memory-vignette.active {
+  opacity: 1;
+}
+
+/* 一、第三章開場 Hero 卡 */
+.chapter-opening-hero-card {
+  margin: 2rem 0 3rem;
+  padding: 2.5rem 2rem;
+  background: rgba(14, 20, 30, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(56, 189, 248, 0.08);
+  text-align: center;
+}
+
+.location-stamp-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--canglong-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  margin-bottom: 1.2rem;
+}
+
+.opening-hero-headline {
+  font-family: var(--font-serif-title);
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 15px var(--canglong-glow);
+  margin-bottom: 1.8rem;
+}
+
+.opening-montage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.montage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(8, 12, 18, 0.7);
+  border-radius: 8px;
+  border-left: 2px solid var(--canglong-cyan);
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+.montage-item .m-icon {
+  font-size: 1.4rem;
+}
+
+.opening-suspense-box {
+  background: rgba(5, 8, 12, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.suspense-line {
+  font-family: var(--font-serif-title);
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+}
+
+.suspense-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-border);
+  margin: 0.6rem auto;
+}
+
+/* 四、鼻鼻萬聲之耳失控卡 */
+.bibi-overload-stage {
+  position: relative;
+  margin: 3rem 0;
+  padding: 3rem 1.5rem;
+  background: rgba(20, 15, 12, 0.9);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.overload-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.whispering-voices-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.ghost-whisper {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: rgba(148, 163, 184, 0.85);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  animation: whisperPulse 3s infinite ease-in-out alternate;
+}
+
+@keyframes whisperPulse {
+  0% { opacity: 0.4; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-4px); }
+}
+
+.overload-core-box {
+  position: relative;
+  z-index: 2;
+}
+
+.warning-tag {
+  font-size: 0.8rem;
+  color: var(--danger-crimson);
+  letter-spacing: 0.1em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.overload-title {
+  font-family: var(--font-serif-title);
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.overload-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 莉亞焦點卡 */
+.leah-card {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: linear-gradient(135deg, rgba(20, 15, 30, 0.9) 0%, rgba(10, 12, 20, 0.95) 100%);
+}
+
+.necromancer-badge {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.leah-talk {
+  align-self: flex-start;
+  background: rgba(25, 20, 38, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #f3e8ff;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+}
+
+.leah-philosophy-quote {
+  background: rgba(15, 18, 28, 0.85);
+  border-left: 3px solid #c084fc;
+  padding: 1.2rem 1.8rem;
+  margin: 1.8rem 0;
+  font-size: 1.1rem;
+  color: #e9d5ff;
+  line-height: 1.9;
+}
+
+/* 四人分工結構卡 */
+.four-roles-card {
+  margin: 3rem 0;
+  padding: 2rem 1.5rem;
+  background: rgba(15, 20, 30, 0.9);
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.four-roles-title {
+  font-family: var(--font-serif-title);
+  color: var(--gold-bright);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.four-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.role-box {
+  padding: 1rem 0.8rem;
+  background: rgba(10, 14, 22, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+}
+
+.role-box strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.role-box span {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--canglong-cyan);
+  margin: 0.2rem 0 0.4rem;
+  font-weight: bold;
+}
+
+.role-box p {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* 萬魂回聲儀式卡 */
+.echoes-ritual-stage {
+  margin: 3rem 0;
+  padding: 2.2rem 1.8rem;
+  background: rgba(18, 14, 26, 0.9);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.ritual-header h4 {
+  font-family: var(--font-serif-title);
+  color: #c084fc;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.ritual-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.8rem 0 1.5rem;
+}
+
+.ritual-step-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0.8rem;
+  background: rgba(30, 20, 45, 0.7);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  border-radius: 8px;
+  color: #f3e8ff;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.ritual-step-btn:hover:not(:disabled) {
+  background: rgba(50, 30, 75, 0.9);
+  border-color: #c084fc;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+  transform: translateY(-3px);
+}
+
+.ritual-step-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ritual-step-btn .step-num {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-bright);
+  margin-bottom: 0.3rem;
+}
+
+.ritual-step-btn .step-title {
+  font-family: var(--font-serif-title);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.ritual-step-btn .step-desc {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.ritual-status-log {
+  background: rgba(8, 10, 16, 0.85);
+  border: 1px dashed rgba(192, 132, 252, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #e9d5ff;
+  min-height: 2.8em;
+}
+
+/* 九百年前古代記憶領域 */
+.ancient-memory-realm {
+  margin: 4rem 0;
+  padding: 2.5rem 1.8rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 14, 24, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.2);
+}
+
+.realm-era-badge {
+  text-align: center;
+  font-family: var(--font-serif-title);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--canglong-cyan);
+  margin-bottom: 1.8rem;
+}
+
+.ancient-priest-first-quote {
+  background: rgba(8, 12, 18, 0.9);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #f87171;
+  margin: 2rem 0;
+}
+
+/* 親手殺了牠震撼宣告卡 */
+.revelation-silence-box {
+  margin: 3rem 0;
+  padding: 3rem 1.5rem;
+  background: #000;
+  border: 1px solid var(--danger-crimson);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
+}
+
+.priest-sad-look {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.shocking-truth-text {
+  font-family: var(--font-serif-title);
+  font-size: 1.8rem;
+  color: #94a3b8;
+}
+
+.truth-pause-space {
+  height: 20px;
+}
+
+.shocking-main-truth {
+  font-family: var(--font-serif-title);
+  font-size: 2.2rem;
+  color: #ef4444;
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+}
+
+/* 鼻鼻救援莉亞卡 */
+.find-leah-rescue-stage {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.rescue-header h4 {
+  font-family: var(--font-serif-title);
+  color: var(--canglong-cyan);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.rescue-voices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.voice-choice-btn {
+  padding: 0.9rem 0.6rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.voice-choice-btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: var(--canglong-cyan);
+}
+
+.rescue-feedback-log {
+  font-size: 0.92rem;
+  color: var(--gold-bright);
+  min-height: 1.8em;
+}
+
+/* 天穹龍墓大型 Hero 卡 */
+.dragon-tomb-hero-card {
+  position: relative;
+  margin: 3.5rem 0;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.95) 0%, rgba(6, 9, 14, 0.98) 100%);
+  border: 1px solid var(--canglong-cyan);
+  border-radius: 12px;
+  box-shadow: 0 0 35px var(--canglong-glow);
+  text-align: center;
+  overflow: hidden;
+}
+
+.tomb-badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--canglong-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+
+.tomb-title {
+  font-family: var(--font-serif-title);
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0.8rem 0;
+}
+
+.tomb-desc {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+
+/* 銀瞳蒼龍震撼視覺區 */
+.silver-eyes-revelation-box {
+  margin: 3rem 0;
+  padding: 3rem 1.5rem;
+  background: #000;
+  border: 2px solid var(--silver-serpent);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 40px var(--silver-glow);
+  transition: var(--transition-slow);
+}
+
+.dragon-eyes-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.silver-dragon-eye {
+  width: 50px;
+  height: 20px;
+  background: radial-gradient(ellipse at center, #ffffff 0%, #cbd1d8 50%, #475569 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px var(--silver-glow);
+}
+
+.eye-color-desc {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.serpent-resonance-flash {
+  font-size: 0.95rem;
+  color: var(--silver-serpent);
+  font-style: italic;
+}
+
+.final-cliffhanger-quote {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--silver-serpent);
+  box-shadow: 0 0 30px var(--silver-glow);
+  padding: 1.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 2.5rem 0;
+}
+
+/* 四人隊伍關係圖卡 */
+.four-party-truth-diagram {
+  margin: 2rem 0;
+  padding: 1.8rem 1rem;
+  background: rgba(10, 14, 22, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.diagram-title {
+  font-family: var(--font-serif-title);
+  color: var(--gold-bright);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.diagram-nodes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.d-node {
+  padding: 0.5rem 0.9rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.d-center-core {
+  padding: 0.6rem 1.2rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-bright);
+  border-radius: 20px;
+  font-family: var(--font-serif-title);
+  font-size: 0.9rem;
+  color: var(--gold-bright);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   【第四章：世界的詠唱者】高潮劇情樣式表
+   ========================================================================== */
+.scene-chapter-4 {
+  position: relative;
+  padding: 4rem 0 6rem;
+  background: radial-gradient(circle at 50% 20%, #17130a 0%, #0d0905 60%, #050403 100%);
+  border-top: 1px solid var(--gold-border);
+}
+
+.ch4-ambient-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.worldsong-gold-aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.12) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 80%);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.worldsong-gold-aurora.active {
+  opacity: 1;
+}
+
+.white-flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-out;
+}
+.white-flash-overlay.active {
+  opacity: 1;
+}
+
+/* 一與二、世界秩序崩壞蒙太奇卡 */
+.world-collapse-montage-card {
+  margin: 3rem 0;
+  padding: 2.5rem 1.8rem;
+  background: rgba(20, 10, 10, 0.92);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.25);
+  text-align: center;
+}
+
+.warning-badge {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.collapse-title {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.collapse-subtitle {
+  font-size: 0.88rem;
+  color: #cbd1d8;
+  margin-bottom: 2rem;
+}
+
+.collapse-nations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.n-collapse-box {
+  padding: 1.1rem;
+  background: rgba(10, 6, 8, 0.85);
+  border-radius: 8px;
+  border-left: 3px solid var(--danger-crimson);
+}
+
+.n-collapse-box .n-head {
+  font-family: var(--font-serif-title);
+  font-size: 1rem;
+  color: #fca5a5;
+  margin-bottom: 0.5rem;
+}
+
+.n-collapse-box p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.world-unbalance-banner {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  color: #ef4444;
+  text-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* 三、汎汎封印嘗試卡 */
+.fanfan-seal-interactive-stage {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.seal-header h4 {
+  font-family: var(--font-serif-title);
+  color: var(--canglong-cyan);
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.seal-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.seal-cmd-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.seal-cmd-btn:hover:not(:disabled) {
+  background: rgba(51, 65, 85, 0.95);
+  border-color: var(--canglong-cyan);
+  box-shadow: 0 0 15px var(--canglong-glow);
+  transform: translateY(-2px);
+}
+
+.seal-cmd-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.seal-cmd-btn .s-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.seal-cmd-btn .s-title {
+  font-family: var(--font-serif-title);
+  font-size: 0.95rem;
+}
+
+.seal-status-log {
+  font-size: 0.92rem;
+  color: var(--gold-bright);
+  min-height: 1.8em;
+}
+
+.failure-tag {
+  text-align: center;
+  font-family: var(--font-serif-title);
+  font-size: 1.05rem;
+  color: var(--danger-crimson);
+  margin: 1.5rem 0;
+}
+
+/* 六、所有英雄敗退卡 */
+.all-heroes-defeated-card {
+  margin: 3rem 0;
+  padding: 2rem 1.5rem;
+  background: rgba(15, 10, 10, 0.95);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.defeated-title {
+  font-family: var(--font-serif-title);
+  color: #f87171;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.defeated-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.d-hero-item {
+  padding: 1rem 0.8rem;
+  background: rgba(8, 6, 8, 0.8);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 8px;
+}
+
+.d-hero-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.d-hero-item span {
+  font-size: 0.8rem;
+  color: #cbd1d8;
+  line-height: 1.5;
+  display: block;
+}
+
+.defeated-footer {
+  font-size: 0.9rem;
+  color: #fca5a5;
+  font-style: italic;
+}
+
+/* 九、記憶者開悟語錄 */
+.memory-bearer-revelation-quote {
+  background: radial-gradient(circle, rgba(40, 30, 15, 0.9) 0%, rgba(20, 15, 10, 0.95) 100%);
+  border: 1px solid var(--gold-bright);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+  padding: 1.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.15rem;
+  color: #fff;
+  line-height: 2;
+  margin: 2.5rem 0;
+}
+
+.sixth-verse-quote {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid var(--silver-serpent);
+  box-shadow: 0 0 20px var(--silver-glow);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+  margin: 2rem 0;
+}
+
+/* 十四與十五、核心【世界詠唱 Worldsong】互動區 */
+.worldsong-interactive-stage {
+  margin: 3.5rem 0;
+  padding: 2.8rem 2rem;
+  background: radial-gradient(circle, rgba(35, 25, 12, 0.95) 0%, rgba(15, 10, 6, 0.98) 100%);
+  border: 2px solid var(--gold-bright);
+  border-radius: 14px;
+  box-shadow: 0 0 45px rgba(255, 215, 0, 0.35);
+  text-align: center;
+}
+
+.ws-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-bright);
+  background: rgba(255, 215, 0, 0.15);
+  padding: 0.25rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  margin-bottom: 0.8rem;
+}
+
+.worldsong-header h4 {
+  font-family: var(--font-serif-title);
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.song-lines-display-box {
+  margin: 2rem 0;
+  padding: 1.8rem 1.2rem;
+  background: rgba(8, 6, 4, 0.9);
+  border: 1px dashed var(--gold-border);
+  border-radius: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-current-line {
+  font-family: var(--font-serif-title);
+  font-size: 1.35rem;
+  color: var(--gold-bright);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  letter-spacing: 0.08em;
+  transition: var(--transition-normal);
+}
+
+.worldsong-sing-btn {
+  font-size: 1.15rem;
+  padding: 0.9rem 2.2rem;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.worldsong-progress-bar-container {
+  height: 6px;
+  background: rgba(30, 20, 10, 0.8);
+  border-radius: 3px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.ws-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim) 0%, var(--gold-bright) 100%);
+  box-shadow: 0 0 10px var(--gold-bright);
+  transition: width 0.6s ease;
+}
+
+/* 十六、五國合唱響應卡 */
+.five-nations-response-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem;
+  margin: 2.5rem 0;
+}
+
+.res-card {
+  padding: 1.1rem 0.9rem;
+  background: rgba(15, 20, 30, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.res-card strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--canglong-cyan);
+  margin-bottom: 0.4rem;
+}
+
+.res-card p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.final-singing-quote {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--gold-bright);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 2rem 0;
+}
+
+.dragon-warning-quote {
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid var(--silver-serpent);
+  box-shadow: 0 0 35px var(--silver-glow);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.35rem;
+  color: #f1f5f9;
+  margin: 3rem 0;
+}
+
+/* ==========================================================================
    頁尾
    ========================================================================== */
 .novel-footer {
@@ -1948,6 +3412,407 @@ body.novel-theme {
   font-size: 0.8rem;
   color: #7d7260;
   margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   第二部 第一章：森林正在做夢 (Part II Chapter 1) 專屬主題樣式
+   ========================================================================== */
+.scene-forest-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #064e3b 0%, #022c22 50%, #060e0c 100%);
+  border-bottom: 2px solid #10b981;
+  overflow: hidden;
+}
+
+.forest-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.forest-canopy-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(52, 211, 153, 0.25), transparent 70%);
+}
+
+.emerald-mist-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(2, 44, 34, 0.95) 100%);
+}
+
+.en-sub-title {
+  display: block;
+  font-family: var(--font-decorative);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  color: #6ee7b7;
+  letter-spacing: 0.2em;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+/* 自然異常六宮格蒙太奇 */
+.nature-anomaly-montage {
+  margin: 2rem 0;
+  background: rgba(4, 20, 16, 0.85);
+  border: 1px solid #059669;
+  border-radius: 8px;
+  padding: 1.8rem;
+  box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.15);
+}
+
+.montage-title {
+  font-family: var(--font-serif-title);
+  font-size: 1.2rem;
+  color: #a7f3d0;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.montage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.anomaly-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 1.2rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.anomaly-card:hover {
+  transform: translateY(-4px);
+  border-color: #34d399;
+}
+
+.anomaly-card .card-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.anomaly-card h4 {
+  font-family: var(--font-serif-title);
+  color: #6ee7b7;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.anomaly-card p {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* 巨鹿 Spotlight 與屁屁卡片 */
+.stag-spotlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  margin: 1.5rem 0;
+}
+
+.stag-avatar {
+  font-size: 3.5rem;
+  background: rgba(16, 185, 129, 0.2);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #34d399;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+}
+
+.stag-info h3 {
+  font-family: var(--font-decorative);
+  color: #34d399;
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.stag-desc {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.druid-reveal-box {
+  margin-top: 1.5rem;
+}
+
+.pipi-intro-card {
+  background: rgba(14, 28, 24, 0.9);
+  border: 1px solid #10b981;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.pipi-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.pipi-icon {
+  font-size: 2.2rem;
+}
+
+.pipi-name {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #a7f3d0;
+}
+
+.pipi-title {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.pipi-quote {
+  font-style: italic;
+  color: #6ee7b7;
+  border-left: 3px solid #10b981;
+  padding-left: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.pipi-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0 0;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.pipi-skills li {
+  margin-bottom: 0.4rem;
+}
+
+/* 藤蔓治療互動舞台 */
+.vine-healing-stage {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #059669;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.healing-steps-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
+}
+
+.step-btn {
+  border-color: #10b981 !important;
+}
+
+.healing-visual-display {
+  background: rgba(2, 44, 34, 0.8);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.vine-bar-bg {
+  height: 14px;
+  background: #334155;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.vine-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  transition: width 0.6s ease;
+}
+
+.healing-log {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+/* 哲理與低語區塊 */
+.philosophy-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #38bdf8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.whisper-box {
+  background: radial-gradient(circle, rgba(6, 78, 59, 0.6), rgba(2, 44, 34, 0.95));
+  border: 1px dashed #34d399;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.whisper-text {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #a7f3d0;
+  letter-spacing: 0.15em;
+  animation: whisperPulse 3s infinite ease-in-out;
+}
+
+@keyframes whisperPulse {
+  0%, 100% { opacity: 0.5; text-shadow: 0 0 5px rgba(52, 211, 153, 0.3); }
+  50% { opacity: 1; text-shadow: 0 0 20px rgba(52, 211, 153, 0.9); }
+}
+
+.shout-incantation {
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+  color: #34d399;
+  text-align: center;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 25px rgba(52, 211, 153, 0.8);
+}
+
+/* 古森巨鹿變身舞台 */
+.stag-transform-stage {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 78, 59, 0.7), rgba(2, 44, 34, 0.95));
+  border: 2px solid #34d399;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+.beast-purify-panel {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #10b981;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.purify-btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.purify-status-box {
+  background: rgba(2, 44, 34, 0.8);
+  border: 1px solid #34d399;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #a7f3d0;
+}
+
+/* 神鹿古代記憶 Sequence */
+.dream-memory-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+  border: 2px solid #818cf8;
+  border-radius: 10px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(129, 140, 248, 0.3);
+}
+
+.dream-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(199, 210, 254, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.dream-title {
+  font-family: var(--font-decorative);
+  font-size: 1.5rem;
+  color: #c7d2fe;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sacred-truth-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.6rem;
+  color: #fef08a;
+  text-align: center;
+  border: none;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 20px rgba(253, 224, 71, 0.7);
+}
+
+/* 心跳視覺 */
+.heartbeat-pulse-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.pulse-text {
+  font-family: var(--font-decorative);
+  font-size: 2.8rem;
+  color: #f43f5e;
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: heartbeatPulse 1.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes heartbeatPulse {
+  0% { transform: scale(1); text-shadow: 0 0 10px rgba(244, 63, 94, 0.4); }
+  15% { transform: scale(1.25); text-shadow: 0 0 35px rgba(244, 63, 94, 0.9); }
+  30% { transform: scale(1.05); }
+  45% { transform: scale(1.2); text-shadow: 0 0 30px rgba(244, 63, 94, 0.8); }
+  60% { transform: scale(1); text-shadow: 0 0 10px rgba(244, 63, 94, 0.4); }
+}
+
+/* 五人旅人指向圖 */
+.five-party-truth-diagram {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #10b981;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.8rem 0;
+}
+
+.diagram-nodes-five {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.node-pipi {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #34d399;
+  color: #a7f3d0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
 /* ==========================================================================

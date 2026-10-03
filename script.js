@@ -13,25 +13,68 @@ document.addEventListener('DOMContentLoaded', () => {
     bibi: {
       id: 'bibi',
       name: '鼻鼻',
-      title: '雲川城流浪詩人',
+      title: '記憶者 / 雲川城詩人',
       role: '吟遊詩人',
-      weapon: '梧桐七弦琴（冰蠶絲弦）',
-      ability: '萬聲之耳（聽見強烈誓約與殘留遠古之音）',
+      weapon: '梧桐七弦琴（冰蠶絲弦・已斷弦）',
+      ability: '萬聲之耳（聽覺記憶） / 世界詠唱（Worldsong）',
       item: '古老銀蛇護符',
+      quote: '救世界又不能付修琴錢。',
       icon: '🎻',
-      desc: '雲川城最不起眼的吟遊詩人。隨性幽默、極擅察言觀色，喜歡蒐集各地不為人知的怪誕傳說與殘破古謠。極度討厭惹麻煩，最大的願望只是賺足房租與熱湯錢，卻在絕境中無意間撥動了開啟封印的失落音律。'
+      desc: '看似最不起眼、無法術無戰力的吟遊詩人。真實身份為世界記憶的承載者『記憶者』。在同伴皆敗退之際，以不具任何戰鬥魔力的『世界詠唱』喚醒艾瑟蘭被遺忘的真實，拼回蒼龍之魂。'
     },
     fanfan: {
       id: 'fanfan',
       name: '汎汎',
       title: '前帝國秘館研究學者',
       role: '秘紋術師',
+      symbol: '文字',
       weapon: '古代幾何符文重構術',
-      ability: '解讀古代碑文、破譯秘術封印、解析失落法則',
+      ability: '解讀古代文字、破譯秘術封印、解析失落法則',
       item: '銀蛇之頁（古代不朽神金）',
       status: '蒼龍帝國最高通緝中',
       icon: '❄️',
-      desc: '極為罕見的秘紋術師。原受雇於帝國研究機構，在北方冰原出土的遠古石板上破譯出推翻五聖神話的禁忌文字，發現「銀蛇可能並非惡神」的震驚真相，攜帶「銀蛇之頁」亡命逃亡至雲川城。'
+      desc: '極為罕見的秘紋術師。原受雇於帝國研究機構，在北方冰原出土的遠古石板上破譯出推翻五聖神話的禁忌文字，攜帶「銀蛇之頁」逃亡。'
+    },
+    papa: {
+      id: 'papa',
+      name: '帕帕',
+      title: '神秘聖騎士',
+      role: '聖騎士',
+      affiliation: '守頁騎士團',
+      symbol: '誓約 / 見證',
+      age: '900+',
+      weapon: '古代誓約長劍（已折斷）',
+      shield: '守頁之盾（已破碎）',
+      ability: '銀白聖焰 / 誓約之焰 / 終誓',
+      quote: '有些誓言，比人的壽命更長。',
+      icon: '⚔️',
+      desc: '守頁騎士團的古老聖騎士。活過了九百年的漫長歲月，曾親眼見證九百年前殺死蒼龍與聖獸封印的現場。'
+    },
+    leah: {
+      id: 'leah',
+      name: '莉亞',
+      title: '渡魂者',
+      role: '死靈法師',
+      symbol: '死亡與平衡',
+      item: '古老魂燈與死靈法杖',
+      ability: '亡魂召喚 / 亡者記憶 / 萬魂回聲',
+      quote: '活人會修改歷史，死者沒有這個必要。',
+      status: '與鼻鼻、汎汎、帕帕同行',
+      icon: '🔮',
+      desc: '遊走於生者與亡者邊界的死靈法師。能召喚古靈與跨越冥界，保護生死平衡。'
+    },
+    pipi: {
+      id: 'pipi',
+      name: '屁屁',
+      title: '森脈守望者',
+      role: '德魯伊',
+      symbol: '生命與自然',
+      form: '古森巨鹿（Ancient Grove Stag）',
+      ability: '自然感知 / 植物操控 / 野獸溝通 / 河流引導 / 局部氣候控制 / 自然治癒 / 古森巨鹿化身',
+      quote: '它不是在攻擊你。它只是在痛。',
+      status: '翠鹿森國荒野守護者・與主角群同行',
+      icon: '🦌',
+      desc: '翠鹿森國的高階德魯伊。能聽見森林與野獸的聲音，與自然締結共生關係。面對失控的大地，他選擇的從來不是消滅，而是治癒。'
     }
   };
 
@@ -48,6 +91,67 @@ document.addEventListener('DOMContentLoaded', () => {
     'escapeBanter',
     'glyphPuzzle',
     'silverPageReveal',
+    'silverPageBeacon',
+    'papaArrival',
+    'ancientCrestReveal',
+    'keepersOfPagesReveal',
+    'imperialAmbush',
+    'oathFlame',
+    'papaBattle',
+    'partyFormation',
+    'dragonAwakening',
+    'easternAnomaly',
+    'ghostTown',
+    'bibiOverload',
+    'leahArrival',
+    'deathBalanceReveal',
+    'dragonResurrectionTheory',
+    'echoesOfTheDeparted',
+    'ancientPriestSummon',
+    'dragonDeathReveal',
+    'youngPapaMemory',
+    'silverPageSealMemory',
+    'leahLostInDeath',
+    'bibiFindsLeah',
+    'dragonTomb',
+    'dragonResurrection',
+    'silverEyesReveal',
+    'soullessDragon',
+    'worldCollapse',
+    'fanfanSealAttempt',
+    'papaFinalOath',
+    'leahSoulSearch',
+    'allHeroesDefeated',
+    'bibiHearsWorld',
+    'memoryBearerReveal',
+    'trueSixthVerse',
+    'worldsongAwakening',
+    'fiveNationsChorus',
+    'dragonSoulReconstruction',
+    'unknownSilverEntity',
+    'dragonRecognizesBibi',
+    'fiveGodsSealedReveal',
+    'forestAftershock',
+    'seasonChaos',
+    'beastAttack',
+    'pipiStagArrival',
+    'pipiReveal',
+    'livingForest',
+    'vinesInPain',
+    'unknownFaction',
+    'lifeAndDeathDialogue',
+    'bibiHearsPlants',
+    'doNotWakeHer',
+    'worldTreeArrival',
+    'deerSealCracks',
+    'dreamCorruption',
+    'forestAssault',
+    'ancientGroveStag',
+    'natureCounterattack',
+    'forestMemory',
+    'fiveBeastsVision',
+    'mutualSealReveal',
+    'worldTreeHeartbeat',
     'chapterEnd'
   ];
 
@@ -163,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 動態注入人物誌
   function renderDossier() {
     dossierContent.innerHTML = '';
-    ['bibi', 'fanfan'].forEach(key => {
+    ['bibi', 'fanfan', 'papa', 'leah', 'pipi'].forEach(key => {
       const c = characters[key];
       const card = document.createElement('div');
       card.className = 'dossier-card';
@@ -175,8 +279,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="dossier-role">${c.title}・${c.role}</span>
           </div>
         </div>
-        <div class="dossier-row"><strong>攜帶物件：</strong>${c.item}</div>
+        ${c.item ? `<div class="dossier-row"><strong>攜帶物件：</strong>${c.item}</div>` : ''}
+        ${c.affiliation ? `<div class="dossier-row"><strong>曾經所屬：</strong>${c.affiliation}</div>` : ''}
+        <div class="dossier-row"><strong>武器裝備：</strong>${c.weapon} ${c.shield ? ' / ' + c.shield : ''}</div>
         <div class="dossier-row"><strong>主要能力：</strong>${c.ability}</div>
+        ${c.quote ? `<div class="dossier-row" style="color:var(--silver-serpent); font-style:italic;"><strong>名言：</strong>「${c.quote}」</div>` : ''}
         ${c.status ? `<div class="dossier-row" style="color:#f87171;"><strong>當前狀態：</strong>${c.status}</div>` : ''}
         <div class="dossier-row" style="margin-top:0.8rem; font-size:0.85rem; line-height:1.7;">${c.desc}</div>
       `;
@@ -576,6 +683,113 @@ document.addEventListener('DOMContentLoaded', () => {
         gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
         osc.start(now);
         osc.stop(now + 0.35);
+      } else if (type === 'beaconPulse') {
+        // 銀蛇之頁信標召喚聲
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(300, now);
+        osc.frequency.exponentialRampToValueAtTime(1500, now + 1.5);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.8);
+        osc.start(now);
+        osc.stop(now + 1.8);
+      } else if (type === 'horseHooves') {
+        // 沉穩馬蹄踏踏聲
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(90, now);
+        gain.gain.setValueAtTime(0.09, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+        osc.start(now);
+        osc.stop(now + 0.12);
+      } else if (type === 'silverFlame') {
+        // 誓約之焰拔劍與銀白火光
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.linearRampToValueAtTime(880, now + 0.8);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+        osc.start(now);
+        osc.stop(now + 1.2);
+      } else if (type === 'shieldBlock') {
+        // 盾牌阻擋蒼藍雷擊金鐵與魔法聲
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(350, now);
+        osc.frequency.exponentialRampToValueAtTime(120, now + 0.4);
+        gain.gain.setValueAtTime(0.18, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.4);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      } else if (type === 'soulLamp') {
+        // 莉亞魂燈點亮與幽藍幽魂微光
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(261.63, now); // C4
+        osc.frequency.linearRampToValueAtTime(523.25, now + 0.8); // C5
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+        osc.start(now);
+        osc.stop(now + 1.2);
+      } else if (type === 'echoesRitual') {
+        // 萬魂回聲降臨 (三重低音共鳴)
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(130.81, now); // C3
+        osc.frequency.exponentialRampToValueAtTime(65.41, now + 1.5); // C2
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.0);
+        osc.start(now);
+        osc.stop(now + 2.0);
+      } else if (type === 'ancientMemory') {
+        // 進入九百年前記憶時空穿梭音
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.linearRampToValueAtTime(880, now + 1.0);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
+        osc.start(now);
+        osc.stop(now + 1.5);
+      } else if (type === 'dragonRoar') {
+        // 蒼天龍震撼天地之怒咆與雷鳴
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(80, now);
+        osc.frequency.linearRampToValueAtTime(30, now + 1.8);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.2);
+        osc.start(now);
+        osc.stop(now + 2.2);
+      } else if (type === 'silverGlow') {
+        // 蒼龍銀瞳睜開與銀蛇護符共鳴神威
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, now); // A5
+        osc.frequency.exponentialRampToValueAtTime(1760, now + 1.0); // A6
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
+        osc.start(now);
+        osc.stop(now + 1.5);
+      } else if (type === 'worldsong') {
+        // 世界詠唱 (五聲華彩五度音階共鳴)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now); // A4
+        osc.frequency.exponentialRampToValueAtTime(880, now + 2.0); // A5
+        gain.gain.setValueAtTime(0.18, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.5);
+        osc.start(now);
+        osc.stop(now + 2.5);
+      } else if (type === 'stringSnap') {
+        // 七弦琴弦崩斷清脆撞擊聲
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(1200, now);
+        osc.frequency.exponentialRampToValueAtTime(200, now + 0.15);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+        osc.start(now);
+        osc.stop(now + 0.15);
+      } else if (type === 'chorusResonance') {
+        // 全艾瑟蘭大合唱天地宏大共鳴
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(220, now); // A3
+        osc.frequency.linearRampToValueAtTime(659.25, now + 3.0); // E5
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 3.5);
+        osc.start(now);
+        osc.stop(now + 3.5);
       } else if (type === 'omenChime') {
         // 終極命運磬鐘
         osc.type = 'sine';
@@ -610,6 +824,455 @@ document.addEventListener('DOMContentLoaded', () => {
           osc.stop(now + 1.2);
         } catch (e) {}
       }, idx * 160);
+    });
+  }
+
+  // =========================================================================
+  // 七、第二章（下）互動邏輯：銀蛇之頁信標共鳴與戰鬥互動
+  // =========================================================================
+  const btnTriggerBeacon = document.getElementById('btn-trigger-beacon');
+  const beaconEffectLog = document.getElementById('beacon-effect-log');
+  const beaconBeamLine = document.getElementById('beacon-beam-line');
+  const groundRunesLayer = document.getElementById('ground-runes-layer');
+  const serpentAmuletGlow = document.getElementById('serpent-amulet-glow');
+
+  const totemNodes = {
+    dragon: document.getElementById('totem-dragon'),
+    lion: document.getElementById('totem-lion'),
+    wolf: document.getElementById('totem-wolf'),
+    phoenix: document.getElementById('totem-phoenix'),
+    deer: document.getElementById('totem-deer'),
+    snake: document.getElementById('totem-snake')
+  };
+
+  let isBeaconActive = false;
+
+  if (btnTriggerBeacon) {
+    btnTriggerBeacon.addEventListener('click', () => {
+      if (isBeaconActive) return;
+      isBeaconActive = true;
+
+      playSynthesizedSound('beaconPulse');
+      beaconEffectLog.textContent = '銀蛇之頁劇烈震動！古代圖騰依序亮起……';
+
+      const sequence = ['dragon', 'lion', 'wolf', 'phoenix', 'deer'];
+      
+      // 前五個圖騰依序亮起並熄滅
+      sequence.forEach((name, idx) => {
+        setTimeout(() => {
+          if (totemNodes[name]) {
+            totemNodes[name].classList.add('illuminated');
+            playSynthesizedSound('glyph');
+            setTimeout(() => {
+              totemNodes[name].classList.remove('illuminated');
+            }, 500);
+          }
+        }, idx * 450);
+      });
+
+      // 最後銀蛇圖騰恆亮，地面符文與信標光束亮起
+      setTimeout(() => {
+        if (totemNodes['snake']) {
+          totemNodes['snake'].classList.add('active-snake-glow');
+        }
+        if (serpentAmuletGlow) {
+          serpentAmuletGlow.classList.add('active');
+        }
+        if (beaconBeamLine) {
+          beaconBeamLine.classList.add('active');
+        }
+        if (groundRunesLayer) {
+          groundRunesLayer.classList.add('active');
+        }
+
+        beaconEffectLog.innerHTML = '✨ <strong>［信標已啟動］</strong> 冷銀光束刺破夜霧直貫穹頂！鼻鼻的銀蛇護符強烈共鳴發光！';
+        playSynthesizedSound('whisper');
+      }, sequence.length * 450 + 200);
+    });
+  }
+
+  // 帕帕戰鬥敘事互動按鈕
+  const cmdShield = document.getElementById('cmd-shield');
+  const cmdSlash = document.getElementById('cmd-slash');
+  const cmdEscape = document.getElementById('cmd-escape');
+  const battleNarrativeLog = document.getElementById('battle-narrative-log');
+
+  if (cmdShield) {
+    cmdShield.addEventListener('click', () => {
+      playSynthesizedSound('shieldBlock');
+      battleNarrativeLog.innerHTML = '🛡️ <strong>【舉盾】</strong> 帕帕挺身而出，揮舞古代守頁重盾接下蒼藍狂雷！盾面上古代文字『吾等守護真相，而非王冠』熠熠生輝！';
+    });
+  }
+
+  if (cmdSlash) {
+    cmdSlash.addEventListener('click', () => {
+      playSynthesizedSound('silverFlame');
+      battleNarrativeLog.innerHTML = '⚔️ <strong>【斬斷術式】</strong> 帕帕拔出古代長劍，純白銀聖焰（誓約之焰）破空而出，硬生生斬斷了十餘名帝國術士的交織魔法陣！';
+    });
+  }
+
+  if (cmdEscape) {
+    cmdEscape.addEventListener('click', () => {
+      playSynthesizedSound('horseHooves');
+      battleNarrativeLog.innerHTML = '🐎 <strong>【撤離山丘】</strong> 帕帕引導銀白聖火化為火牆阻斷追兵道路，護送鼻鼻與汎汎縱馬突破包圍圈，直奔西方！';
+    });
+  }
+
+  // 第三章未開放提示按鈕
+  const btnCh3Teaser = document.getElementById('btn-ch3-teaser');
+  const ch3Notice = document.getElementById('ch3-notice');
+
+  if (btnCh3Teaser) {
+    btnCh3Teaser.addEventListener('click', () => {
+      if (ch3Notice) {
+        ch3Notice.style.display = 'block';
+        playSynthesizedSound('omenChime');
+      }
+    });
+  }
+
+  // =========================================================================
+  // 八、第三章（沉睡的蒼龍）互動邏輯：萬魂回聲儀式、莉亞救援與銀瞳蒼龍降臨
+  // =========================================================================
+  const stepLightLamp = document.getElementById('step-light-lamp');
+  const stepWakeBattlefield = document.getElementById('step-wake-battlefield');
+  const stepListenDead = document.getElementById('step-listen-dead');
+  const stepConnectMemory = document.getElementById('step-connect-memory');
+  const ritualStatusLog = document.getElementById('ritual-status-log');
+  const ancientMemoryRealm = document.getElementById('ancient-memory-realm');
+  const ancientMemoryVignette = document.getElementById('ancient-memory-vignette');
+
+  if (stepLightLamp) {
+    stepLightLamp.addEventListener('click', () => {
+      playSynthesizedSound('soulLamp');
+      stepLightLamp.disabled = true;
+      stepWakeBattlefield.disabled = false;
+      ritualStatusLog.innerHTML = '🕯️ <strong>［STEP 1］</strong> 古老魂燈點亮！幽藍色的冥火在濃霧中綻放安息微光……';
+    });
+  }
+
+  if (stepWakeBattlefield) {
+    stepWakeBattlefield.addEventListener('click', () => {
+      playSynthesizedSound('echoesRitual');
+      stepWakeBattlefield.disabled = true;
+      stepListenDead.disabled = false;
+      ritualStatusLog.innerHTML = '👻 <strong>［STEP 2］</strong> 古戰場地脈響應！數千沉睡的逝者殘魂浮出地面……';
+    });
+  }
+
+  if (stepListenDead) {
+    stepListenDead.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      stepListenDead.disabled = true;
+      stepConnectMemory.disabled = false;
+      ritualStatusLog.innerHTML = '🎻 <strong>［STEP 3］</strong> 鼻鼻的萬聲之耳啟動！萬千死者臨終前的微弱殘音匯聚成波紋……';
+    });
+  }
+
+  if (stepConnectMemory) {
+    stepConnectMemory.addEventListener('click', () => {
+      playSynthesizedSound('ancientMemory');
+      stepConnectMemory.disabled = true;
+      ritualStatusLog.innerHTML = '✨ <strong>［STEP 4］</strong> 萬魂回聲共鳴成功！時空記憶倒流，跨越九百年歲月！';
+
+      if (ancientMemoryVignette) ancientMemoryVignette.classList.add('active');
+
+      setTimeout(() => {
+        if (ancientMemoryRealm) {
+          ancientMemoryRealm.style.display = 'block';
+          ancientMemoryRealm.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1000);
+    });
+  }
+
+  // 鼻鼻救援莉亞互動按鈕
+  const btnCorrectLeah = document.getElementById('btn-correct-leah');
+  const rescueFeedbackLog = document.getElementById('rescue-feedback-log');
+  const wrongVoices = document.querySelectorAll('.wrong-v');
+
+  wrongVoices.forEach(btn => {
+    btn.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      rescueFeedbackLog.innerHTML = '❌ 不是這個聲音！冥界雜音干擾中……鼻鼻需要更專注！';
+    });
+  });
+
+  if (btnCorrectLeah) {
+    btnCorrectLeah.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      playSynthesizedSound('soulLamp');
+      btnCorrectLeah.style.background = 'rgba(56, 189, 248, 0.4)';
+      rescueFeedbackLog.innerHTML = '✨ <strong>【救援成功！】</strong> 鼻鼻一把抓住了莉亞「我還沒死」的微弱聲音，成功將她的意識拉回現實！';
+    });
+  }
+
+  // 天穹龍墓蒼龍降臨見證按鈕
+  const btnWitnessDragon = document.getElementById('btn-witness-dragon');
+  const dragonAwakeningStage = document.getElementById('dragon-awakening-stage');
+  const silverEyesBox = document.getElementById('silver-eyes-box');
+
+  if (btnWitnessDragon) {
+    btnWitnessDragon.addEventListener('click', () => {
+      playSynthesizedSound('dragonRoar');
+      btnWitnessDragon.style.display = 'none';
+
+      if (dragonAwakeningStage) {
+        dragonAwakeningStage.style.display = 'block';
+        dragonAwakeningStage.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      setTimeout(() => {
+        playSynthesizedSound('silverGlow');
+        if (silverEyesBox) {
+          silverEyesBox.classList.add('illuminated');
+        }
+      }, 1800);
+    });
+  }
+
+  // 第四章預告按鈕
+  const btnCh4Teaser = document.getElementById('btn-ch4-teaser');
+  const ch4Notice = document.getElementById('ch4-notice');
+
+  if (btnCh4Teaser) {
+    btnCh4Teaser.addEventListener('click', () => {
+      if (ch4Notice) {
+        ch4Notice.style.display = 'block';
+        playSynthesizedSound('omenChime');
+      }
+    });
+  }
+
+  // =========================================================================
+  // 九、章節分頁切換系統 (Chapter Pagination Manager)
+  // =========================================================================
+  const chapterTabBtns = document.querySelectorAll('.chapter-tab-btn');
+  const chapterPages = document.querySelectorAll('.chapter-page');
+  const switchChBtns = document.querySelectorAll('.switch-ch-btn');
+
+  function switchChapterPage(targetChapterId) {
+    // 隱藏所有分頁
+    chapterPages.forEach(page => {
+      page.classList.remove('active-page');
+    });
+
+    // 取消所有頁籤 active
+    chapterTabBtns.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // 顯示目標分頁
+    const targetPage = document.getElementById(`${targetChapterId}-page`);
+    if (targetPage) {
+      targetPage.classList.add('active-page');
+    }
+
+    // 激活目標標籤
+    const activeTab = document.querySelector(`.chapter-tab-btn[data-chapter="${targetChapterId}"]`);
+    if (activeTab) {
+      activeTab.classList.add('active');
+    }
+
+    // 平滑滾動置頂
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    playSynthesizedSound('glyph');
+  }
+
+  chapterTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const chId = btn.getAttribute('data-chapter');
+      switchChapterPage(chId);
+    });
+  });
+
+  switchChBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const chId = btn.getAttribute('data-target');
+      switchChapterPage(chId);
+    });
+  });
+
+  // =========================================================================
+  // 十、第四章（世界的詠唱者）高潮互動邏輯：汎汎封印失敗、世界詠唱與第一部落幕
+  // =========================================================================
+  const sealBtnBody = document.getElementById('seal-btn-body');
+  const sealBtnDivine = document.getElementById('seal-btn-divine');
+  const sealBtnLeyline = document.getElementById('seal-btn-leyline');
+  const sealStatusLog = document.getElementById('seal-status-log');
+
+  if (sealBtnBody) {
+    sealBtnBody.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      sealBtnBody.disabled = true;
+      sealBtnDivine.disabled = false;
+      sealStatusLog.innerHTML = '🪨 ［第 1 重］ 肉體封印幾何陣圖構建完成！等待定固神性……';
+    });
+  }
+
+  if (sealBtnDivine) {
+    sealBtnDivine.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      sealBtnDivine.disabled = true;
+      sealBtnLeyline.disabled = false;
+      sealStatusLog.innerHTML = '⚡ ［第 2 重］ 神性雷霆鎖鏈貫穿龍脈！準備閉合靈魂鎖環……';
+    });
+  }
+
+  if (sealBtnLeyline) {
+    sealBtnLeyline.addEventListener('click', () => {
+      playSynthesizedSound('doorCrash');
+      sealBtnLeyline.disabled = true;
+      sealStatusLog.innerHTML = '💥 <strong>［封印失敗！］</strong> 蒼龍缺乏靈魂！三重封印無法閉環，秘紋反噬炸裂！銀蛇之頁崩裂出細痕！';
+    });
+  }
+
+  // 世界詠唱【Worldsong】逐句點擊演唱互動
+  const btnWorldsongSing = document.getElementById('btn-worldsong-sing');
+  const songCurrentLine = document.getElementById('song-current-line');
+  const singBtnLabel = document.getElementById('sing-btn-label');
+  const wsProgressFill = document.getElementById('ws-progress-fill');
+  const worldsongGoldAurora = document.getElementById('worldsong-gold-aurora');
+  const whiteFlashOverlay = document.getElementById('white-flash-overlay');
+
+  const worldsongLyrics = [
+    { text: "「蒼龍馭雷而降，」", audio: "worldsong", hint: "✨ 詠唱第二句 ➔" },
+    { text: "「白獅攜日而來，」", audio: "worldsong", hint: "✨ 詠唱第三句 ➔" },
+    { text: "「玄狼行於月影，」", audio: "worldsong", hint: "✨ 詠唱第四句 ➔" },
+    { text: "「朱凰浴火重生，」", audio: "worldsong", hint: "✨ 詠唱第五句 ➔" },
+    { text: "「神鹿守望命運——」", audio: "worldsong", hint: "✨ 唱出失落的名 ➔" },
+    { text: "「——而銀蛇銜尾，守住無人記得的名字！」", audio: "chorusResonance", hint: "✦ 完成世界詠唱 ✦" }
+  ];
+
+  let currentSingStep = 0;
+
+  if (btnWorldsongSing) {
+    btnWorldsongSing.addEventListener('click', () => {
+      if (currentSingStep < worldsongLyrics.length) {
+        const lyricObj = worldsongLyrics[currentSingStep];
+        playSynthesizedSound(lyricObj.audio);
+
+        songCurrentLine.textContent = lyricObj.text;
+        singBtnLabel.textContent = lyricObj.hint;
+
+        currentSingStep++;
+        const pct = (currentSingStep / worldsongLyrics.length) * 100;
+        if (wsProgressFill) wsProgressFill.style.width = `${pct}%`;
+
+        if (worldsongGoldAurora) worldsongGoldAurora.classList.add('active');
+
+        // 最後一句點擊：爆發純白光芒與大合唱效果
+        if (currentSingStep === worldsongLyrics.length) {
+          btnWorldsongSing.disabled = true;
+          playSynthesizedSound('chorusResonance');
+
+          if (whiteFlashOverlay) {
+            whiteFlashOverlay.classList.add('active');
+            setTimeout(() => {
+              whiteFlashOverlay.classList.remove('active');
+            }, 1200);
+          }
+        }
+      }
+    });
+  }
+
+  // =========================================================================
+  // 十一、第二部 第一章（森林正在做夢）互動邏輯
+  // =========================================================================
+  // 1. 屁屁治療失控藤蔓三步驟互動
+  const btnHealStep1 = document.getElementById('btn-heal-step1');
+  const btnHealStep2 = document.getElementById('btn-heal-step2');
+  const btnHealStep3 = document.getElementById('btn-heal-step3');
+  const vineBarFill = document.getElementById('vine-bar-fill');
+  const healingLog = document.getElementById('healing-log');
+
+  if (btnHealStep1) {
+    btnHealStep1.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      btnHealStep1.disabled = true;
+      btnHealStep2.disabled = false;
+      if (vineBarFill) vineBarFill.style.width = '35%';
+      if (healingLog) healingLog.innerHTML = '🌿 <strong>［步驟 1］</strong> 屁屁將手貼於狂暴藤蔓脈絡，感應到內部盤踞的劇痛與銀黑腐蝕氣流……';
+    });
+  }
+
+  if (btnHealStep2) {
+    btnHealStep2.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      btnHealStep2.disabled = true;
+      btnHealStep3.disabled = false;
+      if (vineBarFill) vineBarFill.style.width = '70%';
+      if (healingLog) healingLog.innerHTML = '✨ <strong>［步驟 2］</strong> 屁屁小心翼翼將侵蝕性銀黑力量抽離，藤蔓狂暴抽搐漸趨平緩！';
+    });
+  }
+
+  if (btnHealStep3) {
+    btnHealStep3.addEventListener('click', () => {
+      playSynthesizedSound('natureGlow');
+      btnHealStep3.disabled = true;
+      if (vineBarFill) vineBarFill.style.width = '100%';
+      if (healingLog) healingLog.innerHTML = '🌸 <strong>［修復成功！］</strong> 翠綠生命力注入！藤蔓停止侵蝕村落，鬆開木屋重新化為發香的普通自然植物！';
+    });
+  }
+
+  // 2. 屁屁變身古森巨鹿與魔獸淨化
+  const btnTransformStag = document.getElementById('btn-transform-stag');
+  const beastPurifyPanel = document.getElementById('beast-purify-panel');
+  const btnPurifyCut = document.getElementById('btn-purify-cut');
+  const btnPurifySoothe = document.getElementById('btn-purify-soothe');
+  const btnPurifyRestore = document.getElementById('btn-purify-restore');
+  const purifyStatusBox = document.getElementById('purify-status-box');
+
+  if (btnTransformStag) {
+    btnTransformStag.addEventListener('click', () => {
+      playSynthesizedSound('stagRoar');
+      btnTransformStag.disabled = true;
+      btnTransformStag.innerHTML = '✨ 巨鹿咆哮・自然脈絡共振中！';
+      if (beastPurifyPanel) {
+        beastPurifyPanel.style.display = 'block';
+        beastPurifyPanel.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  if (btnPurifyCut) {
+    btnPurifyCut.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      btnPurifyCut.disabled = true;
+      btnPurifySoothe.disabled = false;
+      if (purifyStatusBox) purifyStatusBox.innerHTML = '⚡ ［第 1 擊］ 古森巨鹿以巨大的樹冠鹿角切斷了灰黑勢力的銀黑控制術式！';
+    });
+  }
+
+  if (btnPurifySoothe) {
+    btnPurifySoothe.addEventListener('click', () => {
+      playSynthesizedSound('natureGlow');
+      btnPurifySoothe.disabled = true;
+      btnPurifyRestore.disabled = false;
+      if (purifyStatusBox) purifyStatusBox.innerHTML = '🦌 ［第 2 擊］ 大地脈絡吟唱！失控的古樹巨人與暴走野獸痛苦平息，眼中猩紅褪去！';
+    });
+  }
+
+  if (btnPurifyRestore) {
+    btnPurifyRestore.addEventListener('click', () => {
+      playSynthesizedSound('pulseGlow');
+      btnPurifyRestore.disabled = true;
+      if (purifyStatusBox) purifyStatusBox.innerHTML = '🌲 <strong>［淨化完成！］</strong> 森脈核心恢復和諧！魔獸全數脫離控制回归森林，世界樹保護完好！';
+    });
+  }
+
+  // 3. 第二部第二章預告按鈕
+  const btnP2Ch2Teaser = document.getElementById('btn-p2ch2-teaser');
+  const p2ch2Notice = document.getElementById('p2ch2-notice');
+
+  if (btnP2Ch2Teaser) {
+    btnP2Ch2Teaser.addEventListener('click', () => {
+      if (p2ch2Notice) {
+        p2ch2Notice.style.display = 'block';
+        playSynthesizedSound('heartbeat');
+      }
     });
   }
 

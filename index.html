@@ -29,7 +29,29 @@
       </div>
 
       <div class="nav-center">
-        <span class="chapter-indicator">第 一 章 ・ 雲川城的吟遊詩人</span>
+        <!-- 章節分頁標籤按鈕 (Chapter Tabs) -->
+        <nav class="chapter-tabs-nav" id="chapter-tabs-nav">
+          <button class="chapter-tab-btn active" data-chapter="ch1">
+            <span class="tab-num">第一章</span>
+            <span class="tab-title">雲川城的吟遊詩人</span>
+          </button>
+          <button class="chapter-tab-btn" data-chapter="ch2">
+            <span class="tab-num">第二章</span>
+            <span class="tab-title">銀蛇之頁與守頁者</span>
+          </button>
+          <button class="chapter-tab-btn" data-chapter="ch3">
+            <span class="tab-num">第三章</span>
+            <span class="tab-title">沉睡的蒼龍</span>
+          </button>
+          <button class="chapter-tab-btn" data-chapter="ch4">
+            <span class="tab-num">第四章</span>
+            <span class="tab-title">世界的詠唱者</span>
+          </button>
+          <button class="chapter-tab-btn" data-chapter="ch5">
+            <span class="tab-num">第二部 第一章</span>
+            <span class="tab-title">森林正在做夢</span>
+          </button>
+        </nav>
       </div>
 
       <div class="nav-right">
@@ -101,6 +123,11 @@
        主體小說滾動故事線
        ============================================== -->
   <main class="novel-main" id="novel-stage">
+
+    <!-- ──────────────────────────────────────────
+         【第一章分頁】 CHAPTER I: THE BARD OF YUNCHUAN
+         ────────────────────────────────────────── -->
+    <div id="ch1-page" class="chapter-page active-page">
 
     <!-- ──────────────────────────────────────────
          一、開場：夜幕下的雲川城 HERO SCENE
@@ -712,15 +739,1121 @@
           <p class="cliffhanger-line line-b" id="ch-line-2">「從來沒有第六個名字。」</p>
         </div>
 
-        <!-- 章節落幕卡 -->
+        <!-- 第一章/第二章前半落幕銜接卡 -->
         <div class="chapter-end-card" id="chapter-end-card">
-          <span class="end-badge">CHAPTER I END</span>
-          <h3 class="end-title">第一章 完</h3>
-          <p class="next-teaser">《第二章：銀蛇之頁》</p>
+          <span class="end-badge">CHAPTER II ・ PART I</span>
+          <h3 class="end-title">第二章（上）：銀蛇之頁</h3>
+          <p class="next-teaser">《第二章（下）：守頁聖騎士》</p>
           
           <div class="end-actions">
-            <button class="parchment-cta-btn" id="btn-next-chapter">
-              <span class="btn-text">繼續旅程 ➔</span>
+            <a href="#scene-chapter2-part2" class="parchment-cta-btn" id="btn-next-chapter">
+              <span class="btn-text">繼續劇情：山丘異象與聖騎士登場 ➔</span>
+            </a>
+            <a href="world.html" class="parchment-btn small-btn">
+              <span>回顧艾瑟蘭世界地圖</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    </div>
+
+    <!-- ──────────────────────────────────────────
+         【第二章分頁】 CHAPTER II: THE SILVER SERPENT PAGE & KEEPERS
+         ────────────────────────────────────────── -->
+    <div id="ch2-page" class="chapter-page">
+
+    <!-- ──────────────────────────────────────────
+         十、第二章（下）：銀蛇之頁異變與神秘聖騎士帕帕登場
+         ────────────────────────────────────────── -->
+    <section id="scene-chapter2-part2" class="scene-section scene-ch2-part2">
+      
+      <!-- 山丘夜色、金屬光束與聖焰氛圍圖層 -->
+      <div class="ch2-hill-backdrop">
+        <div class="hill-night-sky"></div>
+        <div class="hill-city-distant">
+          <div class="city-wall-silhouette"></div>
+          <div class="search-torches"></div>
+        </div>
+        <div class="beacon-beam-line" id="beacon-beam-line"></div>
+        <div class="ground-runes-layer" id="ground-runes-layer"></div>
+        <div class="sky-dragon-shadow" id="sky-dragon-shadow"></div>
+      </div>
+
+      <div class="narrative-wrapper">
+
+        <!-- 場景標記 -->
+        <div class="scene-marker">
+          <span class="marker-tag">第二章（下）</span>
+          <h2 class="marker-title">守頁之誓與銀白聖焰</h2>
+        </div>
+
+        <!-- 一、銀蛇之頁異變 -->
+        <div class="novel-prose-block">
+          <p class="dropcap-paragraph">
+            深夜。寒風獵獵吹過雲川城外的荒丘。
+          </p>
+          <p>
+            鼻鼻與汎汎並肩站在山丘高處。遠方，雲川城的城牆在夜霧中沉寂如黑色巨獸，城頭上成百上千道帝國秘衛的火把如蛇般蠕動，急促的搜索笛聲與號角在空曠的夜色中四處飄散。
+          </p>
+          <p>
+            突然，汎汎手中的「銀蛇之頁」發出了低沉的嗡鳴聲。
+          </p>
+        </div>
+
+        <!-- 六圖騰依序亮起互動展示區 -->
+        <div class="totem-beacon-stage" id="totem-beacon-stage">
+          <div class="beacon-aura-overlay"></div>
+          <p class="stage-instruction">✦ 點擊發光「銀蛇之頁」觸發圖騰共鳴與古老信標 ✦</p>
+          
+          <div class="totem-display-box" id="btn-trigger-beacon">
+            <div class="totem-runes-row">
+              <div class="totem-node node-dragon" id="totem-dragon"><span class="t-icon">🐉</span><span class="t-name">龍</span></div>
+              <div class="totem-node node-lion" id="totem-lion"><span class="t-icon">🦁</span><span class="t-name">獅</span></div>
+              <div class="totem-node node-wolf" id="totem-wolf"><span class="t-icon">🐺</span><span class="t-name">狼</span></div>
+              <div class="totem-node node-phoenix" id="totem-phoenix"><span class="t-icon">🦅</span><span class="t-name">凰</span></div>
+              <div class="totem-node node-deer" id="totem-deer"><span class="t-icon">🦌</span><span class="t-name">鹿</span></div>
+              <div class="totem-node node-snake" id="totem-snake"><span class="t-icon">🐍</span><span class="t-name">蛇</span></div>
+            </div>
+            <div class="serpent-amulet-glow-box" id="serpent-amulet-glow">
+              <span class="amulet-icon">𓆙</span>
+              <span class="amulet-status">鼻鼻胸前銀蛇護符正在劇烈共鳴灼熱！</span>
+            </div>
+          </div>
+
+          <div class="beacon-effect-log" id="beacon-effect-log">
+            等待注入秘法共鳴……
+          </div>
+        </div>
+
+        <!-- 二、汎汎發現銀蛇之頁真正用途 -->
+        <div class="novel-prose-block">
+          <p>
+            只見銀蛇之頁上的龍、獅、狼、凰、鹿五個圖騰依序爆發出絢爛光芒，隨後迅速熄滅，最終唯有最後的「銀蛇」圖騰持續散發著純淨冷冽的淡銀色光暈。古老的符文如游魚般浮空環繞，夜霧被一道幾乎不可見的銀色微光切開，腳下草地的泥土間短暫浮現出巨大古代陣圖，低頻的震動讓草葉輕微抖動。
+          </p>
+          <p>
+            汎汎凝視著這幕異象，眼眸驟縮，突然意識到了什麼。
+          </p>
+          
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「它……它怎麼了？該不會要炸了吧？！」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「這不是單純的記錄……」
+            </div>
+            <div class="dialogue-pause">（汎汎撫摸著溫熱的金屬紋路，稍停良久）</div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「它是信標……它正在呼喚某個人。」
+            </div>
+          </div>
+
+          <p>
+            話音剛落，銀蛇之頁頂端倏地向西方夜空釋出一道微不可察的銀色光束，直貫雲霄！
+          </p>
+        </div>
+
+        <!-- 三與四、神秘騎士登場與視覺細節 -->
+        <div class="novel-prose-block">
+          <p>
+            幾秒鐘後。
+          </p>
+          <p>
+            遠方瀰漫的濃霧深處，傳來了規律沉穩的響聲：
+          </p>
+          <blockquote class="hoof-rhythm">
+            「喀——」<br>
+            「喀——」<br>
+            「喀——」
+          </blockquote>
+          <p>
+            聲音並不急促，完全不像帝國追兵衝鋒的喧囂，而更像是一位早已清楚目的地與等待者的行者，正在不疾不徐地跨霧而來。
+          </p>
+          <p>
+            霧氣翻滾向兩旁裂開。一匹披著銀白色古代甲冑的巨型戰馬緩步走出，戰馬上昂然坐著一名全身籠罩在重甲中的騎士。
+          </p>
+        </div>
+
+        <!-- 帕帕聖騎士視覺卡 -->
+        <div class="character-spotlight-card papa-card">
+          <div class="spotlight-visual">
+            <div class="knight-armor-glow"></div>
+            <div class="lion-serpent-crest">
+              <svg viewBox="0 0 100 100" class="crest-svg">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#d4af37" stroke-width="2"/>
+                <!-- 白獅與銀蛇纏繞徽記 -->
+                <path d="M 50 20 L 65 38 L 50 80 L 35 38 Z" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                <path d="M 30 50 C 50 30, 50 70, 70 50" fill="none" stroke="#cbd1d8" stroke-width="3"/>
+              </svg>
+            </div>
+            <span class="knight-badge">ANCIENT PALADIN</span>
+          </div>
+
+          <div class="spotlight-info">
+            <div class="spotlight-header">
+              <span class="char-role-tag">神秘聖騎士</span>
+              <h3 class="char-title-name">帕帕</h3>
+            </div>
+            
+            <div class="knight-details-grid">
+              <div class="k-detail"><strong>全身裝備：</strong>銀白色古代重甲、深色騎士披風</div>
+              <div class="k-detail"><strong>胸甲印記：</strong>淡金色白獅徽記（周圍纏繞細密銀蛇紋）</div>
+              <div class="k-detail"><strong>佩戴兵器：</strong>腰間古代長劍、左手持大型金屬重盾</div>
+              <div class="k-detail"><strong>盾牌刻印：</strong>『吾等守護真相，而非王冠。』</div>
+              <div class="k-detail"><strong>歲月痕跡：</strong>面容隱於頭盔、鎧甲布滿舊傷疤痕，具強烈古代史詩感</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 五、第一次對峙與幽默互動 -->
+        <div class="novel-prose-block">
+          <p>
+            騎士在離鼻鼻與汎汎十步之外拉住韁繩。他並未立刻拔劍，頭盔暗處的目光首先凝視著汎汎手中的「銀蛇之頁」，接著緩緩移向鼻鼻胸前發光的銀蛇護符。
+          </p>
+          <p>
+            夜風吹過，三人之間保持了長達數秒的沉寂。
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（嚥了口唾沫，打破沉默）「……你也是來抓她的？」
+            </div>
+            <div class="dialogue-pause">（重甲騎士沒有回答，沉穩如山）</div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「還是來抓我的？」
+            </div>
+            <div class="dialogue-pause">（騎士依舊保持沉默）</div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（轉頭小聲對汎汎）「你們穿盔甲的人都這麼不喜歡說話嗎？」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>（冷冷瞪了鼻鼻一眼）「……」
+            </div>
+          </div>
+        </div>
+
+        <!-- 六與七、帕帕第一句話與三百年前的徽記 -->
+        <div class="novel-prose-block">
+          <p>
+            重甲騎士終於開口，他的聲音低沉而富有冰金屬般的共鳴：
+          </p>
+          
+          <blockquote class="papa-first-quote">
+            「銀蛇之頁，終於再次被喚醒了。」
+          </blockquote>
+
+          <p>
+            鼻鼻與汎汎皆是一震。這意味著——這名騎士早在很久以前就知曉銀蛇之頁的存在！
+          </p>
+          <p>
+            汎汎上前半步，雙眸死死盯著騎士胸前的紋章，聲音帶著難以置信的顫抖：
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「你的徽記……這是白獅聖王國舊王朝時期的聖獅紋。」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「妳讀得懂。」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「這種紋章早在三百年前的王朝更迭中就不復存在了！」
+            </div>
+            <div class="dialogue-pause">（山丘上再次陷入短暫沉默）</div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（張大嘴巴，小聲咕囔）「……所以這位先生今年幾歲？」
+            </div>
+          </div>
+        </div>
+
+        <!-- 八與九、守頁騎士團與召喚謎團 -->
+        <div class="novel-prose-block">
+          <p>
+            帕帕並未正面回答年齡，只是緩緩按住劍柄，透露出了被官方歷史抹去的古老真相：
+          </p>
+          <p>
+            在數百年前，曾有一個秘密侍奉六聖誓約的古老騎士團——<strong>「守頁騎士團」（Keepers of the Pages）</strong>。他們的最高使命，便是世世代代守護六件象徵龍、獅、狼、凰、鹿、蛇的古代遺物「聖頁」。而汎汎手中的銀蛇之頁，正是傳說中的第六頁。
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「所以銀蛇之頁剛才把你召喚過來了？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「它不是在呼喚我。」
+            </div>
+            <div class="dialogue-pause">（帕帕停頓片刻，頭盔下的眼神如同沉寂百年的冰川）</div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「它是在確認，我是否還活著。」
+            </div>
+          </div>
+        </div>
+
+        <!-- 十、年齡謎團 -->
+        <div class="novel-prose-block">
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「等等……你剛才說『還活著』？你真的是三百年前的人？！」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「如果守頁騎士團三百年以前就解散了……普通人類絕不可能存活至今。」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「有些誓言，比人的壽命更長。」
+            </div>
+          </div>
+          <p>
+            他沒有解釋自己是否不老、是否曾被封印、抑或是繼承稱號的後人，只是平靜地矗立在風中，讓真相隱沒於沉重的幽暗之中。
+          </p>
+        </div>
+
+        <!-- 十一與十二、帝國秘衛追上與拔劍戰術 -->
+        <div class="novel-prose-block">
+          <p>
+            就在三人交談之際，山丘下方的夜霧突然被熾烈的蒼藍色雷光強行撕裂！
+          </p>
+          <p>
+            無數帝國馬蹄聲與號角聲鋪天蓋地而來，數十名帝國術士吟唱著咒文，蒼藍色的雷霆在半空交織成天羅地網。帝國秘衛軍官在遠處厲聲喝道：「交出逆賊汎汎與禁忌之頁！否則全數格殺！」
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「你們把整座城的秘衛都引來了。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「她引來的！」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「剛才那條密道是你用琴聲打開的。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「……那一半一半好了！」
+            </div>
+          </div>
+
+          <p>
+            帕帕沒有再多言。他緩步前踏，右手按上了腰間古代長劍的劍柄。
+          </p>
+          <p>
+            「錚——！」
+          </p>
+          <p>
+            長劍出鞘的瞬間，騰起的火焰並非現代白獅聖王國常見的陽光金焰，而是一股純淨無瑕的<strong>「銀白色聖焰」（誓約之焰）</strong>！銀白火光沿著古老劍身噴湧而出，將籠罩山丘的夜霧瞬間蒸散！
+          </p>
+        </div>
+
+        <!-- 十三與十四、戰鬥敘事互動選單 (無 RPG 數值，純敘事體驗) -->
+        <div class="interactive-battle-stage" id="interactive-battle-stage">
+          <div class="battle-header">
+            <h4>【 突破帝國重圍 ・ 聖騎士的誓約戰場 】</h4>
+            <p>點擊戰術指令，指揮帕帕施展失傳的古代聖騎士法則：</p>
+          </div>
+
+          <div class="battle-actions-grid">
+            <button class="battle-cmd-btn" id="cmd-shield">
+              <span class="cmd-icon">🛡️</span>
+              <span class="cmd-title">舉盾擋雷</span>
+              <span class="cmd-desc">帕帕提起守頁重盾，以神聖壁障化解蒼藍雷擊</span>
+            </button>
+            <button class="battle-cmd-btn" id="cmd-slash">
+              <span class="cmd-icon">⚔️</span>
+              <span class="cmd-title">斬斷術式</span>
+              <span class="cmd-desc">揮動銀白聖焰，切斷帝國術士陣法與連鎖魔法</span>
+            </button>
+            <button class="battle-cmd-btn" id="cmd-escape">
+              <span class="cmd-icon">🐎</span>
+              <span class="cmd-title">撤離山丘</span>
+              <span class="cmd-desc">以聖火阻斷追兵道路，護送三人衝出包圍圈</span>
+            </button>
+          </div>
+
+          <div class="battle-narrative-log" id="battle-narrative-log">
+            帝國術士正在施放蒼藍雷陣！請選擇戰術行動……
+          </div>
+        </div>
+
+        <!-- 十五與十六、目的地與三人正式組隊 -->
+        <div class="novel-prose-block">
+          <p>
+            銀白聖焰在山丘上拉出一道無法逾越的火牆，帝國秘衛與追兵被迫退避。
+          </p>
+          <p>
+            帕帕收劍入鞘，看向鼻鼻與汎汎，提出了新的旅途方向：
+          </p>
+          <p class="dialogue-line">
+            「離開蒼龍帝國。前往西方<strong>白獅聖王國</strong>。在那裡，保留著一座未被破壞的『守頁騎士團地下聖堂』。」
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>（依然保持警戒）「為什麼我們要相信你？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「妳不需要相信我。」
+            </div>
+            <div class="dialogue-pause">（帕帕低頭看向汎汎手中的銀蛇之頁）</div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「相信它。」
+            </div>
+          </div>
+
+          <!-- 三人冒險小隊卡組 (聲音、文字、誓約) -->
+          <div class="party-trio-card">
+            <h4 class="trio-title">✦ 艾瑟蘭旅人隊伍結成 ✦</h4>
+            <div class="trio-grid">
+              <div class="trio-member bibi-m">
+                <span class="m-icon">🎻</span>
+                <h5 class="m-name">鼻鼻</h5>
+                <span class="m-symbol">【 聲音 】</span>
+                <p class="m-ability">聽見被遺忘的遠古歷史與韻律</p>
+              </div>
+              <div class="trio-member fanfan-m">
+                <span class="m-icon">📜</span>
+                <h5 class="m-name">汎汎</h5>
+                <span class="m-symbol">【 文字 】</span>
+                <p class="m-ability">破譯古代符號、遺跡與禁忌文獻</p>
+              </div>
+              <div class="trio-member papa-m">
+                <span class="m-icon">🛡️</span>
+                <h5 class="m-name">帕帕</h5>
+                <span class="m-symbol">【 誓約 】</span>
+                <p class="m-ability">守護失落真相與三百年守頁使命</p>
+              </div>
+            </div>
+            <p class="trio-footer-concept">「聲音、文字、誓約 —— 三者共同拼湊被抹去的世界歷史。」</p>
+          </div>
+        </div>
+
+        <!-- 十七與十八、幽默互動與古代旋律伏筆 -->
+        <div class="novel-prose-block">
+          <p>
+            三人避開追兵連夜西行。迎著晨曦的微光，鼻鼻看著身旁高大的重甲騎士，忍不住抓了抓頭髮：
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「我昨天最大的煩惱還是下個月的房租。」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「現在呢？」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「現在比較想知道，自己為什麼會被一個三百歲的騎士救了。」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「我沒有說我三百歲。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「你也沒有否認啊！」
+            </div>
+          </div>
+
+          <p>
+            準備跨過高地邊界時，帕帕突然停下馬步，回頭叫住了鼻鼻：
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「吟遊詩人。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「嗯？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「剛才那首歌……你從哪裡學來的？」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「哪一首？在酒館打開地道的那一首？我根本沒學過啊，當時緊張得要命，手指自然就彈出來了。」
+            </div>
+            <div class="dialogue-pause">（帕帕陷入了長久的沉默，雙眼望向遠方）</div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「果然……」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「果然什麼啊？餵！為什麼你們兩個都喜歡講話講一半啊？！」
+            </div>
+          </div>
+
+          <p>
+            汎汎與帕帕皆沒有回答，只是繼續默默前行。
+          </p>
+        </div>
+
+        <!-- 十九、新章終局：蒼龍甦醒異象 -->
+        <div class="novel-prose-block">
+          <p>
+            三人抵達高地山脊，回首遙望，遠方的雲川城已化為地平線上微小的廓影。
+          </p>
+          <p>
+            帕帕突然再次勒馬停步，眉頭緊鎖。
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「太快了……」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「什麼太快？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「銀蛇之頁……它不應該這麼早甦醒。」
+            </div>
+          </div>
+
+          <p>
+            「轟隆隆隆————！」
+          </p>
+          <p>
+            就在這一瞬間，東方雲川城上空的穹頂爆發出撕裂天地的巨大蒼藍色雷光！天空中翻湧的積雨雲層內，短暫地透出了一尊橫跨數里的巨大蒼龍輪廓——那不是實體，而是宛如神明甦醒的萬丈投影！
+          </p>
+          <p>
+            帕帕望著天空中的蒼龍神影，低聲道：
+          </p>
+
+          <blockquote class="dragon-awakening-quote">
+            「看來……第一位守門者，也醒了。」
+          </blockquote>
+        </div>
+
+        <!-- 二十、第二章完與銜接第三章按鈕 -->
+        <div class="chapter-end-card part2-end-card">
+          <span class="end-badge">CHAPTER II END</span>
+          <h3 class="end-title">《第二章 完》</h3>
+          <p class="next-teaser">下一章：《第三章：沉睡的蒼龍》</p>
+          
+          <div class="end-actions">
+            <a href="#scene-chapter3" class="parchment-cta-btn" id="btn-enter-ch3">
+              <span class="btn-text">繼續旅程：進入第三章 ➔</span>
+            </a>
+            <a href="world.html" class="parchment-btn small-btn">
+              <span>查看世界地圖與守頁歷史</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    </div>
+
+    <!-- ==========================================================================
+         【第三章分頁】 CHAPTER III: THE SLEEPING AZURE DRAGON
+         ========================================================================== -->
+    <div id="ch3-page" class="chapter-page">
+
+    <!-- ==========================================================================
+         【第三章：沉睡的蒼龍】 CHAPTER III: THE SLEEPING AZURE DRAGON
+         ========================================================================== -->
+    <section id="scene-chapter3" class="scene-section scene-chapter-3">
+      
+      <!-- 第三章背景氛圍層 (雷雲、幽魂靈光、極速時空穿梭) -->
+      <div class="ch3-ambient-backdrop">
+        <div class="thunder-cloud-layer"></div>
+        <div class="ghost-particle-canvas-overlay" id="ghost-particle-overlay"></div>
+        <div class="ancient-memory-vignette" id="ancient-memory-vignette"></div>
+      </div>
+
+      <div class="narrative-wrapper">
+
+        <!-- ==============================================
+             一、第三章開場蒙太奇：異常的東方
+             ============================================== -->
+        <div class="scene-marker ch3-marker">
+          <span class="marker-tag">CHAPTER III</span>
+          <h2 class="marker-title">第三章：沉睡的蒼龍</h2>
+          <span class="marker-sub">CHAPTER III ・ THE SLEEPING AZURE DRAGON</span>
+        </div>
+
+        <div class="chapter-opening-hero-card">
+          <div class="location-stamp-box">
+            <span class="loc-tag">蒼龍帝國・西境</span>
+            <span class="loc-divider">✦</span>
+            <span class="loc-omen">天地異象</span>
+          </div>
+
+          <h3 class="opening-hero-headline">「神正在甦醒。」</h3>
+          
+          <div class="opening-montage-grid">
+            <div class="montage-item">
+              <span class="m-icon">🌩️</span>
+              <p>原本晴朗的天空長時間籠罩厚重雷雲，無雨卻晝夜迴響著沉悶遠雷</p>
+            </div>
+            <div class="montage-item">
+              <span class="m-icon">✨</span>
+              <p>山川間的深層龍脈出現脈衝式異常發光，古老廢棄神殿石門自行轟然開啟</p>
+            </div>
+            <div class="montage-item">
+              <span class="m-icon">🪨</span>
+              <p>各城鎮蒼龍祭壇自中央裂開，夜間不斷有人宣稱聽見故去親人的悲戚呼喚</p>
+            </div>
+            <div class="montage-item">
+              <span class="m-icon">👻</span>
+              <p>死亡多年的故人頻繁出現在活人夢境中，荒野古墓附近湧現大量青白色幽光</p>
+            </div>
+          </div>
+
+          <div class="opening-suspense-box">
+            <p class="suspense-line line-1">「神正在甦醒。」</p>
+            <div class="suspense-divider"></div>
+            <p class="suspense-line line-2">「但若牠正在復活——」</p>
+            <p class="suspense-line line-3"><strong>「那麼牠曾經死過。」</strong></p>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             二、帕帕察覺不對
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p class="dropcap-paragraph">
+            三人佇立在高地西行幹道的石碑旁。帕帕勒馬停步，深邃的目光長時間注視著東方雲層中瘋狂翻湧的蒼藍雷電，久久一言不發。
+          </p>
+          <p>
+            他經歷過那段漫長的歷史，非常明確地知曉——這絕不是帝國官刊所歌頌的「祥瑞神蹟」。
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（看著遠方滿天雷光，抓了抓頭髮）「所以……這是好事嗎？蒼龍保佑，帝國該不會要普天同慶了吧？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「不是。」
+            </div>
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「蒼龍甦醒不是蒼龍帝國千年以來一直在祈禱等待的神蹟嗎？為什麼你的神情如此嚴峻？」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>（手按古代長劍，聲音低沉得如同萬丈冰谷）「聖獸不該用『復活』這個詞。」
+            </div>
+            <div class="dialogue-pause">（夜風肅殺，山丘上死一般寂靜）</div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span><strong>「除非……牠曾經死過。」</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             三、遭遇異常小鎮：灰渡鎮
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            為了避開帝國在幹道上的卡點，三人轉入了一條沿著兩百年前古戰場遺跡延伸的荒僻小徑。深夜時分，一座被濃厚白霧籠罩的小鎮出現在前方——<strong>「灰渡鎮」</strong>。
+          </p>
+          <p>
+            這座由黑石砌成的老街沉靜得可怕。街道兩旁是年久失修、布滿斑駁苔蘚的蒼龍祭壇，遠方則是兩百年前帝國內戰留下的廢棄戰爭紀念碑與綿延數里的古老墓園。
+          </p>
+          <p>
+            鎮上的窗戶緊閉，但空氣中卻飄散著絲絲縷縷不屬於陽世的寒意。
+          </p>
+        </div>
+
+        <!-- ==============================================
+             四、鼻鼻的萬聲之耳失控 (大量幽魂短句震撼視效)
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            當三人踏入舊戰場邊緣的死寂墓園時，周圍的空氣溫度驟降至冰點！
+          </p>
+          <p>
+            數以千計半透明的青白色幽魂突兀地自地底與墓碑後升起。這一刻，鼻鼻的<strong>「萬聲之耳」</strong>遭遇了前所未有的劇烈衝擊！
+          </p>
+        </div>
+
+        <div class="bibi-overload-stage" id="bibi-overload-stage">
+          <div class="overload-blur-overlay"></div>
+          <div class="whispering-voices-container">
+            <span class="ghost-whisper w1">「別丟下我……」</span>
+            <span class="ghost-whisper w2">「母親……水……給我水……」</span>
+            <span class="ghost-whisper w3">「守住城門！絕對不能退！」</span>
+            <span class="ghost-whisper w4">「退！快退啊！」</span>
+            <span class="ghost-whisper w5">「我還不想死……家裡的麥子剛熟啊……」</span>
+            <span class="ghost-whisper w6">「我的槍呢？！誰拿走了我的槍？！」</span>
+            <span class="ghost-whisper w7">「放過我的孩子……求求你們……」</span>
+          </div>
+
+          <div class="overload-core-box">
+            <span class="warning-tag">⚠️ 萬聲之耳感官失控中 ⚠️</span>
+            <h4 class="overload-title">【 鼻鼻的意識正在被千魂淹沒 】</h4>
+            <p class="overload-desc">無數臨死前的哀嚎、求救與互相重疊的悲痛記憶如巨浪般湧入鼻鼻的腦海，現實與過去的界線瞬間模糊！</p>
+          </div>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            鼻鼻痛苦地捂住雙耳，跪倒在地，冷汗浸透了舊斗篷。汎汎急忙伸手扶住他，焦急地大喊他的名字，但她的聲音在數千死者重疊的巨浪面前顯得如此渺小無力。
+          </p>
+        </div>
+
+        <!-- ==============================================
+             五與六、神秘死靈法師「莉亞」登場
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            帕帕眼神一冷，拔出古代長劍！璀璨的銀白聖焰再次轟然點亮夜空，重盾橫在前地。在聖騎士的眼中，如此龐大的亡靈潮隨時會衝垮活人的意志。
+          </p>
+          <p>
+            就在帕帕準備揮劍驅散亡靈的千鈞一髮之際——
+          </p>
+          <p class="dialogue-line">
+            「不要傷害他們。」
+          </p>
+          <p>
+            清冷、安靜而極具沉靜張力的女子聲音從濃霧與墓碑深處徐徐傳來。
+          </p>
+          <p>
+            所有人瞬間停下了動作。
+          </p>
+        </div>
+
+        <!-- 莉亞角色焦點卡 -->
+        <div class="character-spotlight-card leah-card">
+          <div class="spotlight-visual">
+            <div class="soul-lamp-glow-effect">
+              <div class="lamp-blue-fire"></div>
+            </div>
+            <span class="knight-badge necromancer-badge">NECROMANCER</span>
+          </div>
+
+          <div class="spotlight-info">
+            <div class="spotlight-header">
+              <span class="char-role-tag">渡魂者 ・ 死靈法師</span>
+              <h3 class="char-title-name">莉亞</h3>
+            </div>
+            
+            <div class="knight-details-grid">
+              <div class="k-detail"><strong>外觀特徵：</strong>黑灰色莊重長袍、深色長髮、氣質冷峻成熟</div>
+              <div class="k-detail"><strong>持有法器：</strong>細長死靈法杖、古老魂燈（燃燒幽藍色火焰）</div>
+              <div class="k-detail"><strong>符號印記：</strong>衣袍紋有生死循環、骨紋與月相圓環</div>
+              <div class="k-detail"><strong>核心理念：</strong>『死亡不是詛咒，死亡不是邪惡；強行打破生死平衡才是危險。』</div>
+              <div class="k-detail"><strong>代表名言：</strong>『活人會修改歷史，死者沒有這個必要。』</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            女子緩步走入如海般的幽魂之中。她抬起手中的古老魂燈輕輕一敲，法杖在地面發出清脆的叮噹聲。剎那間，原本躁動不安的千百亡靈彷彿得到了安撫，紛紛平靜地漂浮在她的身側。
+          </p>
+        </div>
+
+        <!-- ==============================================
+             七與八、莉亞的代表台詞與生死平衡理念
+             ============================================== -->
+        <div class="novel-prose-block">
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>（並未放下長劍）「他們正在攻擊活人。」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「不是。」
+            </div>
+            <div class="dialogue-pause">（莉亞抬頭看向東方夜空中翻滾的蒼藍雷雲）</div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span><strong>「有人正在叫醒他們。」</strong>
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「亡者不會無緣無故重返陽世。有人在從死亡的另一側……強行拉扯他們的靈魂。」
+            </div>
+          </div>
+
+          <p>
+            莉亞看著警惕的三人，聲音波瀾不驚：
+          </p>
+          <blockquote class="leah-philosophy-quote">
+            「死亡不是詛咒。死亡是大地與時間最沉靜的安息。<br>
+            有時候，讓死者離開，才是對生命真正的慈悲。」
+          </blockquote>
+        </div>
+
+        <!-- ==============================================
+             九與十、莉亞推斷蒼龍正在被復活與最大矛盾
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            莉亞緩緩高舉魂燈。只見四野游離的無數淡藍色幽魂光流，竟全都在不自主地朝著東方天空匯聚而去！
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「妳的意思是……這股萬魂倒流的異象……」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「有一股極為浩瀚而龐大的生命能量，正在逆向穿越生死冥界。有人正在復活某個極其古老的存在。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（稍微清醒過來，揉著太陽穴）「復活什麼東西？帝國皇帝嗎？」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「如果我的判斷沒有錯——是你們蒼龍帝國的神：<strong>蒼天龍・奧爾雷恩</strong>。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「等等！蒼龍不是五聖神話裡的至高神嗎？！神也會死嗎？！」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>（幽藍雙眸直視鼻鼻）「所以我才想知道——<strong>牠究竟是怎麼死的。</strong>」
+            </div>
+          </div>
+
+          <p>
+            一個震撼的共識在四人心中形成：若要阻止東方的災厄，必須先找出九百年前「蒼龍死亡」的真正真相！
+          </p>
+        </div>
+
+        <!-- ==============================================
+             十一與十二、禁忌秘術：萬魂回聲 (Echoes of the Departed)
+             ============================================== -->
+        <div class="novel-prose-block">
+          <div class="dialogue-group">
+            <div class="dialogue-bubble fanfan-talk">
+              <span class="talker">汎汎：</span>「如果蒼龍真的曾在歷史中死亡過，那必然發生在九百年前的無星紀元末期……現代的所有官方文獻早已被帝國塗改或焚毀。」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「活人的歷史會說謊。死者通常不需要。」
+            </div>
+          </div>
+
+          <p>
+            莉亞準備施展各國魔法聖殿明令封禁的禁忌死靈術——<strong>「萬魂回聲」（Echoes of the Departed）</strong>。這項秘術並非真正召喚亡者復生，而是短暫打開這片土地上沉澱百年的「亡者記憶層」，讓逝者殘留的視覺與感官重現！
+          </p>
+
+          <!-- 四人分工結構圖 -->
+          <div class="four-roles-card">
+            <h4 class="four-roles-title">✦ 九百年前真相破譯・四位探求者 ✦</h4>
+            <div class="four-roles-grid">
+              <div class="role-box"><strong>莉亞</strong><span>【 死亡 】</span><p>開啟亡者記憶層與通冥介質</p></div>
+              <div class="role-box"><strong>鼻鼻</strong><span>【 聲音 】</span><p>聆聽亡者留下的失落殘音與語調</p></div>
+              <div class="role-box"><strong>汎汎</strong><span>【 文字 】</span><p>破譯記憶中的古代符文與封印陣圖</p></div>
+              <div class="role-box"><strong>帕帕</strong><span>【 誓約/見證 】</span><p>辨認九百年前歷史人物與騎士團真相</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             十三與十四、禁術警告與互動儀式 (Echoes of the Departed Stage)
+             ============================================== -->
+        <div class="novel-prose-block">
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>（按住劍柄）「這種術法不是普通死靈術。使用者隨時會被冥界吞噬。」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「我知道。」
+            </div>
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「妳可能回不來。」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>「所以才叫禁術。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「你們這些會魔法的人，為什麼每次都要挑最危險的方法啊？！」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>（看鼻鼻一眼）「因為安全的方法通常找不到真相。」
+            </div>
+          </div>
+        </div>
+
+        <!-- 萬魂回聲互動儀式卡 -->
+        <div class="echoes-ritual-stage" id="echoes-ritual-stage">
+          <div class="ritual-header">
+            <h4>【 禁忌秘術 ・ 萬魂回聲儀式 】</h4>
+            <p>請依序點擊下方符印，引導莉亞與三人共鳴，跨越九百年時空冥界：</p>
+          </div>
+
+          <div class="ritual-steps-grid">
+            <button class="ritual-step-btn" id="step-light-lamp">
+              <span class="step-num">STEP 1</span>
+              <span class="step-title">點亮魂燈</span>
+              <span class="step-desc">喚醒幽藍冥火</span>
+            </button>
+            <button class="ritual-step-btn" id="step-wake-battlefield" disabled>
+              <span class="step-num">STEP 2</span>
+              <span class="step-title">喚醒古戰場</span>
+              <span class="step-desc">引導地脈亡魂</span>
+            </button>
+            <button class="ritual-step-btn" id="step-listen-dead" disabled>
+              <span class="step-num">STEP 3</span>
+              <span class="step-title">聆聽亡者</span>
+              <span class="step-desc">開啟萬聲共鳴</span>
+            </button>
+            <button class="ritual-step-btn" id="step-connect-memory" disabled>
+              <span class="step-num">STEP 4</span>
+              <span class="step-title">連結記憶</span>
+              <span class="step-desc">步入九百年前歷史</span>
+            </button>
+          </div>
+
+          <div class="ritual-status-log" id="ritual-status-log">
+            等待點亮古老魂燈……
+          </div>
+        </div>
+
+        <!-- ==============================================
+             十五與十六、進入九百年前記憶與召喚蒼龍大祭司
+             ============================================== -->
+        <div class="ancient-memory-realm" id="ancient-memory-realm" style="display:none;">
+          <div class="realm-era-badge">ANCIENT MEMORY LAYER ・ 900 YEARS AGO</div>
+          
+          <div class="novel-prose-block">
+            <p class="dropcap-paragraph">
+              周圍的荒丘與黑石小鎮瞬間褪色坍塌！取而代之的，是九百年前巍峨浩大的蒼龍中央神殿。浮空石柱聳立於雲霄之間，無數身穿雷紋祭袍的古代祭司與守頁騎士團重甲戰士列陣於前。空中，天空被遮天蔽日的蒼藍雷暴撕裂，一尊巨型蒼龍正發出痛苦狂暴的哀鳴！
+            </p>
+            <p>
+              莉亞的法杖在冥界記憶中引導，一位高大的虛影自無數亡者中緩緩走出——<strong>九百年前的「蒼龍大祭司」</strong>。他身穿古代蒼龍祭袍，戴著雷紋頭冠，神情疲憊而悲滄，胸前殘留著當年致命的戰鬥傷痕。
+            </p>
+            <p>
+              大祭司睜開半透明的雙眸，看著眼前的後世四人，開口的第一句話絕非歌頌，而是發自靈魂深處的顫抖：
+            </p>
+
+            <blockquote class="ancient-priest-first-quote">
+              「你們……為什麼要把牠叫醒？！」
+            </blockquote>
+          </div>
+
+          <!-- ==============================================
+               十七與十八、震撼揭露：我們親手殺了牠
+               ============================================== -->
+          <div class="novel-prose-block">
+            <div class="dialogue-group">
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>「大祭司大人！蒼龍難道不是開闢大地、守護艾瑟蘭的至高聖獸嗎？為什麼您會說這樣的話？！」
+              </div>
+            </div>
+
+            <div class="revelation-silence-box">
+              <div class="priest-sad-look">（大祭司露出了極度悲傷與苦澀的笑容）</div>
+              <h3 class="shocking-truth-text">「守護？」</h3>
+              <div class="truth-pause-space"></div>
+              <h2 class="shocking-main-truth"><strong>「是我們親手殺了牠。」</strong></h2>
+            </div>
+
+            <div class="novel-prose-block">
+              <p>
+                這震撼的揭露如重錘敲擊在所有人心中！
+              </p>
+              <p>
+                大祭司的記憶殘片在四人面前徐徐展開：九百年前，五大聖獸完成鎮壓邪蛇的巨大封印之後，蒼龍成為了第一個發生恐怖異變的聖獸！牠開始瘋狂吸收整座大地的龍脈能量，神智徹底失控——因為牠的神聖意識，遭到了某種<strong>「不可名狀的未知存在」</strong>嚴重侵蝕！
+              </p>
+              <p>
+                為了防止失控的蒼龍毀滅整個世界，當時的蒼龍大祭司團與侍奉盟約的「守頁騎士團」付出了極其慘烈的代價，聯手做出了最後的絕望決定：<strong>殺死蒼龍。</strong>
+              </p>
+            </div>
+
+            <!-- ==============================================
+                 十九、三重封印與人為復活
+                 ============================================== -->
+            <div class="novel-prose-block">
+              <p>
+                大祭司繼續說道：聖獸乃天地法則所化，無法像普通生物般徹底消滅。因此，古代勇士們將蒼龍分拆為三部分：<strong>【肉體】、【靈魂】、【神性】</strong>，分別封印在大陸的三處禁地。唯有三者重新結合，蒼龍才能重現陽世。
+              </p>
+              <p>
+                「而如今……」大祭司指向東方沸騰的雷雲：「有人正在秘密破壞這三重封印！現在世上發生的根本不是自然甦醒……而是<strong>『人為復活』</strong>！」
+              </p>
+            </div>
+
+            <!-- ==============================================
+                 二十與二十一、帕帕的過去被看見與銀蛇之頁的封印記憶
+                 ============================================== -->
+            <div class="novel-prose-block">
+              <p>
+                在記憶光流的邊緣，鼻鼻突然凝視著神殿前線的一名年輕騎士。
+              </p>
+              <p>
+                那是一名穿著完整守頁騎士團鎧甲、面容英挺肅穆的年輕戰士，正與同伴手持誓約長劍鎮守祭壇。鼻鼻猛地轉頭看向身旁現在的重甲帕帕，又看了看記憶中的騎士：
+              </p>
+
+              <div class="dialogue-group">
+                <div class="dialogue-bubble bibi-talk">
+                  <span class="talker">鼻鼻：</span>「……等等。帕帕……那個人是你？！」
+                </div>
+                <div class="dialogue-bubble papa-talk">
+                  <span class="talker">帕帕：</span>（沒有否認，只是沉靜地看著記憶中的自己）「……」
+                </div>
+                <div class="dialogue-bubble bibi-talk">
+                  <span class="talker">鼻鼻：</span>「所以你真的活了超過九百年？！我的天啊！」
+                </div>
+                <div class="dialogue-bubble papa-talk">
+                  <span class="talker">帕帕：</span>「現在是討論這件事情的時候嗎？」
+                </div>
+                <div class="dialogue-bubble bibi-talk">
+                  <span class="talker">鼻鼻：</span>「我只是終於得到確切答案了……」
+                </div>
+              </div>
+
+              <p>
+                與此同時，汎汎看到記憶中的一位守頁者將「銀蛇之頁」按入古代祭壇，銀色紋路爆發出耀眼鎖鏈束縛住了狂暴的蒼龍！這確鑿地證明：<strong>銀蛇之頁曾深度參與過聖獸封印！</strong>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==============================================
+             二十二至二十五、莉亞失控與鼻鼻救援 (Interactive Rescue)
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            萬魂回聲持續時間過長，莉亞的意識開始失控地滑向死亡領域！她的身體逐漸變得半透明，魂燈微弱閃爍，無數死者的悲泣聲試圖將她的靈魂拖入冥界深淵。
+          </p>
+
+          <div class="dialogue-group">
+            <div class="dialogue-bubble papa-talk">
+              <span class="talker">帕帕：</span>「莉亞！快結束術式！妳的靈魂正在被撕裂！」
+            </div>
+          </div>
+        </div>
+
+        <!-- 鼻鼻尋找莉亞互動卡 -->
+        <div class="find-leah-rescue-stage" id="find-leah-stage">
+          <div class="rescue-header">
+            <h4>【 萬聲之耳 ・ 在千魂中尋找莉亞 】</h4>
+            <p>莉亞的意識即將沉沒！點擊下方微弱的呼喚，幫助鼻鼻定位莉亞真正的聲音：</p>
+          </div>
+
+          <div class="rescue-voices-grid">
+            <button class="voice-choice-btn wrong-v">「帶我走……」</button>
+            <button class="voice-choice-btn wrong-v">「留下來……」</button>
+            <button class="voice-choice-btn correct-leah-v" id="btn-correct-leah">
+              <span class="v-spark">✨</span>
+              <span class="v-text">「我還沒死……」</span>
+            </button>
+            <button class="voice-choice-btn wrong-v">「好冷……」</button>
+          </div>
+
+          <div class="rescue-feedback-log" id="rescue-feedback-log">
+            尋找冥界深處莉亞的微弱呼喚……
+          </div>
+        </div>
+
+        <div class="novel-prose-block">
+          <p>
+            鼻鼻主動催動「萬聲之耳」，在數萬幽魂的雜音中精確抓住了那句微弱的「我還沒死」，一把將莉亞的意識拽回了現實！
+          </p>
+          
+          <div class="dialogue-group">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>（大口喘氣）「妳剛剛差點真的變成自己召喚出來的東西了！」
+            </div>
+            <div class="dialogue-bubble leah-talk">
+              <span class="talker">莉亞：</span>（虛弱地扶著法杖，嘴角微揚）「死靈法師最常見的職業意外。」
+            </div>
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻：</span>「……妳還能開玩笑，看來沒事了。」
+            </div>
+          </div>
+          <p>
+            莉亞看著鼻鼻，眼神中第一次展露出了對這位流浪詩人的真正信任。
+          </p>
+        </div>
+
+        <!-- ==============================================
+             二十六與二十七、終局場景：天穹龍墓 (The Dragon Tomb)
+             ============================================== -->
+        <div class="novel-prose-block">
+          <p>
+            結合大祭司記憶與銀蛇之頁的指引，汎汎成功定位了蒼龍三重封印的核心之地——<strong>「天穹龍墓」</strong>。
+          </p>
+          <p>
+            四人火速趕赴這座被封鎖數百年的山脈神殿。眼前是令人震撼的絕景：巨大的蒼龍骨骸雕塑懸掛於萬丈山谷之間，古代祭壇四周浮空岩石崩落，雷雲密布，銀色與蒼藍色的符文在龍脈裂縫中劇烈震盪！
+          </p>
+          <p>
+            然而當四人抵達時，神秘黑袍組織已經破壞了最後一道封印，浩瀚的能量匯聚完成！
+          </p>
+        </div>
+
+        <!-- 天穹龍墓大型視覺卡 -->
+        <div class="dragon-tomb-hero-card">
+          <div class="tomb-visual-overlay"></div>
+          <div class="tomb-content">
+            <span class="tomb-badge">ANCIENT SEAL BREAK</span>
+            <h3 class="tomb-title">天穹龍墓 ・ 復活儀式完成</h3>
+            <p class="tomb-desc">肉體、靈魂、神性三重封印已被徹底撕裂！浩瀚的雷霆能量正在重構至高神軀！</p>
+
+            <button class="parchment-cta-btn" id="btn-witness-dragon">
+              <span class="btn-text">⚡ 見證蒼天龍降臨 ➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             二十九至三十一、蒼龍復活與最終震撼：銀瞳異變
+             ============================================== -->
+        <div class="dragon-awakening-stage" id="dragon-awakening-stage" style="display:none;">
+          <div class="novel-prose-block">
+            <p class="dropcap-paragraph">
+              「轟隆隆隆—————！」
+            </p>
+            <p>
+              整座天穹龍墓山脈巨響崩塌！一隻覆蓋著青藍巨鱗的擎天龍爪自神殿深處伸出，隨後，遮天蔽日的<strong>蒼天龍・奧爾雷恩</strong>真正降臨於世！雲層與萬鈞雷霆圍繞著牠翱翔，每一次呼吸都引發大地震爆！
+            </p>
+            <p>
+              正當所有人都以為蒼龍復活之際，巨大的龍首緩緩低垂，睜開了雙眸——
+            </p>
+          </div>
+
+          <!-- 銀瞳蒼龍異變震撼視覺區 -->
+          <div class="silver-eyes-revelation-box" id="silver-eyes-box">
+            <div class="dragon-eyes-container">
+              <div class="silver-dragon-eye left-eye"></div>
+              <div class="silver-dragon-eye right-eye"></div>
+            </div>
+            <p class="eye-color-desc">牠的眼睛並非傳說中神聖的青藍色，而是——<strong>冰冷冷冽的銀色！</strong></p>
+
+            <div class="serpent-resonance-flash">
+              ✦ 鼻鼻胸前的銀蛇護符與汎汎手中的銀蛇之頁同時爆發出毀滅性的銀光！ ✦
+            </div>
+          </div>
+
+          <div class="novel-prose-block">
+            <p>
+              凝視著冥界靈魂流向的莉亞瞳孔劇烈收縮，發出了全章最令人膽寒的斷言：
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span><strong>「那不是復活……」</strong>
+              </div>
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>「什麼？！牠明明已經重構了神軀！」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「死者回來的時候，我看得見他們的靈魂。那具身體裡的東西——根本不是蒼龍！」
+              </div>
+            </div>
+
+            <p>
+              蒼龍發出撕裂天地的咆哮，銀色雷霆瞬間照亮了整座艾瑟蘭東方夜空！莉亞面色慘白地低語：
+            </p>
+
+            <blockquote class="final-cliffhanger-quote">
+              「有東西——借用了牠的屍體。」
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             三十二、第三章完與四人隊伍卡
+             ============================================== -->
+        <div class="chapter-end-card ch3-end-card" id="ch3-end-card">
+          <span class="end-badge">CHAPTER III END</span>
+          <h3 class="end-title">《第三章 完》</h3>
+          <p class="next-teaser">下一章：《第四章：銀瞳之龍》（Chapter IV: The Silver-Eyed Dragon）</p>
+
+          <!-- 四人隊伍關係圖 (聲音、文字、誓約、死亡 -> 被抹去的真相) -->
+          <div class="four-party-truth-diagram">
+            <h4 class="diagram-title">✦ 艾瑟蘭四人旅人小隊 ✦</h4>
+            <div class="diagram-nodes">
+              <div class="d-node node-bibi">鼻鼻【聲音】</div>
+              <div class="d-node node-fanfan">汎汎【文字】</div>
+              <div class="d-center-core">被抹去的真相</div>
+              <div class="d-node node-papa">帕帕【誓約】</div>
+              <div class="d-node node-leah">莉亞【死亡】</div>
+            </div>
+          </div>
+          
+          <div class="end-actions">
+            <button class="parchment-cta-btn switch-ch-btn" data-target="ch4">
+              <span class="btn-text">進入第四章：世界的詠唱者 ➔</span>
             </button>
             <a href="world.html" class="parchment-btn small-btn">
               <span>回顧艾瑟蘭世界地圖</span>
@@ -730,8 +1863,1018 @@
 
       </div>
     </section>
+    </div>
 
-  </main>
+    <!-- ──────────────────────────────────────────
+         【第四章分頁】 CHAPTER IV: WORLDSONG - THE MEMORY BEARER
+         ────────────────────────────────────────── -->
+    <div id="ch4-page" class="chapter-page">
+      <section id="scene-chapter4" class="scene-section scene-chapter-4">
+        
+        <!-- 第四章背景圖層 (世界崩壞、大合唱金束與銀光視效) -->
+        <div class="ch4-ambient-backdrop">
+          <div class="world-collapse-layer" id="world-collapse-layer"></div>
+          <div class="worldsong-gold-aurora" id="worldsong-gold-aurora"></div>
+          <div class="white-flash-overlay" id="white-flash-overlay"></div>
+        </div>
+
+        <div class="narrative-wrapper">
+
+          <!-- ==============================================
+               一、劇情起點：無魂蒼龍
+               ============================================== -->
+          <div class="scene-marker ch4-marker">
+            <span class="marker-tag">CHAPTER IV</span>
+            <h2 class="marker-title">第四章：世界的詠唱者</h2>
+            <span class="marker-sub">CHAPTER IV ・ THE MEMORY BEARER & WORLDSONG</span>
+          </div>
+
+          <div class="novel-prose-block">
+            <p class="dropcap-paragraph">
+              天穹龍墓上空，蒼天龍・奧爾雷恩的巨型神軀遮天蔽日。萬鈞雷霆在牠的鱗片間狂暴呼嘯，每一次呼吸都令整座山脈劇烈抖動。
+            </p>
+            <p>
+              然而，死靈法師莉亞死死凝視著龍軀深處的靈魂流向，面色慘白如紙。
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>（雙唇顫抖）「那不是活著。」
+              </div>
+              <div class="dialogue-pause">（天地間的狂風似乎在此刻凝滯片刻）</div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「也不是死亡。它擁有肉體、神性與浩瀚龍脈……卻唯獨沒有意志、沒有靈魂、沒有自我，更沒有過往的死亡記憶。」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span><strong>「它只是……還在運作。」</strong>
+              </div>
+            </div>
+
+            <p>
+              一具擁有至高神力、卻毫無意志靈魂的巨龍軀殼佇立於世，帶給所有人的並非神蹟，而是毀滅性的不安！
+            </p>
+          </div>
+
+          <!-- ==============================================
+               二、世界開始崩壞 (五大國度崩壞蒙太奇)
+               ============================================== -->
+          <div class="world-collapse-montage-card">
+            <div class="collapse-header">
+              <span class="warning-badge">⚠️ WORLD ORDER COLLAPSE</span>
+              <h3 class="collapse-title">【 五國秩序失衡 ・ 世界正在失去平衡 】</h3>
+              <p class="collapse-subtitle">當唯有神性、缺乏靈魂的聖獸歸位，世界規則錯誤判定『守門者已歸位』，天地法則宣告崩解！</p>
+            </div>
+
+            <div class="collapse-nations-grid">
+              <div class="n-collapse-box c-dragon">
+                <div class="n-head">🐉 蒼龍帝國</div>
+                <p>雷暴覆蓋帝都，古老龍脈破土噴湧，三江河流逆流，千年前的神殿基石連環崩裂。</p>
+              </div>
+              <div class="n-collapse-box c-lion">
+                <div class="n-head">🦁 白獅聖王國</div>
+                <p>日耀堡聖焰祭壇無火自燃，白日爆發刺眼強光，百年無人敲響的聖堂警鐘自行轟鳴。</p>
+              </div>
+              <div class="n-collapse-box c-wolf">
+                <div class="n-head">🐺 玄狼冰原聯邦</div>
+                <p>萬年永凍冰原撕開萬丈裂谷，沉睡冰下數千年的遺跡浮現，夜空月芒裂變為雙重重影。</p>
+              </div>
+              <div class="n-collapse-box c-phoenix">
+                <div class="n-head">🦅 朱凰神國</div>
+                <p>數座熄滅的火山同時噴發，赤宮聖火不斷熄滅又重燃，祭壇表面冒出詭異黑灰。</p>
+              </div>
+              <div class="n-collapse-box c-deer">
+                <div class="n-head">🦌 翠鹿森國</div>
+                <p>太古世界樹大量枯黃落葉，神鹿祭司徹底失去預知能力，萬千森林飛禽走獸集體狂亂遷徙。</p>
+              </div>
+            </div>
+
+            <div class="world-unbalance-banner">
+              <span>✦ 世 界 正 在 失 去 平 衡 ✦</span>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               三、第一個出手：汎汎 (秘紋封印崩解)
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              汎汎咬緊牙關，上前一步：「既然災厄源於蒼龍失控，那就重新啟動古代封印將牠鎖回去！」
+            </p>
+            <p>
+              她高舉「銀蛇之頁」，全身幾何符文爆發出耀眼藍光，嘗試調動古代秘紋重構「三重封印」！
+            </p>
+          </div>
+
+          <!-- 汎汎封印嘗試互動區 -->
+          <div class="fanfan-seal-interactive-stage" id="fanfan-seal-stage">
+            <div class="seal-header">
+              <h4>【 汎汎的秘術 ・ 重構三重古代封印 】</h4>
+              <p>請協助汎汎點擊印記，嘗試重建封印閉環：</p>
+            </div>
+
+            <div class="seal-actions-row">
+              <button class="seal-cmd-btn" id="seal-btn-body">
+                <span class="s-icon">🪨</span>
+                <span class="s-title">重建肉體封印</span>
+              </button>
+              <button class="seal-cmd-btn" id="seal-btn-divine" disabled>
+                <span class="s-icon">⚡</span>
+                <span class="s-title">重建神性封印</span>
+              </button>
+              <button class="seal-cmd-btn" id="seal-btn-leyline" disabled>
+                <span class="s-icon">🌐</span>
+                <span class="s-title">鎖定龍脈陣法</span>
+              </button>
+            </div>
+
+            <div class="seal-status-log" id="seal-status-log">
+              等待啟動第一重肉體封印……
+            </div>
+          </div>
+
+          <div class="novel-prose-block">
+            <p>
+              然而，就在封印即將閉合的最後一步【靈魂封印】時，因為蒼龍缺乏靈魂，封印無法形成完整迴圈！無數古代幾何符文瞬間寸寸爆裂，反噬的衝擊波將汎汎重重震飛，銀蛇之頁表面崩裂出細微裂紋！
+            </p>
+            <p class="failure-tag">✦ 汎汎的秘紋封印——失敗！ ✦</p>
+          </div>
+
+          <!-- ==============================================
+               四、第二個出手：帕帕 (終誓與聖焰熄滅)
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              帕帕一步跨出，面容肅穆如鐵。他發動了守頁騎士團至高禁忌的決死秘奧——<strong>「終誓」</strong>！
+            </p>
+            <p>
+              他將自己九百年來的生命、時間、誓約與聖焰全數燃燒！長劍爆發出前所未有、照亮整座山谷的銀白色誓約聖焰，重盾化為耀眼的防護壁障！
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble papa-talk">
+                <span class="talker">帕帕：</span>「吾等守護真相，而非王冠！破——！」
+              </div>
+            </div>
+
+            <p>
+              帕帕縱馬衝向蒼龍，聖焰長劍狠狠斬斷了蒼龍的一角神性！然而無魂蒼龍完全沒有痛覺與死亡概念，浩瀚的龍脈電光頃刻間恢復如初，反手一記擎天龍爪將帕帕拍飛！
+            </p>
+            <p>
+              「喀嚓！」
+            </p>
+            <p>
+              傳承九百年的古代誓約長劍斷裂成兩截，守頁重盾碎成粉屑，那燃燒了九百年的銀白聖焰……徹底熄滅。
+            </p>
+            <p class="failure-tag">✦ 帕帕的騎士終誓——失敗！ ✦</p>
+          </div>
+
+          <!-- ==============================================
+               五、第三個出手：莉亞 (冥界裂隙暴走)
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              莉亞咬牙高舉古老魂燈，發動了規模空前的「萬魂回聲」，直接在半空中撕開了一道貫通生者世界與冥界的幽藍色大門！
+            </p>
+            <p>
+              數以萬計的古代亡魂在幽藍巨門周圍悲鳴沸騰。莉亞的意識跨越萬千死亡領域，試圖搜尋蒼龍真正的靈魂所在。
+            </p>
+            <p>
+              許久，莉亞面色慘白地合上雙眸，魂燈火焰微弱得近乎熄滅：
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span><strong>「不在這裡……」</strong>
+              </div>
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>（嘴角帶血，震驚地問）「什麼？！冥界也沒有？！」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「它不在生者世界，也不在亡者世界……蒼龍的靈魂，被某種力量從世界本身抹去了！」
+              </div>
+            </div>
+
+            <p>
+              暴走的冥界裂隙險些將莉亞吞噬，她拼死關閉大門後力竭癱倒，魂燈徹底黯淡。
+            </p>
+            <p class="failure-tag">✦ 莉亞的冥界搜魂——失敗！ ✦</p>
+          </div>
+
+          <!-- ==============================================
+               六與七、所有強者敗退與鏡頭轉向鼻鼻
+               ============================================== -->
+          <div class="all-heroes-defeated-card">
+            <h4 class="defeated-title">✦ 探求者們皆已敗退 ✦</h4>
+            <div class="defeated-grid">
+              <div class="d-hero-item">
+                <strong>汎汎</strong>
+                <span>秘紋術耗盡 / 銀蛇之頁受損 / 無法啟封</span>
+              </div>
+              <div class="d-hero-item">
+                <strong>帕帕</strong>
+                <span>長劍折斷 / 盾牌碎裂 / 誓約聖焰熄滅</span>
+              </div>
+              <div class="d-hero-item">
+                <strong>莉亞</strong>
+                <span>魂燈黯淡 / 冥門關閉 / 精神力竭倒下</span>
+              </div>
+            </div>
+            <p class="defeated-footer">強大知識、毀滅戰力、跨越生死之術——在此刻全數失效！無魂蒼龍依然在毀滅世界！</p>
+          </div>
+
+          <div class="novel-prose-block">
+            <p>
+              山谷陷入了死一般的沉寂。
+            </p>
+            <p>
+              鏡頭緩緩轉向了一直默默站在後方的吟遊詩人——<strong>鼻鼻</strong>。
+            </p>
+            <p>
+              他沒有法杖，沒有高深的幾何秘術，沒有聖焰與長劍，也沒有通冥的魂燈。他有的，僅僅是那把一路陪伴他流浪、在逃亡碰撞中已經斷了一根琴弦的舊梧桐七弦琴。
+            </p>
+            <p>
+              鼻鼻看著手裡損壞的七弦琴，嘴角泛起苦笑，自嘲地低語：
+            </p>
+            <p class="dialogue-line">
+              「大家……我連戰鬥都不會，我又能做什麼呢……？」
+            </p>
+          </div>
+
+          <!-- ==============================================
+               八與九、萬聲之耳覺醒：揭露「記憶者」真正本質
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              然而，就在鼻鼻按住琴弦的這一刻，他的「萬聲之耳」爆發出了前所未有的宏大響聲！
+            </p>
+            <p>
+              那不再是個人的哀痛，也不再是臨死前的呼喚，而是——<strong>整座艾瑟蘭大地的聲音！</strong>
+            </p>
+            <p>
+              三江河流奔騰的脈動、風吹過針葉林的呼嘯、遠古山脈的沉吟、雲川城小巷裡孩童的歌聲、老祖母在床頭講述的故事、村落節慶的民謠、歷代吟遊詩人流浪時彈唱的古歌……九百年來無數人對於大地的記憶，在此刻如溫暖的江河般流入鼻鼻的感知！
+            </p>
+            <p>
+              鼻鼻在這一刻徹底頓悟了：
+            </p>
+
+            <blockquote class="memory-bearer-revelation-quote">
+              「記憶者」從來不是某種強大的法師血統，也不是某種戰鬥職業。<br>
+              這是艾瑟蘭大地為了防止真實歷史被權者與時間徹底抹去，而藏在每一首童謠、每一段傳說與每一首詩歌裡的——<strong>世界記憶。</strong>
+            </blockquote>
+          </div>
+
+          <!-- ==============================================
+               十與十一、蒼龍靈魂所在地與鼻鼻準備唱歌
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              鼻鼻的眼眶濕潤了。他終於明白了為什麼冥界找不到蒼龍的靈魂——因為蒼龍的自我並沒有消失！九百年來，每當人們吟唱《五聖鎮世歌》，每當孩童聽聞蒼龍的神話，蒼龍的靈魂碎片便活在世人的故事與大地的記憶裡！
+            </p>
+            <p>
+              鼻鼻拍了拍斗篷上的塵土，緩慢在碎石上坐下，將受損的七弦琴平放在膝頭。
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>（虛弱地抬頭）「鼻鼻……你想做什麼？」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「唱歌。」
+              </div>
+              <div class="dialogue-bubble papa-talk">
+                <span class="talker">帕帕：</span>（靠著碎石，驚訝地問）「現在？在神面前？」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>（笑了笑，眼神無比溫暖堅定）「對啊。我本來就是靠這個吃飯的。」
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               十二與十三、失落的第六段：《六聖鎮世歌》
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              鼻鼻撥動了殘破的琴弦。那正是第一章在青羽亭酒館裡彈唱的《五聖鎮世歌》！但這一次，不再是為了賺取幾枚銅幣與熱湯，而是為了讓這個世界重新想起自己！
+            </p>
+            <p>
+              「蒼龍馭雷而降，白獅攜日而來，玄狼行於月影，朱凰浴火重生，神鹿守望命運——」
+            </p>
+            <p>
+              唱到此處，鼻鼻停頓片刻。他聽見了九百年來被歷史刪除、被帝國封禁的真正第六段：
+            </p>
+
+            <blockquote class="sixth-verse-quote" id="sixth-verse-quote">
+              「——而銀蛇銜尾，守住無人記得的名字。」
+            </blockquote>
+          </div>
+
+          <!-- ==============================================
+               十四與十五、核心互動：玩家親自詠唱【世界詠唱 Worldsong】
+               ============================================== -->
+          <div class="worldsong-interactive-stage" id="worldsong-stage">
+            <div class="worldsong-header">
+              <span class="ws-badge">TRUE POWER ・ WORLDSONG</span>
+              <h4>【 喚醒世界記憶 ・ 玩家親自詠唱 】</h4>
+              <p>請點擊下方按鈕，協助鼻鼻唱出被遺忘九百年的完整《六聖鎮世歌》：</p>
+            </div>
+
+            <div class="song-lines-display-box" id="song-lines-display">
+              <p class="song-current-line" id="song-current-line">「等待開始詠唱……」</p>
+            </div>
+
+            <div class="worldsong-action-wrapper">
+              <button class="parchment-cta-btn worldsong-sing-btn" id="btn-worldsong-sing">
+                <span class="btn-text" id="sing-btn-label">✨ 開始詠唱第一句 ➔</span>
+              </button>
+            </div>
+
+            <div class="worldsong-progress-bar-container">
+              <div class="ws-progress-fill" id="ws-progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               十六與十七、五國回應與世界合唱
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              奇跡發生了。
+            </p>
+            <p>
+              鼻鼻的歌聲並非靠魔力擴散，而是透過龍脈、聖火、月影、世界樹與大地記憶傳遍了整個艾瑟蘭五國！
+            </p>
+
+            <div class="five-nations-response-grid">
+              <div class="res-card">
+                <strong>🐉 蒼龍帝國</strong>
+                <p>街頭老者無意識地跟著哼唱童年聽過的旋律，暴雨雷暴開始奇蹟停息。</p>
+              </div>
+              <div class="res-card">
+                <strong>🦁 白獅聖王國</strong>
+                <p>古老修道院沉寂百年的銅鐘自發敲響和聲，暴烈的強光化為柔和暖陽。</p>
+              </div>
+              <div class="res-card">
+                <strong>🐺 玄狼冰原聯邦</strong>
+                <p>七部族長者與狂戰士齊聲合唱失傳古歌，裂開的冰原停止撕裂。</p>
+              </div>
+              <div class="res-card">
+                <strong>🦅 朱凰神國</strong>
+                <p>聖女與祭司聽見遠古祭歌，噴發的火山噴煙轉為緋紅祥雲。</p>
+              </div>
+              <div class="res-card">
+                <strong>🦌 翠鹿森國</strong>
+                <p>世界樹枝頭瞬間抽芽重新長出綠葉，集體遷徙的百獸安詳止步。</p>
+              </div>
+            </div>
+
+            <p>
+              全艾瑟蘭數千萬人的記憶聲音匯聚成宏大的天地合唱，鼻鼻只是那個讓世界重新聽見自己的人！
+            </p>
+          </div>
+
+          <!-- ==============================================
+               十八與十九、蒼龍靈魂重構與未知銀色存在排出
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              億萬道由記憶化成的金色光點從世界各地漫天飛來，湧入蒼龍體內！童謠、壁畫、民謠、祈詞與吟遊詩人的歌聲重構了蒼龍的意識自我。
+            </p>
+            <p>
+              蒼龍痛苦地咆哮，牠那雙冰冷的銀色眼睛劇烈閃爍——最終，銀光消退，神聖純淨的<strong>蒼藍色龍瞳</strong>重新睜開！
+            </p>
+            <p>
+              「嘶————！」
+            </p>
+            <p>
+              一團無法名狀的巨型銀色影子被蒼龍靈魂強行排出體外！它形狀不斷變化，似蛇、似霧、似巨大的陰影。
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>（震驚地指著銀影）「那是……銀蛇？！」
+              </div>
+              <div class="dialogue-bubble papa-talk">
+                <span class="talker">帕帕：</span>（第一次露出了極度的恐懼）<strong>「不是！那不是第六守門者！銀蛇根本不是侵蝕聖獸的存在！」</strong>
+              </div>
+            </div>
+
+            <p>
+              這顛覆性的真相證明：真正侵蝕五聖獸的幕後黑影，另有其人！
+            </p>
+          </div>
+
+          <!-- ==============================================
+               二十一與二十二、琴弦全斷與世界復原
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              鼻鼻唱出了最後的歌詞：
+            </p>
+            <blockquote class="final-singing-quote">
+              「名字可以被抹去，故事可以被改寫；<br>
+              但只要還有人記得——世界就不會忘記自己。」
+            </blockquote>
+            <p>
+              「嘣、嘣、嘣……嘣！」
+            </p>
+            <p>
+              承受了極致世界詠唱的梧桐七弦琴，琴弦接連崩斷，最後一根冰蠶弦也應聲斷裂。
+            </p>
+            <p>
+              與此同時，覆蓋整座大陸的雷暴與地震全數平息，浩劫化解，艾瑟蘭得救了！
+            </p>
+          </div>
+
+          <!-- ==============================================
+               二十三至二十五、蒼龍認出鼻鼻與幽默收尾
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              恢復意識的蒼天龍・奧爾雷恩緩緩低垂巨大的龍首，青藍色巨瞳凝視著鼻鼻，低沉開口：
+            </p>
+            
+            <div class="dialogue-group">
+              <div class="dialogue-bubble dragon-talk">
+                <span class="talker">蒼龍：</span><strong>「記憶者……你終於回來了。」</strong>
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>（愣住，手指指著自己）「……我？」
+              </div>
+            </div>
+
+            <p>
+              同伴們震驚地看著鼻鼻。莉亞感嘆：「我能呼喚死者，但你剛才呼喚的是整個世界。」帕帕也低語：「也許守頁者等待的……從來不是銀蛇。」
+            </p>
+            <p>
+              鼻鼻低頭看著完全斷弦的七弦琴，沉默了三秒，突然發出了哀鳴：
+            </p>
+
+            <div class="dialogue-group">
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「……完了啦！」
+              </div>
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>「什麼完了？」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「吃飯的傢伙壞掉了啊！這把琴超貴的耶！」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「你剛剛救了整個世界。」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「救世界又不能拿去付修琴錢！」
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               二十九至三十一、第一部終局伏筆與落幕卡
+               ============================================== -->
+          <div class="novel-prose-block">
+            <p>
+              蒼龍看向汎汎手中的銀蛇之頁，留下了最後的震憾警示：
+            </p>
+            <blockquote class="dragon-warning-quote">
+              「不要去找第六守門者。因為牠不是被封印的那一個……<br>
+              <strong>我們五個——才是。</strong>」
+            </blockquote>
+          </div>
+
+          <div class="chapter-end-card ch4-end-card" id="ch4-end-card">
+            <span class="end-badge">BOOK I FINALE</span>
+            <h3 class="end-title">《第一部：銀蛇之頁》 完</h3>
+            <p class="next-teaser">下一部：《第二部：被封印的五神》（The Five Sealed Gods）</p>
+
+            <!-- 四人能力真實指向結構卡 -->
+            <div class="four-party-truth-diagram">
+              <h4 class="diagram-title">✦ 艾瑟蘭四人旅人小隊 ・ 真實之陣 ✦</h4>
+              <div class="diagram-nodes">
+                <div class="d-node node-fanfan">汎汎【文字】</div>
+                <div class="d-node node-papa">帕帕【誓約】</div>
+                <div class="d-center-core">艾瑟蘭的真實</div>
+                <div class="d-node node-leah">莉亞【死亡】</div>
+                <div class="d-node node-bibi">鼻鼻【聲音/詠唱】</div>
+              </div>
+            </div>
+            
+            <div class="end-actions">
+              <button class="parchment-cta-btn switch-ch-btn" data-target="ch5">
+                <span class="btn-text">進入 第二部 第一章：森林正在做夢 ➔</span>
+              </button>
+              <a href="world.html" class="parchment-btn small-btn">
+                <span>回顧艾瑟蘭世界地圖</span>
+              </a>
+            </div>
+
+            <div class="book2-notice" id="book2-notice" style="display:none; margin-top:1.2rem; color:var(--gold-bright);">
+              ✦ 《第二部：被封印的五神》尚未開放，敬請期待！ ✦
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ──────────────────────────────────────────
+         【第二部 第一章分頁】 PART II CHAPTER I: THE FOREST IS DREAMING
+         ────────────────────────────────────────── -->
+    <div id="ch5-page" class="chapter-page">
+
+      <!-- 一、劇情承接與標題 HERO SECTION -->
+      <section id="scene-p2ch1-hero" class="scene-section scene-forest-hero">
+        <div class="forest-hero-backdrop">
+          <div class="forest-canopy-glow"></div>
+          <div class="emerald-mist-layer"></div>
+          <div class="ancient-trees-silhouette"></div>
+        </div>
+
+        <div class="hero-text-container">
+          <div class="scene-pre-badge">PART II ・ CHAPTER I</div>
+          <h1 class="novel-chapter-title">
+            <span class="sub-chapter">第二部 第一章</span>
+            <span class="main-title">森林正在做夢</span>
+            <span class="en-sub-title">The Forest Is Dreaming</span>
+          </h1>
+
+          <div class="city-lore-stamp">
+            <span class="location-name">艾瑟蘭中央國家・翠鹿森國</span>
+            <span class="divider">✦</span>
+            <span class="era-name">神鹿願景節前夕</span>
+          </div>
+
+          <p class="hero-lead-quote">
+            「自然不是可以命令的工具……它若發怒，只是因為它在痛。」
+          </p>
+
+          <div class="enter-forest-wrapper">
+            <a href="#scene-nature-anomaly" class="parchment-cta-btn" id="btn-enter-forest">
+              <span class="corner tl"></span><span class="corner tr"></span>
+              <span class="corner bl"></span><span class="corner br"></span>
+              <span class="btn-icon">🦌</span>
+              <span class="btn-label">踏入「翠鹿森國」邊境</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 二、無魂蒼龍後遺症：大型自然異常蒙太奇 -->
+      <section id="scene-nature-anomaly" class="scene-section scene-nature-anomaly">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">一、蒼龍餘波與混亂的大地法則</h2>
+          
+          <div class="novel-prose-block">
+            <p>
+              第一部《銀蛇之頁》結尾，鼻鼻以「世界詠唱」成功找回了無魂蒼龍真正的靈魂，讓蒼龍恢復意識。然而，蒼龍曾被抽離靈魂、作為暴走載體短暫存在期間所造成的生命脈絡撕裂，並未立刻消失。
+            </p>
+            <p>
+              位於艾瑟蘭大陸中央的「翠鹿森國」，正是龍脈、古林、水系與世界樹根系交會最為密集的樞紐。因此，這裡受到的法則震盪最為劇烈。
+            </p>
+          </div>
+
+          <!-- 自然異常六宮格互動視覽 -->
+          <div class="nature-anomaly-montage">
+            <h3 class="montage-title">✦ 翠鹿森國異象蒙太奇（Nature Anomaly Montage） ✦</h3>
+            <div class="montage-grid">
+              <div class="anomaly-card">
+                <span class="card-icon">🌊</span>
+                <h4>河流逆流與突然改道</h4>
+                <p>奔騰數百年的清澈溪流在一夜間違背重力逆向奔流，沖塌了沿岸古木與石橋。</p>
+              </div>
+              <div class="anomaly-card">
+                <span class="card-icon">🥀</span>
+                <h4>古樹枯萎與瘋狂生長</h4>
+                <p>數百年老樹清晨枯萎成灰，傍晚卻又以肉眼可見的速度瘋狂抽芽成長數十米。</p>
+              </div>
+              <div class="anomaly-card">
+                <span class="card-icon">✨</span>
+                <h4>發光鹿角與巨大魔獸</h4>
+                <p>溫順的野生鹿群長出如夜螢般炫目的發光鹿角，普通野獸體型異常膨脹數倍。</p>
+              </div>
+              <div class="anomaly-card">
+                <span class="card-icon">🌿</span>
+                <h4>藤蔓吞噬村落</h4>
+                <p>粗如蟒蛇的藤蔓帶有劇烈陣痛般抖動，沿著木屋與牆垣死死纏繞，將村莊一口口吞沒。</p>
+              </div>
+              <div class="anomaly-card">
+                <span class="card-icon">❄️</span>
+                <h4>寒冬盛開與夏日飄雪</h4>
+                <p>冷冽冰雪降臨夏日樹冠，而冰封的溪谷中卻奇蹟般盛開著陽春百花。</p>
+              </div>
+              <div class="anomaly-card">
+                <span class="card-icon">🍂</span>
+                <h4>四季同林併存</h4>
+                <p>跨過一條小溪，左側為春芽吐綠，右側為夏日茂密，前方秋葉飄零，腳下已是嚴冬霜雪。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="novel-prose-block" style="margin-top: 1.5rem;">
+            <div class="dialogue-group">
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>「這不是普通的自然天災……秘紋法則的流向全部扭曲了。自然法則本身……亂掉了。」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「而且……整座森林聽起來像是在哭啊。」
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 三、進入翠鹿森國與暴走魔獸襲擊 -->
+      <section id="scene-cuilu-entry" class="scene-section scene-cuilu-entry">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">二、翠鹿森國與失控的生命力</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              眾人沿著古木木橋踏入森林深處。薄霧繚繞於高聳入雲的巨木之間，發光的苔蘚與古代石碑隱現於密林中。這裡本是森林精靈、獸人與人類共同和諧居住的土地，供奉著主神「世界樹神鹿・艾露希亞」。
+            </p>
+            <p>
+              然而，四人剛深入不遠，周圍大地猛烈震顫！一群眼神猩紅、身上爆發著劇烈綠光與銀黑氣流的失控魔獸襲擊而至——包含巨狼、森林蜥獸與古樹魔獸。牠們並非出於惡意，而是身體承受著過量生命能量的劇痛，陷入了瘋狂暴躁狀態。
+            </p>
+          </div>
+
+          <div class="battle-prompt-box">
+            <div class="dialogue-group">
+              <div class="dialogue-bubble papa-talk">
+                <span class="talker">帕帕：</span>「小心！牠們發狂了！拔劍準備戰鬥！」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「我可以用亡魂鎖鏈暫時綑綁牠們的靈魂……」
+              </div>
+            </div>
+            <p style="margin-top:0.8rem; color:var(--gold-bright); font-style:italic;">
+              ——就在戰鬥即將爆發之際，森林最深處突響起一聲震天撼地的威嚴鹿鳴！
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 四、屁屁首次登場：古森巨鹿震撼現身 -->
+      <section id="scene-pipi-stag-arrival" class="scene-section scene-pipi-arrival">
+        <div class="section-parchment-box highlight-parchment">
+          <h2 class="scene-title">三、荒野守護者・屁屁登場</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              轟隆隆——！地面劇烈隆起，無數粗大的古樹樹根如巨蟒般從地下竄出！然而樹根並未攻擊四人，而是以無與倫比的精準度迅速纏住所有暴走魔獸的四肢，將牠們溫柔而堅定地壓制在地。
+            </p>
+            <p>
+              緊接著，一頭體型遠大於戰馬、鹿角如繁茂樹冠般伸展的巨大野鹿從樹海中躍出！鹿角上纏繞著新鮮藤蔓與綻放的花朵，牠的蹄尖踏過之處，枯土奇蹟般重新鋪滿翡翠青草！
+            </p>
+          </div>
+
+          <div class="stag-spotlight-card" id="stag-spotlight-card">
+            <div class="stag-avatar">🦌</div>
+            <div class="stag-info">
+              <h3>【 古 森 巨 鹿 】</h3>
+              <p class="stag-desc">翠鹿森國最高階德魯伊自然化身｜與自然締結共生關係的大地守護者</p>
+            </div>
+          </div>
+
+          <div class="novel-prose-block" style="margin-top: 1.5rem;">
+            <div class="dialogue-group">
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「……這是鹿？」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「如果你問的是物種，是的。」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「我是問……這尺寸合理嗎？！」
+              </div>
+            </div>
+          </div>
+
+          <!-- 巨鹿縮小化身為德魯伊屁屁 -->
+          <div class="druid-reveal-box">
+            <p>
+              巨鹿周身環繞著翠綠光芒，體型隨之緩緩縮小，最終化為一名衣著自然的年輕德魯伊——「屁屁」。
+            </p>
+            <div class="pipi-intro-card">
+              <div class="pipi-header">
+                <span class="pipi-icon">🍃</span>
+                <div>
+                  <h3 class="pipi-name">屁屁（Pipi）</h3>
+                  <span class="pipi-title">德魯伊 ・ 森脈守望者</span>
+                </div>
+              </div>
+              <div class="pipi-quote">
+                「自然不是可以命令的工具，它只是在痛。」
+              </div>
+              <ul class="pipi-skills">
+                <li>✦ <strong>核心能力：</strong>與野獸溝通、操控樹根藤蔓、引導河流、局部氣候調節、自然治癒</li>
+                <li>✦ <strong>最高形態：</strong>古森巨鹿（Ancient Grove Stag）</li>
+                <li>✦ <strong>戰鬥理念：</strong>從不消滅敵人，而是「修復被破壞的自然平衡」</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 五、屁屁阻止帕帕與互動：治療失控藤蔓 -->
+      <section id="scene-pipi-heal-vines" class="scene-section scene-pipi-healing">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">四、失控不等於邪惡・治療自然</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              眾人繼續前行，遭遇了一片狂暴生長並正吞噬木屋村落的失控藤蔓。帕帕見狀立刻拔出誓約長劍，銀白聖焰在劍身上燃起：「聖焰可以淨化並燒毀這些威脅村莊的植物！」
+            </p>
+            <p>
+              屁屁伸手一把擋在帕帕劍前：「不行。它不是敵人。」<br>
+              帕帕眉頭緊皺：「它現在正在吃房子！」<br>
+              屁屁閉上雙眼，撫摸著發燙抖動的藤蔓：「因為它在痛。」
+            </p>
+          </div>
+
+          <!-- 互動式淨化與治療藤蔓體驗 -->
+          <div class="vine-healing-stage" id="vine-healing-stage">
+            <h3 class="stage-title">✦ 互動體驗：協助屁屁抽出異常能量 ✦</h3>
+            <p class="stage-sub">正常生命力為翡翠綠，侵蝕能量為銀黑色。請依序點擊下方修復步驟：</p>
+
+            <div class="healing-steps-row">
+              <button class="parchment-btn step-btn" id="btn-heal-step1">
+                <span>1. 觸碰藤蔓脈絡</span>
+              </button>
+              <button class="parchment-btn step-btn" id="btn-heal-step2" disabled>
+                <span>2. 抽離銀黑污染</span>
+              </button>
+              <button class="parchment-btn step-btn" id="btn-heal-step3" disabled>
+                <span>3. 注入翠綠生命力</span>
+              </button>
+            </div>
+
+            <div class="healing-visual-display" id="healing-visual-display">
+              <div class="vine-bar-bg">
+                <div class="vine-bar-fill" id="vine-bar-fill"></div>
+              </div>
+              <div class="healing-log" id="healing-log">
+                🌿 靜待引導……藤蔓正處於極度痛苦的狂暴狀態。
+              </div>
+            </div>
+          </div>
+
+          <div class="novel-prose-block" style="margin-top:1.5rem;">
+            <p>
+              隨著銀黑色的異常能量被一點點抽離，狂暴的藤蔓逐漸停止了抽動與擴散，慢慢鬆開木屋，重新化為一株散發著清香的普通植物。
+            </p>
+            <div class="dialogue-group">
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「……我覺得兩邊都有道理，不過屁屁這種解決方式聽起來比較省重建費。」
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 六、發現不明勢力與生命與死亡的對話 -->
+      <section id="scene-unknown-faction" class="scene-section scene-dialogue">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">五、幕後黑手與「生命與死亡」的對話</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              屁屁帶領眾人深入密林，發現森林的失控並不完全是蒼龍造成的後遺症。一群身穿灰黑斗篷、臉部遮擋、手持古代印記裝置的不明勢力正在暗中抽取「森脈核心」。牠們的法術異常古怪，不是燒毀森林，而是逼迫自然本身無限失控生長，直到自我毀滅。
+            </p>
+            <blockquote class="dark-quote">
+              屁屁眼神凝重：「牠們不是在毀滅自然……牠們是在逼自然毀滅自己。」
+            </blockquote>
+          </div>
+
+          <!-- 莉亞與屁屁的生命與死亡哲理對話 -->
+          <div class="philosophy-card">
+            <h3 class="card-title">✦ 莉亞（死亡）與 屁屁（生命）的深層對白 ✦</h3>
+            <div class="dialogue-group">
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「我是死靈法師，你不排斥與亡魂溝通的人？」
+              </div>
+              <div class="dialogue-bubble pipi-talk">
+                <span class="talker">屁屁：</span>「森林每天都有東西死去，也每天都有新生命誕生。枯木腐爛會滋養新芽，四季本就包含誕生、成長、衰敗與再生。死亡本就是自然的一部分。」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞：</span>「所以你不怕我？」
+              </div>
+              <div class="dialogue-bubble pipi-talk">
+                <span class="talker">屁屁：</span>「只要你沒有把本該離開的東西強迫留下。」
+              </div>
+              <div class="dialogue-bubble leah-talk">
+                <span class="talker">莉亞（微笑道）：</span>「看來我們會相處得不錯。」
+              </div>
+            </div>
+          </div>
+
+          <!-- 鼻鼻聽見植物的聲音："不要叫醒她" -->
+          <div class="novel-prose-block" style="margin-top:1.8rem;">
+            <p>
+              深入森林過程中，鼻鼻的「萬聲之耳」再次發生了異變。他第一次聽到了植物的記憶低語——不是人類語言，而是億萬樹木與溪流匯聚而成的浩瀚回聲，不斷反覆吟唱著同一句話：
+            </p>
+            <div class="whisper-box" id="plant-whisper-box">
+              <span class="whisper-text">「……不要叫醒她……不要叫醒神鹿……」</span>
+            </div>
+            <p style="margin-top: 1rem;">
+              眾人皆大惑不解：世界樹神鹿・艾露希亞明明是翠鹿森國的守護神，為什麼整座森林都在害怕她的甦醒？這與第一部蒼龍所說的「我們五個才是被封印的」產生了極大的懸念呼應。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 七、前往世界樹・艾露恩與神鹿沉睡之地 -->
+      <section id="scene-world-tree" class="scene-section scene-world-tree">
+        <div class="section-parchment-box highlight-parchment">
+          <h2 class="scene-title">六、世界樹・艾露恩與侵蝕的夢境</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              四人終於抵達翠鹿森國的核心——史詩巨構「世界樹・艾露恩」。樹干如宏偉山峰連綿直插雲霄，巨大的根系跨越河谷延伸至整個大陸。然而在世界樹最深處的神鹿沉睡封印地，眾人驚恐地發現，封印正在出現恐怖裂痕！
+            </p>
+            <p>
+              無數銀黑色的恐怖紋路正沿著樹干滲入封印核心——與無魂蒼龍體內的侵蝕力量同源！
+            </p>
+          </div>
+
+          <div class="novel-prose-block">
+            <div class="dialogue-group">
+              <div class="dialogue-bubble fanfan-talk">
+                <span class="talker">汎汎：</span>「又是這種銀黑色的腐蝕力量！」
+              </div>
+              <div class="dialogue-bubble papa-talk">
+                <span class="talker">帕帕：</span>「但這次不是銀蛇……這股力量正在入侵封印深處！」
+              </div>
+            </div>
+            <p>
+              屁屁將手按在世界樹樹干上，臉色瞬間變得無比蒼白：「神鹿仍在沉睡……但外來力量不是要消滅她，而是正在<strong>修改她夢境的內容！</strong>」
+            </p>
+            <blockquote class="lore-alert-quote">
+              神鹿艾露希亞掌管「自然、時間、記憶與命運」。對神來說，夢從不只是夢——<strong>神的夢，會直接覆蓋並成為現實！</strong>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 八、屁屁化身古森巨鹿與淨化魔獸大作戰 -->
+      <section id="scene-stag-transformation-battle" class="scene-section scene-battle">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">七、大自然的反擊：古森巨鹿化身</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              此時，灰黑斗篷勢力發動總攻擊！無數被銀黑力量污染的古樹巨人、巨型石像獸與狂暴鹿群直衝世界樹，企圖徹底破壞封印。
+            </p>
+            <p>
+              屁屁阻攔了準備開殺戒的帕帕與莉亞：「讓我來！不要破壞森林！」他雙手深深插進大地，大聲疾呼：
+            </p>
+            <h3 class="shout-incantation">「森林——借我你的力量！」</h3>
+          </div>
+
+          <!-- 變身古森巨鹿互動舞台 -->
+          <div class="stag-transform-stage" id="stag-transform-stage">
+            <h3 class="stage-title">✦ 屁屁化身：【古森巨鹿 Ancient Grove Stag】 ✦</h3>
+            <p style="text-align:center; color:var(--parchment-sub); font-size:0.9rem;">
+              點擊下方按鈕，釋放翠鹿森國全域自然生命脈絡！
+            </p>
+            <div style="text-align:center; margin-top:1.2rem;">
+              <button class="parchment-cta-btn" id="btn-transform-stag">
+                <span class="btn-icon">✨🦌</span>
+                <span class="btn-text">召喚整座森林回應・化身古森巨鹿</span>
+              </button>
+            </div>
+
+            <!-- 淨化被控制魔獸的三連擊操作 -->
+            <div class="beast-purify-panel" id="beast-purify-panel" style="display:none; margin-top:1.8rem;">
+              <h4>✦ 淨化與救援失控魔獸（Purification Sequence） ✦</h4>
+              <div class="purify-btn-group">
+                <button class="parchment-btn purify-btn" id="btn-purify-cut">1. 切斷銀黑術式</button>
+                <button class="parchment-btn purify-btn" id="btn-purify-soothe" disabled>2. 安撫失控野獸</button>
+                <button class="parchment-btn purify-btn" id="btn-purify-restore" disabled>3. 恢復森脈核心</button>
+              </div>
+              <div class="purify-status-box" id="purify-status-box">
+                🛡️ 巨鹿鹿角托起倒塌樹林，地面青草瘋長！請選擇第一步操作……
+              </div>
+            </div>
+          </div>
+
+          <div class="novel-prose-block" style="margin-top:1.5rem;">
+            <p>
+              巨大的古森巨鹿踏碎敵方法術，鹿角引導生命脈絡河流改道切斷敵軍，成功擊退了不明勢力。對方被迫撤退，但仍帶走了一小部分世界樹能量樣本。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 九、神鹿古代記憶：五聖獸真相大揭露 -->
+      <section id="scene-five-beasts-memory" class="scene-section scene-memory-realm">
+        <div class="section-parchment-box highlight-parchment">
+          <h2 class="scene-title">八、神鹿的古代記憶：五聖封印真相</h2>
+
+          <div class="novel-prose-block">
+            <p>
+              戰鬥結束後，屁屁再次觸碰世界樹。這一次，神鹿主動向他展開了一段迷幻柔和的沉睡記憶（Dream Sequence）。
+            </p>
+          </div>
+
+          <!-- 記憶視覺區塊 -->
+          <div class="dream-memory-box" id="dream-memory-box">
+            <div class="dream-overlay"></div>
+            <h3 class="dream-title">✦ 900年前古代記憶：五聖獸祭壇 ✦</h3>
+            <p class="dream-desc">
+              屁屁看見五頭遠古聖獸——蒼龍、白獅、玄狼、朱凰與神鹿・艾露希亞，圍繞在一做巨大的古代祭壇周圍。祭壇中央站著一個無法看清輪廓的漆黑扭曲存在，散發著銀黑色的邊緣光芒……
+            </p>
+            <p class="dream-desc" style="color:var(--gold-bright); font-size:1.1rem; font-weight:bold; margin-top:1rem;">
+              神鹿・艾露希亞流下了滾燙的眼淚，輕聲說道：
+            </p>
+            <blockquote class="sacred-truth-quote">
+              「不是我們封印了它……<br>
+              <strong>是它讓我們，封印了彼此。</strong>」
+            </blockquote>
+          </div>
+
+          <div class="novel-prose-block" style="margin-top: 1.5rem;">
+            <p>
+              這句震撼人心的對白揭露了九百年前的真相：當年根本不是五聖獸聯手封印邪惡，而是某個神秘存在操縱了五聖獸，讓牠們相互懷疑、恐怖與攻擊，最終走向彼此封印！
+            </p>
+            <p>
+              下一秒，祭壇中央的不明存在突然緩緩轉向屁屁！一股毀滅性的衝擊將屁屁從記憶世界中硬生生彈回現實！
+            </p>
+          </div>
+
+          <div class="dialogue-group" style="margin-top:1.2rem;">
+            <div class="dialogue-bubble bibi-talk">
+              <span class="talker">鼻鼻（扶住屁屁）：</span>「你看到什麼了？！」
+            </div>
+            <div class="dialogue-bubble pipi-talk">
+              <span class="talker">屁屁（喘息）：</span>「五聖獸……不是為了封印敵人而沉睡……有人讓五位守門者，開始害怕彼此。」
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 十、世界樹心跳與第二部第一章完結 -->
+      <section id="scene-worldtree-heartbeat" class="scene-section scene-finale">
+        <div class="section-parchment-box">
+          <h2 class="scene-title">九、世界樹的心跳與神的夢境</h2>
+
+          <div class="novel-prose-block" style="text-align:center;">
+            <p>突然間，世界樹最深處傳來了一聲貫穿天地的宏偉心跳：</p>
+            <div class="heartbeat-pulse-container" id="heartbeat-pulse-container">
+              <span class="pulse-text">「 咚 —— 咚 —— 」</span>
+            </div>
+            <p>成千上萬的鳥群驚恐飛離樹冠，野獸不安地匍匐在地。</p>
+
+            <div class="dialogue-group" style="max-width:650px; margin:1.5rem auto;">
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「怎麼了？！發生什麼事了？！」
+              </div>
+              <div class="dialogue-bubble pipi-talk">
+                <span class="talker">屁屁（望向樹冠）：</span>「艾露希亞……開始做夢了。」
+              </div>
+              <div class="dialogue-bubble bibi-talk">
+                <span class="talker">鼻鼻：</span>「做夢？」
+              </div>
+              <div class="dialogue-bubble pipi-talk">
+                <span class="talker">屁屁：</span>「對普通人來說，夢只是夢。但艾露希亞掌管自然、時間與命運……<strong>神的夢，會變成現實。</strong>」
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二部第一章落幕卡 -->
+          <div class="chapter-end-card p2ch1-end-card" id="p2ch1-end-card">
+            <span class="end-badge">PART II ・ CHAPTER I END</span>
+            <h3 class="end-title">《第二部 第一章：森林正在做夢》 完</h3>
+            <p class="next-teaser">下一章：《第二部 第二章：神鹿之夢》（Part II · Chapter II: The Dream of the Sacred Deer）</p>
+
+            <!-- 五人旅人小隊結構圖 -->
+            <div class="five-party-truth-diagram">
+              <h4 class="diagram-title">✦ 艾瑟蘭五位旅人小隊 ・ 真實指向圖 ✦</h4>
+              <div class="diagram-nodes-five">
+                <div class="d-node node-bibi">鼻鼻【聲音/記憶】</div>
+                <div class="d-node node-fanfan">汎汎【文字/秘術】</div>
+                <div class="d-node node-papa">帕帕【誓約/守護】</div>
+                <div class="d-node node-leah">莉亞【死亡/靈魂】</div>
+                <div class="d-node node-pipi">屁屁【生命/自然】</div>
+              </div>
+            </div>
+
+            <div class="end-actions">
+              <button class="parchment-cta-btn" id="btn-p2ch2-teaser">
+                <span class="btn-text">繼續旅程 ➔</span>
+              </button>
+              <a href="world.html" class="parchment-btn small-btn">
+                <span>回顧艾瑟蘭世界地圖</span>
+              </a>
+            </div>
+
+            <div class="book2-notice" id="p2ch2-notice" style="display:none; margin-top:1.2rem; color:var(--gold-bright);">
+              ✦ 《第二部 第二章：神鹿之夢》尚未開放，敬請期待！ ✦
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
 
   <!-- 底部版權 -->
   <footer class="novel-footer">
