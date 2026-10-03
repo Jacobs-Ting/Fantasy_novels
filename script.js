@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'bibi',
       name: '鼻鼻',
       title: '記憶者 / 雲川城詩人',
-      role: '吟遊詩人',
+      role: '吟遊詩人 ・ 【連接者 (Bridge)】',
       weapon: '梧桐七弦琴（冰蠶絲弦・已斷弦）',
-      ability: '萬聲之耳（聽覺記憶） / 世界詠唱（Worldsong）',
-      item: '古老銀蛇護符',
-      quote: '救世界又不能付修琴錢。',
+      ability: '萬聲之耳（聽覺記憶） / 世界詠唱（Worldsong） / 連接萬物記憶與故事',
+      item: '古老銀蛇護符 / 聖樹遺物・夢葉（Dreamleaf）',
+      quote: '真正改變世界的人，不一定是最強的人，而是能讓不同的人，願意相信同一個未來的人。',
       icon: '🎻',
-      desc: '看似最不起眼、無法術無戰力的吟遊詩人。真實身份為世界記憶的承載者『記憶者』。在同伴皆敗退之際，以不具任何戰鬥魔力的『世界詠唱』喚醒艾瑟蘭被遺忘的真實，拼回蒼龍之魂。'
+      desc: '看似最不起眼的吟遊詩人，實際上為團隊中唯一不屬於任何單一神之法則的『連接者』。他能理解不同的故事與立場，成為溝通的橋樑，肩負著重塑艾瑟蘭共同命運的真正使命。'
     },
     fanfan: {
       id: 'fanfan',
@@ -75,6 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
       status: '翠鹿森國荒野守護者・與主角群同行',
       icon: '🦌',
       desc: '翠鹿森國的高階德魯伊。能聽見森林與野獸的聲音，與自然締結共生關係。面對失控的大地，他選擇的從來不是消滅，而是治癒。'
+    },
+    isendra: {
+      id: 'isendra',
+      name: '依森德拉',
+      title: '秘紋大賢者',
+      role: '汎汎的導師',
+      status: '？？？（神鹿之夢中登場）',
+      ability: '高階秘紋重構 / 法則解構 / 封印術式',
+      quote: '秘術師最危險的敵人，不是未知，而是自以為已經理解。',
+      icon: '🔮',
+      desc: '汎汎年輕時最敬畏的秘術導師。在神鹿之夢深層登場考驗汎汎的心魔。無人能確認她是真正的導師本人、汎汎記憶的投影，亦或是夢境生成的幻象。'
     }
   };
 
@@ -152,6 +163,49 @@ document.addEventListener('DOMContentLoaded', () => {
     'fiveBeastsVision',
     'mutualSealReveal',
     'worldTreeHeartbeat',
+    'druidVillageNight',
+    'pipiDreamWarning',
+    'mysteriousSong',
+    'dreamboughTree',
+    'memoryBearerCall',
+    'enterSacredTreeDream',
+    'fiveLawsVision',
+    'bibiSelfDoubt',
+    'godsAreNotFree',
+    'fiveBeastsDistrust',
+    'connectorReveal',
+    'reshapeStoryMission',
+    'worldsongTruth',
+    'futureFragments',
+    'missingBibiFuture',
+    'dreamleafGift',
+    'wakeUnderTree',
+    'sacredDeerWarning',
+    'daylightMoon',
+    'fanfanRealityFreeze',
+    'enterSacredDeerDream',
+    'arcaneAnalysis',
+    'fanfanIsTheCore',
+    'isendraArrival',
+    'firstRegretVision',
+    'bibiRegretVision',
+    'hiddenMemoryBearerSecret',
+    'isendraDominance',
+    'conceptualDreamReveal',
+    'fanfanRepeatedFailure',
+    'iDontKnow',
+    'acceptUncertainty',
+    'listenInsteadOfControl',
+    'isendraFinalQuestions',
+    'walkWithoutAnswer',
+    'futureFragmentsReveal',
+    'silverBlackThreads',
+    'possibilityTruth',
+    'fanfanAwakens',
+    'dreamleafValidation',
+    'allPossibleFutures',
+    'blankWorldBibi',
+    'unknownVoice',
     'chapterEnd'
   ];
 
@@ -267,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 動態注入人物誌
   function renderDossier() {
     dossierContent.innerHTML = '';
-    ['bibi', 'fanfan', 'papa', 'leah', 'pipi'].forEach(key => {
+    ['bibi', 'fanfan', 'papa', 'leah', 'pipi', 'isendra'].forEach(key => {
       const c = characters[key];
       const card = document.createElement('div');
       card.className = 'dossier-card';
@@ -1271,6 +1325,147 @@ document.addEventListener('DOMContentLoaded', () => {
     btnP2Ch2Teaser.addEventListener('click', () => {
       if (p2ch2Notice) {
         p2ch2Notice.style.display = 'block';
+        playSynthesizedSound('heartbeat');
+      }
+    });
+  }
+
+  // =========================================================================
+  // 十二、第二部 第二章（聖樹之夢）互動邏輯
+  // =========================================================================
+  // 1. 追隨歌聲四步驟互動
+  const btnSongStep1 = document.getElementById('btn-song-step1');
+  const btnSongStep2 = document.getElementById('btn-song-step2');
+  const btnSongStep3 = document.getElementById('btn-song-step3');
+  const btnSongStep4 = document.getElementById('btn-song-step4');
+  const songJourneyLog = document.getElementById('song-journey-log');
+
+  if (btnSongStep1) {
+    btnSongStep1.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      btnSongStep1.disabled = true;
+      btnSongStep2.disabled = false;
+      if (songJourneyLog) songJourneyLog.innerHTML = '👣 <strong>［步驟 1］</strong> 鼻鼻輕推木門走出樹屋，月光下村莊安靜得只剩遠方的古老旋律……';
+    });
+  }
+
+  if (btnSongStep2) {
+    btnSongStep2.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      btnSongStep2.disabled = true;
+      btnSongStep3.disabled = false;
+      if (songJourneyLog) songJourneyLog.innerHTML = '🌉 <strong>［步驟 2］</strong> 赤足踩過搖曳的藤蔓長廊，夜螢在腳邊圍繞成指引的路徑。';
+    });
+  }
+
+  if (btnSongStep3) {
+    btnSongStep3.addEventListener('click', () => {
+      playSynthesizedSound('natureGlow');
+      btnSongStep3.disabled = true;
+      btnSongStep4.disabled = false;
+      if (songJourneyLog) songJourneyLog.innerHTML = '✨ <strong>［步驟 3］</strong> 順著微光穿過巨木樹冠，周圍蟲鳴漸遠，聖樹低吟愈發清晰。';
+    });
+  }
+
+  if (btnSongStep4) {
+    btnSongStep4.addEventListener('click', () => {
+      playSynthesizedSound('pulseGlow');
+      btnSongStep4.disabled = true;
+      if (songJourneyLog) songJourneyLog.innerHTML = '🌳 <strong>［抵達終點！］</strong> 鼻鼻佇立於『夢枝聖樹』之下，銀綠光芒將他籠罩，落葉化為邀請之鑰！';
+    });
+  }
+
+  // 2. 未來碎片四分頁切換
+  const futureTabBtns = document.querySelectorAll('.future-tab-btn');
+  const futureTitle = document.getElementById('future-title');
+  const futureDesc = document.getElementById('future-desc');
+
+  const futureData = {
+    f1: { title: "💥 【未來一：五國全面戰爭】", desc: "蒼龍帝國大軍跨越邊境，五大元素王國陷於戰火與毀滅之中。" },
+    f2: { title: "⚡ 【未來二：第二次神戰】", desc: "五聖獸全數甦醒，卻因過去的恐懼與猜疑再度大打出手，天崩地裂。" },
+    f3: { title: "🌌 【未來三：銀黑崩壞之世】", desc: "未知存在成功吞噬五獸神性，整座艾瑟蘭大陸法則崩潰，歸於虛無。" },
+    f4: { title: "🕊️ 【未來四：和平共同生活（無鼻鼻）】", desc: "五國人民和平站在世界樹下，無軍隊無神戰。然而……預言圖像中唯獨找不到鼻鼻的身影。" }
+  };
+
+  futureTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      futureTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const fKey = btn.getAttribute('data-future');
+      if (futureData[fKey] && futureTitle && futureDesc) {
+        futureTitle.textContent = futureData[fKey].title;
+        futureDesc.textContent = futureData[fKey].desc;
+        playSynthesizedSound('glyph');
+      }
+    });
+  });
+
+  // 3. 第二部第三章預告按鈕
+  const btnP2Ch3Teaser = document.getElementById('btn-p2ch3-teaser');
+  const p2ch3Notice = document.getElementById('p2ch3-notice');
+
+  if (btnP2Ch3Teaser) {
+    btnP2Ch3Teaser.addEventListener('click', () => {
+      if (p2ch3Notice) {
+        p2ch3Notice.style.display = 'block';
+        playSynthesizedSound('heartbeat');
+      }
+    });
+  }
+
+  // =========================================================================
+  // 十三、第二部 第三章（夢中的秘術師）互動邏輯
+  // =========================================================================
+  // 1. 汎汎秘紋解析四步驟互動
+  const btnAnalyzeSpace = document.getElementById('btn-analyze-space');
+  const btnAnalyzeTime = document.getElementById('btn-analyze-time');
+  const btnAnalyzeCore = document.getElementById('btn-analyze-core');
+  const btnAnalyzeExit = document.getElementById('btn-analyze-exit');
+  const analysisResultBox = document.getElementById('analysis-result-box');
+
+  if (btnAnalyzeSpace) {
+    btnAnalyzeSpace.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      btnAnalyzeSpace.disabled = true;
+      btnAnalyzeTime.disabled = false;
+      if (analysisResultBox) analysisResultBox.innerHTML = '📐 ［步驟 1］ 幾何符文鎖鏈展開！發現空間維度呈現重疊折疊狀態，非一般物理結界。';
+    });
+  }
+
+  if (btnAnalyzeTime) {
+    btnAnalyzeTime.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      btnAnalyzeTime.disabled = true;
+      btnAnalyzeCore.disabled = false;
+      if (analysisResultBox) analysisResultBox.innerHTML = '⏳ ［步驟 2］ 時間脈絡倒流逆行，夢境混雜著無數可能發生的平行抉擇分支。';
+    });
+  }
+
+  if (btnAnalyzeCore) {
+    btnAnalyzeCore.addEventListener('click', () => {
+      playSynthesizedSound('pulseGlow');
+      btnAnalyzeCore.disabled = true;
+      btnAnalyzeExit.disabled = false;
+      if (analysisResultBox) analysisResultBox.innerHTML = '🔮 ［步驟 3］ 尋找結界核心……符文線居然全數彎曲並收束回【汎汎本人】身上！';
+    });
+  }
+
+  if (btnAnalyzeExit) {
+    btnAnalyzeExit.addEventListener('click', () => {
+      playSynthesizedSound('doorCrash');
+      btnAnalyzeExit.disabled = true;
+      if (analysisResultBox) analysisResultBox.innerHTML = '💥 ［解析警示］ 發現通道被『潛意識信念』死死鎖定！迷霧中導師依森德拉踱步走出！';
+    });
+  }
+
+  // 2. 第二部第四章預告按鈕
+  const btnP2Ch4Teaser = document.getElementById('btn-p2ch4-teaser');
+  const p2ch4Notice = document.getElementById('p2ch4-notice');
+
+  if (btnP2Ch4Teaser) {
+    btnP2Ch4Teaser.addEventListener('click', () => {
+      if (p2ch4Notice) {
+        p2ch4Notice.style.display = 'block';
         playSynthesizedSound('heartbeat');
       }
     });

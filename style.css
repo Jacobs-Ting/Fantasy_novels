@@ -3816,6 +3816,674 @@ body.novel-theme {
 }
 
 /* ==========================================================================
+   第二部 第二章：聖樹之夢 (Part II Chapter 2) 專屬主題樣式
+   ========================================================================== */
+.scene-dreambough-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #1e1b4b 0%, #0f172a 60%, #030712 100%);
+  border-bottom: 2px solid #818cf8;
+  overflow: hidden;
+}
+
+.dreambough-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.night-village-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(129, 140, 248, 0.2), transparent 70%);
+}
+
+.starfield-layer {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 100px 150px, #a5b4fc, rgba(0,0,0,0)),
+                    radial-gradient(1.5px 1.5px at 240px 80px, #818cf8, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.6;
+}
+
+/* 追隨歌聲互動舞台 */
+.follow-song-stage {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #818cf8;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.2);
+}
+
+.song-steps-row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.melody-step-btn {
+  border-color: #818cf8 !important;
+  color: #c7d2fe !important;
+}
+
+.song-journey-log {
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+}
+
+.ancient-tree-whisper {
+  font-family: var(--font-decorative);
+  font-size: 1.6rem;
+  color: #a5b4fc;
+  text-align: center;
+  border: none;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 20px rgba(165, 180, 252, 0.8);
+}
+
+/* 超現實五神夢境展示 */
+.dream-five-gods-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.god-silhouette {
+  background: rgba(30, 27, 75, 0.7);
+  border: 1px solid #818cf8;
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--font-serif-title);
+  color: #c7d2fe;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.2);
+}
+
+.god-silhouette.empty-slot {
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px dashed #f43f5e;
+  color: #fda4af;
+  animation: emptyGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes emptyGlow {
+  0%, 100% { border-color: #f43f5e; box-shadow: 0 0 10px rgba(244, 63, 94, 0.3); }
+  50% { border-color: #fb7185; box-shadow: 0 0 25px rgba(244, 63, 94, 0.8); }
+}
+
+.tree-question {
+  font-family: var(--font-decorative);
+  font-size: 1.5rem;
+  color: #a5b4fc;
+  border-left: 4px solid #818cf8;
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+}
+
+.tree-answer-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.5rem;
+  color: #fef08a;
+  text-align: center;
+  border: none;
+  margin: 1.8rem 0;
+  text-shadow: 0 0 20px rgba(253, 224, 71, 0.8);
+}
+
+/* 團隊能力對比格 */
+.party-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.comp-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.comp-card span {
+  display: block;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 0.3rem;
+}
+
+.comp-card strong {
+  color: #818cf8;
+  font-size: 0.9rem;
+}
+
+/* 五種法則枷鎖 */
+.laws-five-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.8rem 0;
+}
+
+.law-item {
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid #818cf8;
+  padding: 1.2rem;
+  border-radius: 8px;
+}
+
+.law-item h4 {
+  font-family: var(--font-serif-title);
+  color: #c7d2fe;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.law-item p {
+  font-size: 0.88rem;
+  color: #e0e7ff;
+  line-height: 1.6;
+}
+
+/* 連接者 Bridge 揭示卡 */
+.connector-reveal-card {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.95), rgba(15, 23, 42, 0.95));
+  border: 2px solid #a855f7;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.connector-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.line-node {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #cbd5e1;
+  color: #e2e8f0;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.center-bridge-node {
+  background: rgba(168, 85, 247, 0.3);
+  border: 2px solid #c084fc;
+  color: #f3e8ff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  font-family: var(--font-serif-title);
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
+}
+
+.highlight-bridge {
+  border: 2px solid #c084fc !important;
+  color: #f3e8ff !important;
+  background: rgba(168, 85, 247, 0.3) !important;
+  font-weight: bold;
+}
+
+.mission-highlight {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #e0e7ff;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.grand-keyword {
+  font-family: var(--font-decorative);
+  font-size: 2.2rem;
+  color: #c084fc;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  margin-top: 0.8rem;
+  text-shadow: 0 0 30px rgba(192, 132, 252, 0.9);
+}
+
+/* 未來碎片切換舞台 */
+.futures-interactive-stage {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #818cf8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.8rem 0;
+}
+
+.future-tabs-row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.future-tab-btn {
+  font-size: 0.85rem !important;
+}
+
+.future-tab-btn.active {
+  background: rgba(129, 140, 248, 0.3) !important;
+  border-color: #818cf8 !important;
+  color: #ffffff !important;
+}
+
+.future-content-display {
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.future-content-display h4 {
+  font-family: var(--font-serif-title);
+  font-size: 1.2rem;
+  color: #c7d2fe;
+  margin-bottom: 0.6rem;
+}
+
+.future-content-display p {
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  line-height: 1.7;
+}
+
+.destiny-omen-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #fda4af;
+  text-align: center;
+  border: none;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 20px rgba(253, 164, 175, 0.7);
+}
+
+/* 夢葉獲得卡片 */
+.dreamleaf-reward-card {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 2px solid #34d399;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 35px rgba(52, 211, 153, 0.4);
+}
+
+.dreamleaf-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.leaf-icon {
+  font-size: 2.8rem;
+}
+
+.dreamleaf-header h3 {
+  font-family: var(--font-serif-title);
+  color: #a7f3d0;
+  font-size: 1.4rem;
+}
+
+.leaf-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.leaf-desc {
+  font-size: 0.92rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+/* 神鹿警示呼喚 */
+.deer-warning-callout {
+  background: radial-gradient(circle, rgba(153, 27, 27, 0.8), rgba(15, 23, 42, 0.95));
+  border: 2px solid #f87171;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+  box-shadow: 0 0 40px rgba(248, 113, 113, 0.4);
+}
+
+.callout-title {
+  font-family: var(--font-serif-title);
+  color: #fca5a5;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.deer-voice-text {
+  font-family: var(--font-decorative);
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 25px rgba(248, 113, 113, 0.9);
+}
+
+/* 白晝滿月視覺 */
+.daylight-moon-container {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.daylight-moon-disc {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.9), 0 0 100px rgba(129, 140, 248, 0.6);
+  animation: moonPulse 4s infinite ease-in-out;
+}
+
+@keyframes moonPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(129, 140, 248, 0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 70px rgba(255, 255, 255, 1), 0 0 140px rgba(129, 140, 248, 0.9); }
+}
+
+.moon-caption {
+  font-family: var(--font-serif-title);
+  font-size: 0.9rem;
+  color: #c7d2fe;
+  margin-top: 1rem;
+  letter-spacing: 0.15em;
+}
+
+/* ==========================================================================
+   第二部 第三章：夢中的秘術師 (Part II Chapter 3) 專屬主題樣式
+   ========================================================================== */
+.scene-arcanist-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #0f172a 0%, #1e1b4b 60%, #020617 100%);
+  border-bottom: 2px solid #38bdf8;
+  overflow: hidden;
+}
+
+.arcanist-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.deep-dream-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.2), transparent 70%);
+}
+
+.frozen-party-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.frozen-member {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #38bdf8;
+  color: #93c5fd;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-family: var(--font-serif-title);
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.freeze-desc {
+  text-align: center;
+  color: #38bdf8;
+  font-size: 0.9rem;
+}
+
+/* 四重秘紋解析互動 */
+.arcane-analysis-stage {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+}
+
+.analysis-btn-group {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.analysis-btn {
+  border-color: #38bdf8 !important;
+  color: #7dd3fc !important;
+}
+
+.analysis-result-box {
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 1.2rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+}
+
+/* 依森德拉 Spotlight 卡 */
+.isendra-spotlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.95), rgba(15, 23, 42, 0.95));
+  border: 2px solid #a855f7;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+  margin: 1.8rem 0;
+}
+
+.isendra-avatar {
+  font-size: 3.2rem;
+  background: rgba(168, 85, 247, 0.2);
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #c084fc;
+}
+
+.isendra-info h3 {
+  font-family: var(--font-decorative);
+  color: #c084fc;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.isendra-title {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.isendra-quote {
+  font-style: italic;
+  color: #e9d5ff;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* 三層心魔拷問盒 */
+.demon-interrogation-box {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #38bdf8;
+  border-left: 4px solid #a855f7;
+  padding: 1.2rem 1.5rem;
+  border-radius: 6px;
+  margin: 1.2rem 0;
+}
+
+.demon-interrogation-box h4 {
+  font-family: var(--font-serif-title);
+  color: #7dd3fc;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.demon-question {
+  color: #fda4af;
+  font-style: italic;
+  margin-top: 0.6rem;
+  font-weight: bold;
+}
+
+.rule-explain-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #7dd3fc;
+  border-left: 4px solid #38bdf8;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+}
+
+.quiet-breakthrough-text {
+  font-family: var(--font-serif-title);
+  font-size: 2.2rem;
+  color: #a7f3d0;
+  text-align: center;
+  margin: 1.5rem 0;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 25px rgba(167, 243, 208, 0.8);
+}
+
+.three-questions-card {
+  background: rgba(30, 27, 75, 0.9);
+  border: 1px solid #a855f7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.8rem 0;
+}
+
+.isendra-talk {
+  border-color: #a855f7 !important;
+  background: rgba(168, 85, 247, 0.15) !important;
+}
+
+.isendra-talk .talker {
+  color: #c084fc !important;
+}
+
+/* 世界觀宣言 */
+.truth-manifesto-box {
+  background: radial-gradient(circle, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+  border: 2px solid #38bdf8;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);
+}
+
+.manifesto-line {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #e0e7ff;
+  margin-bottom: 0.8rem;
+}
+
+.manifesto-line.highlight {
+  font-family: var(--font-decorative);
+  font-size: 1.8rem;
+  color: #7dd3fc;
+  text-shadow: 0 0 25px rgba(125, 211, 252, 0.9);
+}
+
+/* 未知存在第一次聲音 */
+.unknown-voice-box {
+  background: #000000;
+  border: 2px solid #64748b;
+  padding: 2.5rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2.5rem 0;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+
+.voice-header {
+  font-family: var(--font-serif-title);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.dark-entity-voice {
+  font-family: var(--font-decorative);
+  font-size: 2.2rem;
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  border: none;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(100, 116, 139, 0.8);
+}
+
+.character-growth-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #38bdf8;
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.character-growth-card h4 {
+  font-family: var(--font-serif-title);
+  color: #7dd3fc;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.character-growth-card p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
    響應式設計 RWD
    ========================================================================== */
 @media (max-width: 768px) {
