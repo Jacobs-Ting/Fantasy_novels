@@ -86,6 +86,51 @@ document.addEventListener('DOMContentLoaded', () => {
       quote: '秘術師最危險的敵人，不是未知，而是自以為已經理解。',
       icon: '🔮',
       desc: '汎汎年輕時最敬畏的秘術導師。在神鹿之夢深層登場考驗汎汎的心魔。無人能確認她是真正的導師本人、汎汎記憶的投影，亦或是夢境生成的幻象。'
+    },
+    elysea: {
+      id: 'elysea',
+      name: '艾露希亞',
+      title: '世界樹神鹿',
+      role: '翠鹿森國守護主神',
+      status: '重新進入自然安息沉睡',
+      ability: '自然、時間、記憶、命運與可能性觀測',
+      quote: '謝謝你，沒有相信我的恐懼。',
+      icon: '🦌✨',
+      desc: '翠鹿森國的古老主神。掌管自然與命運可能性，因受無數極端未來折磨險些暴走毀滅世界，最終被旅人小隊的安魂曲安撫並重新安息。'
+    },
+    remy: {
+      id: 'remy',
+      name: '蕾米',
+      title: '赤狼',
+      role: '鐵狼族戰團指揮官',
+      affiliation: '鐵狼氏族聯盟',
+      weapon: '厚重雙手巨斧',
+      ability: '軍事防線調度 / 戰場地形洞察 / 雪原近身巨斧戰技',
+      quote: '王国军是敌人，但不是每个穿王国军服的人，都自己选择来到这里。',
+      icon: '🪓',
+      desc: '鐵狼氏族年輕的戰團指揮官，族長赫魯恩之女。她熟悉北方雪原與戰爭，也比任何人更清楚戰爭真正意味著什麼。面對王國大軍，她選擇守住玄狼聖地，卻從不把殺戮視為榮耀。'
+    },
+    versain: {
+      id: 'versain',
+      name: '維爾薩恩',
+      title: '王國首相',
+      role: '高階術士 / 戰爭政策推動者',
+      affiliation: '北境王國',
+      ability: '情緒增幅秘術（銀黑秘紋） / 政治演講 / 高階元素與心智術法',
+      quote: '我们没有选择战争。王国只是保护自己的人民。',
+      icon: '👑',
+      desc: '北境王國最具權勢的政治人物之一，也是國王最信任的顧問。他公開宣稱戰爭是為了保護王國，但其發布的戰時文書中隱藏著與未知力量相似的銀黑秘紋。'
+    },
+    hruen: {
+      id: 'hruen',
+      name: '赫魯恩',
+      title: '鐵狼族長',
+      role: '老練北境領袖',
+      affiliation: '鐵狼氏族聯盟',
+      weapon: '傳統雙狼戰刀',
+      quote: '妳的任务不是陪这座峡谷一起死，是让族人还有明天。',
+      icon: '🐺',
+      desc: '身經百戰的鐵狼氏族老族長，蕾米之父。長期率領部族守護玄狼聖地與北方邊境，堅信守護族人的未來比盲目死守死地更重要。'
     }
   };
 
@@ -206,6 +251,51 @@ document.addEventListener('DOMContentLoaded', () => {
     'allPossibleFutures',
     'blankWorldBibi',
     'unknownVoice',
+    'blankWorldVision',
+    'papaTurnsOnBibi',
+    'leahSoulFire',
+    'bibiRefusesToFight',
+    'pipiStopsConflict',
+    'fanfanRejectsFixedFuture',
+    'worldTreeQuake',
+    'sacredDeerAwakens',
+    'deerWorldDestruction',
+    'partyRealizesDreamInfluence',
+    'pipiAncientStag',
+    'healTheSacredDeer',
+    'forestPresentMemory',
+    'bibiRequiem',
+    'fivePersonHarmony',
+    'deerCalms',
+    'deerThanksBibi',
+    'moonWolfClue',
+    'forestRestored',
+    'northwardPreview',
+    'enterFrostcrown',
+    'wartimeCheckpoints',
+    'mobilizationOrders',
+    'whiteAntlerInn',
+    'innkeeperConscriptionStory',
+    'ironWolfReputation',
+    'storyChangedInSixMonths',
+    'fanfanFindsBlackRunes',
+    'emotionAmplificationReveal',
+    'leahWarDeaths',
+    'pipiWarConsumesNature',
+    'frostfangPass',
+    'remyIntroduction',
+    'remyDefensePlanning',
+    'armyDisparity',
+    'remyRejectsWarGlory',
+    'chieftainHruen',
+    'protectConscriptedSoldiers',
+    'dualWarMontage',
+    'versainSpeech',
+    'crowdWarFrenzy',
+    'bibiHearsHiddenVoice',
+    'versainNoticesBibi',
+    'royalArmyApproaches',
+    'warHorn',
     'chapterEnd'
   ];
 
@@ -321,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 動態注入人物誌
   function renderDossier() {
     dossierContent.innerHTML = '';
-    ['bibi', 'fanfan', 'papa', 'leah', 'pipi', 'isendra'].forEach(key => {
+    ['bibi', 'fanfan', 'papa', 'leah', 'pipi', 'isendra', 'elysea', 'remy', 'versain', 'hruen'].forEach(key => {
       const c = characters[key];
       const card = document.createElement('div');
       card.className = 'dossier-card';
@@ -334,8 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         ${c.item ? `<div class="dossier-row"><strong>攜帶物件：</strong>${c.item}</div>` : ''}
-        ${c.affiliation ? `<div class="dossier-row"><strong>曾經所屬：</strong>${c.affiliation}</div>` : ''}
-        <div class="dossier-row"><strong>武器裝備：</strong>${c.weapon} ${c.shield ? ' / ' + c.shield : ''}</div>
+        ${c.affiliation ? `<div class="dossier-row"><strong>曾經所屬/勢力：</strong>${c.affiliation}</div>` : ''}
+        ${c.weapon ? `<div class="dossier-row"><strong>武器裝備：</strong>${c.weapon} ${c.shield ? ' / ' + c.shield : ''}</div>` : ''}
         <div class="dossier-row"><strong>主要能力：</strong>${c.ability}</div>
         ${c.quote ? `<div class="dossier-row" style="color:var(--silver-serpent); font-style:italic;"><strong>名言：</strong>「${c.quote}」</div>` : ''}
         ${c.status ? `<div class="dossier-row" style="color:#f87171;"><strong>當前狀態：</strong>${c.status}</div>` : ''}
@@ -1375,56 +1465,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. 未來碎片四分頁切換
-  const futureTabBtns = document.querySelectorAll('.future-tab-btn');
-  const futureTitle = document.getElementById('future-title');
-  const futureDesc = document.getElementById('future-desc');
-
-  const futureData = {
-    f1: { title: "💥 【未來一：五國全面戰爭】", desc: "蒼龍帝國大軍跨越邊境，五大元素王國陷於戰火與毀滅之中。" },
-    f2: { title: "⚡ 【未來二：第二次神戰】", desc: "五聖獸全數甦醒，卻因過去的恐懼與猜疑再度大打出手，天崩地裂。" },
-    f3: { title: "🌌 【未來三：銀黑崩壞之世】", desc: "未知存在成功吞噬五獸神性，整座艾瑟蘭大陸法則崩潰，歸於虛無。" },
-    f4: { title: "🕊️ 【未來四：和平共同生活（無鼻鼻）】", desc: "五國人民和平站在世界樹下，無軍隊無神戰。然而……預言圖像中唯獨找不到鼻鼻的身影。" }
-  };
-
-  futureTabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      futureTabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const fKey = btn.getAttribute('data-future');
-      if (futureData[fKey] && futureTitle && futureDesc) {
-        futureTitle.textContent = futureData[fKey].title;
-        futureDesc.textContent = futureData[fKey].desc;
-        playSynthesizedSound('glyph');
-      }
-    });
-  });
-
-  // 3. 第二部第三章預告按鈕
-  const btnP2Ch3Teaser = document.getElementById('btn-p2ch3-teaser');
-  const p2ch3Notice = document.getElementById('p2ch3-notice');
-
-  if (btnP2Ch3Teaser) {
-    btnP2Ch3Teaser.addEventListener('click', () => {
-      if (p2ch3Notice) {
-        p2ch3Notice.style.display = 'block';
-        playSynthesizedSound('heartbeat');
-      }
-    });
-  }
-
   // =========================================================================
   // 十三、第二部 第三章（夢中的秘術師）互動邏輯
   // =========================================================================
   // 1. 汎汎秘紋解析四步驟互動
-  const btnAnalyzeSpace = document.getElementById('btn-analyze-space');
-  const btnAnalyzeTime = document.getElementById('btn-analyze-time');
-  const btnAnalyzeCore = document.getElementById('btn-analyze-core');
-  const btnAnalyzeExit = document.getElementById('btn-analyze-exit');
-  const analysisResultBox = document.getElementById('analysis-result-box');
-
   if (btnAnalyzeSpace) {
-    btnAnalyzeSpace.addEventListener('click', () => {
       playSynthesizedSound('glyph');
       btnAnalyzeSpace.disabled = true;
       btnAnalyzeTime.disabled = false;
@@ -1471,11 +1516,242 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =========================================================================
+  // 十四、第二部 第四章/終章（不存在的未來）互動邏輯
+  // =========================================================================
+  // 1. 五人協同救贖五連擊點擊互動
+  const btnCoopFanfan = document.getElementById('btn-coop-fanfan');
+  const btnCoopPapa = document.getElementById('btn-coop-papa');
+  const btnCoopLeah = document.getElementById('btn-coop-leah');
+  const btnCoopPipi = document.getElementById('btn-coop-pipi');
+  const btnCoopBibi = document.getElementById('btn-coop-bibi');
+  const coopStatusDisplay = document.getElementById('coop-status-display');
+  const requiemSingBox = document.getElementById('requiem-sing-box');
+
+  if (btnCoopFanfan) {
+    btnCoopFanfan.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      btnCoopFanfan.disabled = true;
+      btnCoopPapa.disabled = false;
+      if (coopStatusDisplay) coopStatusDisplay.innerHTML = '❄️ ［第 1 重］ 汎汎祭出古代幾何秘紋，切斷神鹿意識中纏繞的銀黑侵蝕絲線！';
+    });
+  }
+
+  if (btnCoopPapa) {
+    btnCoopPapa.addEventListener('click', () => {
+      playSynthesizedSound('oathFlame');
+      btnCoopPapa.disabled = true;
+      btnCoopLeah.disabled = false;
+      if (coopStatusDisplay) coopStatusDisplay.innerHTML = '⚔️ ［第 2 重］ 帕帕重新點燃銀白誓約之焰，建立護盾庇護世界樹根系！';
+    });
+  }
+
+  if (btnCoopLeah) {
+    btnCoopLeah.addEventListener('click', () => {
+      playSynthesizedSound('soulLamp');
+      btnCoopLeah.disabled = true;
+      btnCoopPipi.disabled = false;
+      if (coopStatusDisplay) coopStatusDisplay.innerHTML = '🔮 ［第 3 重］ 莉亞高舉古老魂燈，將億萬亡魂悲鳴隔開，安撫神鹿雜音。';
+    });
+  }
+
+  if (btnCoopPipi) {
+    btnCoopPipi.addEventListener('click', () => {
+      playSynthesizedSound('natureGlow');
+      btnCoopPipi.disabled = true;
+      btnCoopBibi.disabled = false;
+      if (coopStatusDisplay) coopStatusDisplay.innerHTML = '🍃 ［第 4 重］ 古森巨鹿鹿角交融，將整座森林『真實的現在』注入神鹿心中！';
+    });
+  }
+
+  if (btnCoopBibi) {
+    btnCoopBibi.addEventListener('click', () => {
+      playSynthesizedSound('worldsong');
+      btnCoopBibi.disabled = true;
+      if (coopStatusDisplay) coopStatusDisplay.innerHTML = '🎻 <strong>［第 5 重］ 鼻鼻清唱安魂曲！</strong> 神鹿雙眼銀黑污染徹底退散，心魔熄滅！';
+      if (requiemSingBox) {
+        requiemSingBox.style.display = 'block';
+        requiemSingBox.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // 2. 《森眠安魂曲》逐句吟唱互動
+  const btnSingNextRequiem = document.getElementById('btn-sing-next-requiem');
+  const requiemLyricDisplay = document.getElementById('requiem-lyric-display');
+
+  const requiemLyrics = [
+    "「——風已經停了。」",
+    "「——森林還在。」",
+    "「——春天會回來。」",
+    "「——今天還沒有結束。」",
+    "「✦ 你可以休息了 ✦」"
+  ];
+  let requiemIndex = 0;
+
+  if (btnSingNextRequiem) {
+    btnSingNextRequiem.addEventListener('click', () => {
+      requiemIndex++;
+      if (requiemIndex < requiemLyrics.length) {
+        playSynthesizedSound('worldsong');
+        if (requiemLyricDisplay) requiemLyricDisplay.textContent = requiemLyrics[requiemIndex];
+        if (requiemIndex === requiemLyrics.length - 1) {
+          btnSingNextRequiem.disabled = true;
+          playSynthesizedSound('chorusResonance');
+        }
+      }
+    });
+  }
+
+  // 3. 第三部預告按鈕
+  const btnBook3Teaser = document.getElementById('btn-book3-teaser');
+  const book3Notice = document.getElementById('book3-notice');
+
+  if (btnBook3Teaser) {
+    btnBook3Teaser.addEventListener('click', () => {
+      if (book3Notice) {
+        book3Notice.style.display = 'block';
+        playSynthesizedSound('heartbeat');
+      }
+    });
+  }
+
+  // =========================================================================
+  // 十五、第三部 第一章（王都的戰時陰影）互動邏輯
+  // =========================================================================
+  // 1. 戰時告示點擊閱讀 Pop-up Modal
+  // 1. 戰時告示點擊閱讀（內嵌方框與彈窗 Modal 雙向渲染）
+  const noticeBtns = document.querySelectorAll('.notice-card-btn, .notice-read-btn');
+  const noticeModalBackdrop = document.getElementById('notice-modal-backdrop');
+  const noticeModalBody = document.getElementById('notice-modal-body');
+  const noticeModalContent = document.getElementById('notice-modal-content');
+  const btnCloseNoticeModal = document.getElementById('btn-close-notice-modal');
+
+  const noticeTexts = {
+    n1: `
+      <h3>📜 《王國戰時動員令》</h3>
+      <p style="color:#ef4444; font-weight:bold; margin-bottom:0.8rem;">【北境王國最高軍事委員會 頒布】</p>
+      <p>鑑於北方鐵狼氏族非法集結軍隊、私藏聖物並脅迫邊境商隊，國王陛下正式簽署全面戰時動員。</p>
+      <ul style="padding-left:1.2rem; margin-bottom:1rem; line-height:1.8;">
+        <li>凡年滿 20 至 45 歲之健壯男子，必須於三日內向各地軍營登記入伍。</li>
+        <li>鐵匠鋪、馬廄、糧倉及商會物資全面接受軍方優先徵用。</li>
+        <li>拒絕服從徵召者，將以背叛王國罪處置。</li>
+      </ul>
+      <p style="font-size:0.85rem; color:#a3a3a3;">（羊皮紙邊角赫然附著極微弱的銀黑幾何紋路，散發著令人心慌的壓迫感……）</p>
+    `,
+    n2: `
+      <h3>🛡️ 《霜冠城戒嚴管制令》</h3>
+      <p style="color:#ef4444; font-weight:bold; margin-bottom:0.8rem;">【霜冠城衛軍司令部 公告】</p>
+      <p>為確保王都安全與物資順利運往前線，即日起實行最高級別城市戒嚴：</p>
+      <ul style="padding-left:1.2rem; margin-bottom:1rem; line-height:1.8;">
+        <li>每日日落後城門全面封閉，未持有軍方特別通行證者禁止出入。</li>
+        <li>市區實施宵禁，夜間三人以上聚會將立即接受衛兵盤問逮捕。</li>
+        <li>外來商隊與旅人必須登記武器並接受三次身分核驗。</li>
+      </ul>
+    `,
+    n3: `
+      <h3>⚠️ 《禁止散播叛亂言論》</h3>
+      <p style="color:#ef4444; font-weight:bold; margin-bottom:0.8rem;">【王國審訊廳與首相府 警示】</p>
+      <p>近期城內出現質疑『北伐安定遠征』之荒謬言論與謠言，特此嚴正警告：</p>
+      <ul style="padding-left:1.2rem; margin-bottom:1rem; line-height:1.8;">
+        <li>公開同情鐵狼氏族或質疑戰爭合法性者，視同敵國間諜。</li>
+        <li>凡私下宣傳『鐵狼族為守護者』等舊時代歷史者，剝奪公民財產並接受審訊。</li>
+        <li>鼓勵民眾主動舉報身邊思想異常之人。</li>
+      </ul>
+    `
+  };
+
+  noticeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-notice');
+      if (noticeTexts[type]) {
+        playSynthesizedSound('glyph');
+
+        // 1. 渲染至下方內嵌資訊顯示框
+        if (noticeModalContent) {
+          noticeModalContent.innerHTML = noticeTexts[type];
+          noticeModalContent.style.borderColor = '#38bdf8';
+          noticeModalContent.style.background = 'rgba(15, 23, 42, 0.95)';
+          noticeModalContent.style.color = '#e2e8f0';
+          noticeModalContent.style.boxShadow = '0 0 20px rgba(56, 189, 248, 0.3)';
+        }
+
+        // 2. 開啟高亮浮動 Modal 彈窗 (若 modal 存在)
+        if (noticeModalBody && noticeModalBackdrop) {
+          noticeModalBody.innerHTML = noticeTexts[type];
+          noticeModalBackdrop.style.display = 'flex';
+        }
+      }
+    });
+  });
+
+  if (btnCloseNoticeModal && noticeModalBackdrop) {
+    btnCloseNoticeModal.addEventListener('click', () => {
+      noticeModalBackdrop.style.display = 'none';
+    });
+    noticeModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === noticeModalBackdrop) {
+        noticeModalBackdrop.style.display = 'none';
+      }
+    });
+  }
+
+  // 2. 蕾米前線布防選擇互動
+  const btnPlanRethink = document.getElementById('btn-plan-rethink');
+  const btnPlanArchers = document.getElementById('btn-plan-archers');
+  const btnPlanWolves = document.getElementById('btn-plan-wolves');
+  const planFeedbackBox = document.getElementById('plan-feedback-box');
+
+  if (btnPlanRethink) {
+    btnPlanRethink.addEventListener('click', () => {
+      playSynthesizedSound('footsteps');
+      if (planFeedbackBox) {
+        planFeedbackBox.style.display = 'block';
+        planFeedbackBox.innerHTML = '🪓 <strong>【防線調整完成】</strong> 拒馬向後撤退二十步！王國重騎兵衝入峽谷時將深陷鬆軟雪層，喪失衝鋒慣性。';
+      }
+    });
+  }
+
+  if (btnPlanArchers) {
+    btnPlanArchers.addEventListener('click', () => {
+      playSynthesizedSound('glyph');
+      if (planFeedbackBox) {
+        planFeedbackBox.style.display = 'block';
+        planFeedbackBox.innerHTML = '🏹 <strong>【伏擊部署完成】</strong> 弓箭手全數隱蔽於兩側岩壁雪穴中！躲過王國術士第一波集中轟炸火力。';
+      }
+    });
+  }
+
+  if (btnPlanWolves) {
+    btnPlanWolves.addEventListener('click', () => {
+      playSynthesizedSound('whisper');
+      if (planFeedbackBox) {
+        planFeedbackBox.style.display = 'block';
+        planFeedbackBox.innerHTML = '🐺 <strong>【機動游擊預備】</strong> 狼騎兵小隊遊走於側面峭壁，準備在兩軍交鋒時突襲敵軍後方糧草車隊！';
+      }
+    });
+  }
+
+  // 3. 第三部第二章預告按鈕
+  const btnP3Ch2Teaser = document.getElementById('btn-p3ch2-teaser');
+  const p3ch2Notice = document.getElementById('p3ch2-notice');
+
+  if (btnP3Ch2Teaser) {
+    btnP3Ch2Teaser.addEventListener('click', () => {
+      if (p3ch2Notice) {
+        p3ch2Notice.style.display = 'block';
+        playSynthesizedSound('heartbeat');
+      }
+    });
+  }
+
   // ESC 鍵關閉所有側欄
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeAllDrawers();
+      if (noticeModalBackdrop) noticeModalBackdrop.style.display = 'none';
     }
   });
 
 });
+

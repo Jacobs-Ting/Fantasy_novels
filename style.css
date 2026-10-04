@@ -4484,6 +4484,518 @@ body.novel-theme {
 }
 
 /* ==========================================================================
+   第二部 終章：不存在的未來 (Part II Chapter 4 / Book II Finale) 專屬主題樣式
+   ========================================================================== */
+.scene-future-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #064e3b 0%, #0f172a 60%, #020617 100%);
+  border-bottom: 2px solid #34d399;
+  overflow: hidden;
+}
+
+.future-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.conflict-spotlight-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid #f87171;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 30px rgba(248, 113, 113, 0.3);
+}
+
+.pipi-shout-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #a7f3d0;
+  border-left: 4px solid #10b981;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* 神鹿現身 Spotlight */
+.deer-god-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(15, 23, 42, 0.95));
+  border: 2px solid #34d399;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 45px rgba(52, 211, 153, 0.4);
+}
+
+.deer-avatar {
+  font-size: 4rem;
+}
+
+.deer-god-info h3 {
+  font-family: var(--font-decorative);
+  color: #a7f3d0;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.deer-status {
+  font-size: 0.95rem;
+  color: #6ee7b7;
+}
+
+.deer-pain-desc {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+}
+
+.nature-connect-box {
+  background: rgba(4, 20, 16, 0.9);
+  border: 1px solid #10b981;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.nature-elements-list {
+  font-size: 0.95rem;
+  color: #6ee7b7;
+  letter-spacing: 0.1em;
+  margin: 0.8rem 0;
+}
+
+.pipi-heal-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #a7f3d0;
+  border: none;
+  margin-top: 1rem;
+}
+
+/* 五人協同救贖陣圖 */
+.five-coop-stage {
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid #10b981;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+.coop-btn-group {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.coop-btn {
+  border-color: #10b981 !important;
+  color: #a7f3d0 !important;
+}
+
+.coop-status-display {
+  background: rgba(2, 44, 34, 0.8);
+  border: 1px solid #34d399;
+  padding: 1.2rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+/* 安魂曲唱響 Stage */
+.requiem-sing-box {
+  background: radial-gradient(circle, rgba(6, 78, 59, 0.8), rgba(15, 23, 42, 0.95));
+  border: 2px solid #34d399;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 35px rgba(52, 211, 153, 0.4);
+}
+
+.requiem-title {
+  font-family: var(--font-serif-title);
+  color: #a7f3d0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.requiem-lyric-display {
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 25px rgba(52, 211, 153, 0.9);
+}
+
+.deer-thanks-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.5rem;
+  color: #a7f3d0;
+  text-align: center;
+  border: none;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 20px rgba(167, 243, 208, 0.8);
+}
+
+.moonwolf-clue-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #38bdf8;
+  text-align: center;
+  border: none;
+  margin: 1.2rem 0;
+}
+
+/* 主題對照演出 */
+.theme-showdown-box {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--gold-border);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.dark-doctrine {
+  font-family: var(--font-serif-title);
+  font-size: 1.4rem;
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.shatter-divider {
+  font-size: 1.1rem;
+  color: #f43f5e;
+  margin: 1rem 0;
+}
+
+.light-doctrine {
+  font-family: var(--font-decorative);
+  font-size: 2.2rem;
+  color: #fef08a;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 30px rgba(253, 224, 71, 0.9);
+}
+
+/* 北境預告卡 */
+.northward-preview-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.9));
+  border: 2px solid #38bdf8;
+  border-radius: 10px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+}
+
+.preview-title {
+  font-family: var(--font-decorative);
+  font-size: 1.6rem;
+  color: #7dd3fc;
+  margin-bottom: 1rem;
+}
+
+.preview-desc {
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  line-height: 1.7;
+}
+
+.hero-nodes-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.hero-chip {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #34d399;
+  color: #a7f3d0;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   第三部 第一章：王都的戰時陰影 (Part III Chapter 1) 專屬主題樣式
+   ========================================================================== */
+.scene-frostcrown-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #1e293b 0%, #0f172a 60%, #020617 100%);
+  border-bottom: 2px solid #38bdf8;
+  overflow: hidden;
+}
+
+.frostcrown-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wartime-skyline-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.15), transparent 70%);
+}
+
+/* 戰時告示卡片互動 */
+.wartime-notices-stage {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+.notice-cards-row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.notice-card-btn {
+  border-color: #38bdf8 !important;
+  color: #7dd3fc !important;
+}
+
+.notice-modal-content {
+  background: rgba(30, 27, 75, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  line-height: 1.7;
+}
+
+.innkeeper-talk {
+  border-color: #f59e0b !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+}
+
+.innkeeper-talk .talker {
+  color: #fbbf24 !important;
+}
+
+.innkeeper-doubt-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.3rem;
+  color: #fbbf24;
+  border-left: 4px solid #f59e0b;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+}
+
+.fanfan-reveal-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.25rem;
+  color: #38bdf8;
+  border-left: 4px solid #0284c7;
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+}
+
+/* 雙線切換提示 Badge */
+.storyline-switch-badge {
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.9), rgba(15, 23, 42, 0.9));
+  border: 1px solid #38bdf8;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-align: center;
+  font-family: var(--font-serif-title);
+  color: #7dd3fc;
+  font-size: 0.95rem;
+  margin: 1.5rem 0;
+  letter-spacing: 0.1em;
+}
+
+/* 蕾米 Spotlight 卡 */
+.remy-spotlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(153, 27, 27, 0.9), rgba(15, 23, 42, 0.95));
+  border: 2px solid #ef4444;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+  margin: 1.8rem 0;
+}
+
+.remy-avatar {
+  font-size: 3.2rem;
+  background: rgba(239, 68, 68, 0.2);
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #f87171;
+}
+
+.remy-info h3 {
+  font-family: var(--font-decorative);
+  color: #fca5a5;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.remy-title {
+  font-size: 0.85rem;
+  color: #fecaca;
+}
+
+.remy-quote {
+  font-style: italic;
+  color: #fee2e2;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* 蕾米防線規劃 */
+.defense-planning-stage {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.defense-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.def-card {
+  background: rgba(30, 27, 75, 0.8);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.def-card strong {
+  color: #fca5a5;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.def-card p {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+/* 首相演說卡片 */
+.versain-speech-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid #64748b;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin: 1.8rem 0;
+}
+
+.versain-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.versain-icon {
+  font-size: 2.5rem;
+}
+
+.versain-header h3 {
+  font-family: var(--font-serif-title);
+  color: #e2e8f0;
+  font-size: 1.3rem;
+}
+
+.versain-sub {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.versain-speech-quote {
+  font-family: var(--font-serif-title);
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  border-left: 4px solid #64748b;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+.dark-whisper-callout {
+  font-family: var(--font-decorative);
+  font-size: 1.6rem;
+  color: #818cf8;
+  text-align: center;
+  border: none;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 20px rgba(129, 140, 248, 0.9);
+}
+
+/* 史詩火把海洋與號角 */
+.army-approaching-display {
+  background: radial-gradient(circle at 50% 50%, rgba(153, 27, 27, 0.8), rgba(15, 23, 42, 0.95));
+  border: 2px solid #ef4444;
+  padding: 2.5rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  margin: 2rem 0;
+  box-shadow: 0 0 45px rgba(239, 68, 68, 0.4);
+}
+
+.war-horn-sound {
+  font-family: var(--font-decorative);
+  font-size: 2.6rem;
+  color: #fca5a5;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.8rem;
+  animation: hornVibrate 2s infinite ease-in-out;
+}
+
+@keyframes hornVibrate {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 15px rgba(239, 68, 68, 0.6); }
+  50% { transform: scale(1.1); text-shadow: 0 0 35px rgba(239, 68, 68, 1); }
+}
+
+.horn-desc {
+  font-family: var(--font-serif-title);
+  font-size: 0.9rem;
+  color: #fecaca;
+  letter-spacing: 0.15em;
+}
+
+/* ==========================================================================
    響應式設計 RWD
    ========================================================================== */
 @media (max-width: 768px) {
