@@ -1196,13 +1196,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const switchChBtns = document.querySelectorAll('.switch-ch-btn');
 
   function switchChapterPage(targetChapterId) {
+    if (!targetChapterId) return;
+
     // 隱藏所有分頁
-    chapterPages.forEach(page => {
+    const allPages = document.querySelectorAll('.chapter-page');
+    allPages.forEach(page => {
       page.classList.remove('active-page');
     });
 
     // 取消所有頁籤 active
-    chapterTabBtns.forEach(btn => {
+    const allTabs = document.querySelectorAll('.chapter-tab-btn');
+    allTabs.forEach(btn => {
       btn.classList.remove('active');
     });
 
@@ -1221,21 +1225,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 平滑滾動置頂
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    playSynthesizedSound('glyph');
+    try {
+      playSynthesizedSound('glyph');
+    } catch (e) {
+      // Audio sound fail safe
+    }
   }
 
-  chapterTabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const chId = btn.getAttribute('data-chapter');
-      switchChapterPage(chId);
-    });
-  });
+  // 事件代理：統一處理章節切換點擊 (點擊內部 span 或外圍按鈕皆可精準觸發)
+  document.addEventListener('click', (e) => {
+    const tabBtn = e.target.closest('.chapter-tab-btn');
+    if (tabBtn) {
+      const chId = tabBtn.getAttribute('data-chapter');
+      if (chId) {
+        switchChapterPage(chId);
+        return;
+      }
+    }
 
-  switchChBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const chId = btn.getAttribute('data-target');
-      switchChapterPage(chId);
-    });
+    const switchBtn = e.target.closest('.switch-ch-btn');
+    if (switchBtn) {
+      const chId = switchBtn.getAttribute('data-target');
+      if (chId) {
+        switchChapterPage(chId);
+        return;
+      }
+    }
   });
 
   // =========================================================================
@@ -1469,7 +1484,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 十三、第二部 第三章（夢中的秘術師）互動邏輯
   // =========================================================================
   // 1. 汎汎秘紋解析四步驟互動
+  const btnAnalyzeSpace = document.getElementById('btn-analyze-space');
+  const btnAnalyzeTime = document.getElementById('btn-analyze-time');
+  const btnAnalyzeCore = document.getElementById('btn-analyze-core');
+  const btnAnalyzeExit = document.getElementById('btn-analyze-exit');
+  const analysisResultBox = document.getElementById('analysis-result-box');
+
   if (btnAnalyzeSpace) {
+    btnAnalyzeSpace.addEventListener('click', () => {
       playSynthesizedSound('glyph');
       btnAnalyzeSpace.disabled = true;
       btnAnalyzeTime.disabled = false;
